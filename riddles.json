@@ -1,242 +1,242 @@
 [
   {
     "id": 1,
-    "riddle": "In Hogwarts, this creature causes chaos in code. Hagrid might love it, but developers squash it daily.",
-    "hint": "It rhymes with 'mug' and hides in your program.",
+    "riddle": "In the Forbidden Forest, Ron Weasley is terrified of spiders and creepy crawlers. In computer programming, this tiny pest creeps into your source code and breaks your program until squashed.",
+    "hint": "It rhymes with 'mug'. First famously found trapped in a Mark II computer relay in 1947.",
     "answer": "bug",
     "answers": ["bug", "bugs", "software bug", "a bug", "code bug"],
     "category": "Harry Potter"
   },
   {
     "id": 2,
-    "riddle": "Like the One Ring that circles endlessly until cast into Mount Doom, in code I repeat instructions until a condition sets me free.",
-    "hint": "Think of something circular — for, while, do... it runs and repeats.",
+    "riddle": "Like Mystique or the Shape-shifter who can take on any identity, this fundamental programming container holds data whose value can change throughout the execution of a program.",
+    "hint": "Declared with keywords like let, var, or const. Its value is not constant.",
+    "answer": "variable",
+    "answers": ["variable", "variables", "var", "a variable"],
+    "category": "Marvel"
+  },
+  {
+    "id": 3,
+    "riddle": "Sauron forged the One Ring into a continuous circle with no beginning and no end. In code, this construct repeats a block of instructions until a termination condition is met.",
+    "hint": "Common types include 'for', 'while', and 'do-while'.",
     "answer": "loop",
     "answers": ["loop", "loops", "for loop", "while loop", "a loop", "iteration"],
     "category": "Lord of the Rings"
   },
   {
-    "id": 3,
-    "riddle": "Nagini speaks it, Voldemort commands it in Parseltongue. In the coding world, it's one of the most popular languages — named after a reptile and a comedy troupe.",
-    "hint": "Guido van Rossum created it. Famous for indentation and readability.",
-    "answer": "python",
-    "answers": ["python", "python3", "python language", "py"],
-    "category": "Harry Potter"
-  },
-  {
     "id": 4,
-    "riddle": "In Middle-earth, Gandalf roars 'You shall not pass!' In code, this keyword checks a condition — if it's true, you pass; if not, you take another path.",
-    "hint": "Two letters. The most basic decision-making keyword: __ / else.",
-    "answer": "if",
-    "answers": ["if", "if statement", "if condition", "conditional", "if else"],
-    "category": "Lord of the Rings"
+    "riddle": "Jedi Master Yoda says 'Do or do not, there is no try.' In programming, this fundamental data type accepts only two possible values: true or false, 1 or 0.",
+    "hint": "Named after mathematician George Boole. Often shortened to 'bool'.",
+    "answer": "boolean",
+    "answers": ["boolean", "bool", "booleans", "boolean type"],
+    "category": "Star Wars"
   },
   {
     "id": 5,
-    "riddle": "Like a Horcrux splits Voldemort's soul into numbered pieces, this data structure stores multiple values in indexed slots starting at zero.",
-    "hint": "It starts at index 0 and holds items in order. Accessible with square brackets [].",
-    "answer": "array",
-    "answers": ["array", "arrays", "an array", "list", "lists"],
+    "riddle": "Every time Harry chants 'Expecto Patronum', a reusable spell executes to ward off Dementors. In code, this named, reusable block of instructions takes inputs and returns an output whenever called.",
+    "hint": "In Python you declare it with 'def', in JavaScript with 'function'. In OOP it's called a method.",
+    "answer": "function",
+    "answers": ["function", "functions", "method", "methods", "procedure", "a function"],
     "category": "Harry Potter"
   },
   {
     "id": 6,
-    "riddle": "The Marauder's Map tracks every footstep at Hogwarts. In the developer world, this tool tracks every change in your code — who wrote it, when, and why.",
-    "hint": "Linus Torvalds created it. You 'commit', 'push', and 'pull' with it.",
-    "answer": "git",
-    "answers": ["git", "version control", "vcs", "git vcs"],
-    "category": "Harry Potter"
+    "riddle": "Like the Infinity Gauntlet that holds six stones in designated slots, this indexed data structure stores an ordered collection of elements accessible starting at index 0.",
+    "hint": "Surrounded by square brackets []. Elements are accessed by index numbers.",
+    "answer": "array",
+    "answers": ["array", "arrays", "an array", "list", "lists"],
+    "category": "Marvel"
   },
   {
     "id": 7,
-    "riddle": "Like Dumbledore's Pensieve stores memories for quick access but clears when emptied, this computer component offers lightning-fast, volatile temporary storage.",
-    "hint": "It stands for Random Access Memory.",
-    "answer": "ram",
-    "answers": ["ram", "random access memory", "main memory", "memory"],
-    "category": "Harry Potter"
+    "riddle": "Like the Sacred Jedi Texts that preserved generations of history and wisdom, this distributed version control system lets developers record commits, make branches, and travel back through code history.",
+    "hint": "Created by Linus Torvalds. Powers platforms like GitHub and GitLab.",
+    "answer": "git",
+    "answers": ["git", "version control", "vcs", "github"],
+    "category": "Star Wars"
   },
   {
     "id": 8,
-    "riddle": "Lucy steps through the wardrobe and reveals a hidden world. In code, this simple function is the first spell every beginner learns — it reveals output on your screen.",
-    "hint": "In Python it's print(), in Java it's System.out.____ln().",
-    "answer": "print",
-    "answers": ["print", "print function", "println", "console.log", "printf"],
-    "category": "Narnia"
+    "riddle": "Behind every simulation in the Matrix lies a foundational wireframe. On the World Wide Web, this markup language uses angle brackets and tags to create the backbone structure of every web page.",
+    "hint": "Four letters: HyperText Markup Language.",
+    "answer": "html",
+    "answers": ["html", "html5", "hypertext markup language"],
+    "category": "The Matrix"
   },
   {
     "id": 9,
-    "riddle": "The Sorting Hat at Hogwarts examines students and places them in the right house. This algorithm does the same — arranging a messy collection into order.",
-    "hint": "Bubble, Quick, and Merge are all famous types of this.",
-    "answer": "sort",
-    "answers": ["sort", "sorting", "sort algorithm", "sorting algorithm"],
+    "riddle": "The Transfiguration spell changes appearances, colors, and layouts. On the web, this stylesheet language styles HTML elements, adding beautiful colors, animations, and responsive layouts.",
+    "hint": "Three letters. Cascading Style Sheets.",
+    "answer": "css",
+    "answers": ["css", "css3", "cascading style sheets"],
     "category": "Harry Potter"
   },
   {
     "id": 10,
-    "riddle": "Like Dobby the house-elf who was freed when Harry gave him a sock, this type of software is freely available for anyone to use, modify, and share.",
-    "hint": "Linux is a famous example. Opposite of proprietary. Two words: ____ Source.",
-    "answer": "open source",
-    "answers": ["open source", "opensource", "foss", "open source software", "oss"],
-    "category": "Harry Potter"
+    "riddle": "Morpheus bends reality by adding interactive rules to the Matrix. In web development, this scripting language gives life, click events, and dynamic behavior to static web pages in the browser.",
+    "hint": "Often abbreviated as JS. Created in 10 days by Brendan Eich in 1995.",
+    "answer": "javascript",
+    "answers": ["javascript", "js", "ecmascript"],
+    "category": "The Matrix"
   },
   {
     "id": 11,
-    "riddle": "Like a Boggart that shapeshifts into whatever form it needs, this OOP concept lets one interface take many forms — a single method behaving differently for different objects.",
-    "hint": "Poly = many, morph = forms. A pillar of Object-Oriented Programming.",
-    "answer": "polymorphism",
-    "answers": ["polymorphism", "polymorphic"],
-    "category": "Harry Potter"
+    "riddle": "When Tony Stark tells J.A.R.V.I.S., 'SELECT suit FROM armory WHERE model = Mark_50', he's using a language very similar to this standard query language for relational databases.",
+    "hint": "Three letters. Structured Query Language. You use SELECT, INSERT, UPDATE, and DELETE.",
+    "answer": "sql",
+    "answers": ["sql", "structured query language", "sequel"],
+    "category": "Marvel"
   },
   {
     "id": 12,
-    "riddle": "Owls deliver messages between wizards across great distances. In tech, this is how different software systems talk to each other — sending requests and getting responses.",
-    "hint": "Three letters. Application Programming Interface.",
-    "answer": "api",
-    "answers": ["api", "apis", "rest api", "web api", "application programming interface"],
-    "category": "Harry Potter"
+    "riddle": "The Citadel library in Oldtown holds vast collections of scrolls organized by category across thousands of shelves. In tech, this system securely stores, organizes, and retrieves structured collections of data.",
+    "hint": "MySQL, PostgreSQL, Oracle, and MongoDB are popular types of this (often abbreviated DB).",
+    "answer": "database",
+    "answers": ["database", "databases", "db", "dbms", "rdbms"],
+    "category": "Game of Thrones"
   },
   {
     "id": 13,
-    "riddle": "Like Nearly Headless Nick who wanders Hogwarts but has no physical body, this special value in code means a variable exists but points to absolutely nothing.",
-    "hint": "In Java/JS it's ____; in Python it's None.",
-    "answer": "null",
-    "answers": ["null", "nil", "none", "nullptr", "undefined"],
-    "category": "Harry Potter"
-  },
-  {
-    "id": 14,
-    "riddle": "Hermione's Time-Turner lets her go back and redo things. In coding, this key command undoes your last action and takes you back to the previous state.",
-    "hint": "Universal shortcut on Windows/Mac: Ctrl+Z or Cmd+Z.",
-    "answer": "undo",
-    "answers": ["undo", "ctrl+z", "ctrl z", "control z", "cmd+z", "cmd z", "undo command"],
-    "category": "Harry Potter"
-  },
-  {
-    "id": 15,
-    "riddle": "In Star Wars, the Force has only two sides — Light and Dark, On and Off, 1 and 0. Computers think entirely in this number system.",
-    "hint": "It uses only two digits: 0 and 1. The word starts with 'bi'.",
+    "riddle": "R2-D2 speaks in rapid bleeps and bloops that translate directly into machine code. What base-2 numeral system consisting of only 0s and 1s forms the foundational language of all digital hardware?",
+    "hint": "Base 2. Two states: on/off, high/low voltage.",
     "answer": "binary",
     "answers": ["binary", "binary code", "base 2", "base two", "machine code"],
     "category": "Star Wars"
   },
   {
-    "id": 16,
-    "riddle": "Like the Invisibility Cloak that hides Harry's details from the world, this OOP concept bundles data and methods while keeping internal implementation hidden.",
-    "hint": "It's a pillar of OOP starting with 'E'. Think of enclosing data in a capsule.",
-    "answer": "encapsulation",
-    "answers": ["encapsulation", "data hiding", "encapsulate"],
+    "id": 14,
+    "riddle": "The Arc Reactor in Iron Man's chest powers his armor, but the brain that actually carries out calculations and instructions is this primary chip — often called the 'brain' of the computer.",
+    "hint": "Three letters. Central Processing Unit. Intel and AMD manufacture them.",
+    "answer": "cpu",
+    "answers": ["cpu", "processor", "central processing unit", "microprocessor"],
+    "category": "Marvel"
+  },
+  {
+    "id": 15,
+    "riddle": "Like the Pensieve where memories are stored for quick temporary inspection while working, this volatile computer memory loses all its contents when the power is turned off.",
+    "hint": "Three letters. Random Access Memory. Not your hard drive or SSD.",
+    "answer": "ram",
+    "answers": ["ram", "random access memory", "main memory", "volatile memory"],
     "category": "Harry Potter"
   },
   {
+    "id": 16,
+    "riddle": "Eleven stacks Eggo waffles on her breakfast plate: she eats the topmost waffle first, while the first waffle made is eaten last (LIFO). What fundamental data structure follows this exact behavior?",
+    "hint": "Last-In, First-Out (LIFO). Supported by push and pop operations.",
+    "answer": "stack",
+    "answers": ["stack", "stacks", "call stack", "a stack"],
+    "category": "Stranger Things"
+  },
+  {
     "id": 17,
-    "riddle": "Like Aragorn who inherits the throne and all powers of the King of Gondor, in OOP a child class receives all properties and methods from its parent class.",
-    "hint": "One of the four pillars of OOP. A subclass ______s from a superclass.",
-    "answer": "inheritance",
-    "answers": ["inheritance", "inherit", "subclassing"],
-    "category": "Lord of the Rings"
+    "riddle": "Students queue up in single file at Platform 9 3/4 to board the Hogwarts Express: the first student in line is the first to step aboard (FIFO). What linear data structure is this?",
+    "hint": "First-In, First-Out (FIFO). Used in printer tasks and task scheduling.",
+    "answer": "queue",
+    "answers": ["queue", "queues", "fifo", "a queue"],
+    "category": "Harry Potter"
   },
   {
     "id": 18,
-    "riddle": "In Westeros, maesters record history in scrolls. In code, this practice means writing human notes explaining what code does, completely ignored by the computer.",
-    "hint": "In Python you use #, in JavaScript you use //. They are called ______s.",
-    "answer": "comment",
-    "answers": ["comment", "comments", "code comment", "code comments"],
-    "category": "Game of Thrones"
-  },
-  {
-    "id": 19,
-    "riddle": "The massive Wall of the Night's Watch stands 700 feet high to keep wild threats out of Westeros. In networking, this barrier filters and blocks unauthorized traffic.",
-    "hint": "A literal wall made of flame that protects your computer or network.",
-    "answer": "firewall",
-    "answers": ["firewall", "firewalls", "network firewall", "a firewall"],
-    "category": "Game of Thrones"
-  },
-  {
-    "id": 20,
-    "riddle": "Doctor Strange traps Dormammu by creating a time loop that repeats and calls itself again and again until a base condition is finally met.",
-    "hint": "A programming technique where a function calls itself.",
+    "riddle": "Doctor Strange trapped Dormammu in a time loop where the same scene invokes itself repeatedly until a bargaining condition is met. In programming, what is it called when a function calls itself?",
+    "hint": "Requires a base case to avoid a Stack Overflow error.",
     "answer": "recursion",
     "answers": ["recursion", "recursive", "recursive function", "recurse"],
     "category": "Marvel"
   },
   {
-    "id": 21,
-    "riddle": "Tony Stark stacks his Iron Man suits in vertical pods where the last suit placed inside is the first one deployed (LIFO). What data structure is this?",
-    "hint": "Last-In, First-Out. Push and Pop are its signature operations.",
-    "answer": "stack",
-    "answers": ["stack", "stacks", "call stack", "a stack"],
-    "category": "Marvel"
-  },
-  {
-    "id": 22,
-    "riddle": "Civilians fleeing an attack line up at the helicarrier: the first person to arrive is the first person rescued (FIFO). Which data structure follows this rule?",
-    "hint": "First-In, First-Out. Used in printer jobs and message queues.",
-    "answer": "queue",
-    "answers": ["queue", "queues", "fifo", "a queue"],
-    "category": "Marvel"
-  },
-  {
-    "id": 23,
-    "riddle": "In The Matrix, operator monitors translate human thoughts into green digital code. In software, this program translates human source code into machine binary.",
-    "hint": "GCC, Clang, and javac are famous examples.",
+    "id": 19,
+    "riddle": "In the Matrix, Tank operates the console and converts human battle commands into digital machine code. In programming, this software translates high-level code (like C++ or Java) into executable machine code.",
+    "hint": "GCC, javac, and clang are examples. Different from an interpreter, it compiles beforehand.",
     "answer": "compiler",
     "answers": ["compiler", "compilers", "transpiler"],
     "category": "The Matrix"
   },
   {
-    "id": 24,
-    "riddle": "Lando Calrissian oversees Cloud City high in Bespin's sky. In modern tech, this term describes running compute and storage on remote data centers across the internet.",
-    "hint": "AWS, Azure, and Google ______.",
+    "id": 20,
+    "riddle": "Elrond lays out a precise, step-by-step quest for the Fellowship to travel from Rivendell to Mount Doom. In computer science, what do we call a defined, step-by-step set of instructions for solving a problem?",
+    "hint": "Starts with 'A'. Binary Search, Dijkstra, and Bubble Sort are famous examples.",
+    "answer": "algorithm",
+    "answers": ["algorithm", "algorithms", "an algorithm"],
+    "category": "Lord of the Rings"
+  },
+  {
+    "id": 21,
+    "riddle": "The massive Wall at Castle Black keeps dangerous wild threats outside the Seven Kingdoms. In computer networks, this security system monitors and blocks unauthorized traffic.",
+    "hint": "A wall made of fire. Inspects packets and filters ports.",
+    "answer": "firewall",
+    "answers": ["firewall", "firewalls", "network firewall", "a firewall"],
+    "category": "Game of Thrones"
+  },
+  {
+    "id": 22,
+    "riddle": "To enter the Batcave through Wayne Manor's grandfather clock, Bruce Wayne turns the clock hands to a secret combination. In security, this secret string of characters authenticates a user's identity.",
+    "hint": "Often hashed with bcrypt or SHA. Never share it with anyone!",
+    "answer": "password",
+    "answers": ["password", "passwords", "passcode", "passphrase"],
+    "category": "Batman"
+  },
+  {
+    "id": 23,
+    "riddle": "Lando Calrissian administers Cloud City, hovering high in the atmosphere. In modern tech, this term refers to storing files and running compute servers on remote data centers accessible over the internet.",
+    "hint": "AWS, Microsoft Azure, and Google ______.",
     "answer": "cloud",
     "answers": ["cloud", "cloud computing", "the cloud"],
     "category": "Star Wars"
   },
   {
+    "id": 24,
+    "riddle": "King's Landing receives ravens carrying requests from every lord across Westeros and sends back royal decrees and resources. In networking, what computer system listens for requests and serves responses to clients?",
+    "hint": "Pairs with 'client' in the client-______ architecture.",
+    "answer": "server",
+    "answers": ["server", "servers", "web server", "a server"],
+    "category": "Game of Thrones"
+  },
+  {
     "id": 25,
-    "riddle": "Like the giant wooden horse that Greek soldiers hid inside to sneak into Troy, this malware disguises itself as legitimate, harmless software to trick users.",
-    "hint": "Named after the legendary horse: a ______ Horse.",
-    "answer": "trojan",
-    "answers": ["trojan", "trojan horse", "trojans", "trojan malware"],
-    "category": "Mythology & Tech"
+    "riddle": "Floo powder transports wizards to an exact hearth when they pronounce its address clearly. On the internet, this address string in your browser bar leads to an exact webpage or web resource.",
+    "hint": "Three letters. Uniform Resource Locator. E.g., https://google.com",
+    "answer": "url",
+    "answers": ["url", "urls", "web address", "link", "uniform resource locator"],
+    "category": "Harry Potter"
   },
   {
     "id": 26,
-    "riddle": "J.A.R.V.I.S. and F.R.I.D.A.Y. store petabytes of Avengers files and blueprints in structured tables queried in milliseconds. What system manages this organized data?",
-    "hint": "SQL, MongoDB, PostgreSQL, and MySQL are popular types of this.",
-    "answer": "database",
-    "answers": ["database", "databases", "db", "dbms", "sql database"],
-    "category": "Marvel"
-  },
-  {
-    "id": 27,
-    "riddle": "Eleven loves waffles, but web browsers store these small crumbly pieces of data to remember your login and track your session across pages.",
-    "hint": "A sweet baked snack name, but stored by your browser.",
-    "answer": "cookie",
-    "answers": ["cookie", "cookies", "http cookie", "browser cookie"],
-    "category": "Stranger Things"
-  },
-  {
-    "id": 28,
-    "riddle": "Luke and Han get trapped in the Death Star trash compactor where discarded junk is crushed. In Java and Python, this automatic process reclaims unused memory.",
-    "hint": "Abbreviated as GC. It sweeps and frees objects that have no remaining references.",
-    "answer": "garbage collection",
-    "answers": ["garbage collection", "garbage collector", "gc"],
+    "riddle": "Every star system in the Galactic Empire has specific navigational coordinates (like Coruscant: 0, 0, 0). On the internet, this numerical label (like 192.168.1.1) uniquely identifies each connected device.",
+    "hint": "Two letters + Address. IPv4 uses 32 bits, IPv6 uses 128 bits.",
+    "answer": "ip address",
+    "answers": ["ip address", "ip", "ip addresses", "internet protocol address"],
     "category": "Star Wars"
   },
   {
+    "id": 27,
+    "riddle": "Ollivander holds the blueprint and formula for making wands before any individual wand is crafted. In Object-Oriented Programming, what template or blueprint defines the properties and methods for creating objects?",
+    "hint": "Used with the 'new' keyword to instantiate objects. In Python: ______ Dog: ...",
+    "answer": "class",
+    "answers": ["class", "classes", "blueprint", "a class"],
+    "category": "Harry Potter"
+  },
+  {
+    "id": 28,
+    "riddle": "Bilbo's sword Sting glows blue around orcs. In programming, adding one letter transforms it into this essential text data type enclosed in quotation marks that holds a sequence of characters.",
+    "hint": "Enclosed in single or double quotes. e.g. \"Hello, World!\"",
+    "answer": "string",
+    "answers": ["string", "strings", "str", "a string", "text"],
+    "category": "Lord of the Rings"
+  },
+  {
     "id": 29,
-    "riddle": "The Riddler leaves scrambled cyphers that only Batman can crack. In cybersecurity, this mathematical process scrambles plaintext into unreadable ciphertext.",
-    "hint": "AES, RSA, and SSL all use this to protect sensitive passwords and traffic.",
-    "answer": "encryption",
-    "answers": ["encryption", "encrypt", "cryptography", "cipher", "cypher"],
-    "category": "Batman"
+    "riddle": "Morpheus and Trinity don't click buttons with a mouse; they type fast commands into a dark text-based window. What command-line interface lets developers control the operating system using plain text?",
+    "hint": "Also known as CLI, console, prompt, bash, or terminal window.",
+    "answer": "terminal",
+    "answers": ["terminal", "cli", "command line", "console", "command prompt", "shell", "bash"],
+    "category": "The Matrix"
   },
   {
     "id": 30,
-    "riddle": "Cersei and Daenerys each hold a hostage and refuse to act until the other yields first, freezing all progress forever. In multithreading, what is this frozen state called?",
-    "hint": "Occurs when two threads wait indefinitely for locks held by each other.",
-    "answer": "deadlock",
-    "answers": ["deadlock", "deadlocks", "dead lock"],
-    "category": "Game of Thrones"
+    "riddle": "Madam Pomfrey uses healing spells to find injuries and restore sick wizards. In software development, what is the art of detecting, tracing, and removing errors from your code called?",
+    "hint": "If finding problems is discovering bugs, this process removes them.",
+    "answer": "debugging",
+    "answers": ["debugging", "debug", "debugger"],
+    "category": "Harry Potter"
   }
 ]
