@@ -495,7 +495,21 @@ io.on("connection", (socket) => {
     if (!r) return;
     if (player.solved.includes(riddleId)) return;
 
-    const correct = answer.trim().toLowerCase() === r.answer.trim().toLowerCase();
+    const normalize = (s) => String(s || "").trim().toLowerCase();
+    const cleanPunct = (s) => normalize(s).replace(/[.,!?;:'"()[\]{}]/g, "").replace(/\s+/g, " ");
+
+    const userRaw = normalize(answer);
+    const userClean = cleanPunct(answer);
+
+    const acceptedList = Array.isArray(r.answers)
+      ? r.answers
+      : (Array.isArray(r.answer) ? r.answer : [r.answer]);
+
+    const correct = acceptedList.some((ans) => {
+      const aRaw = normalize(ans);
+      const aClean = cleanPunct(ans);
+      return userRaw === aRaw || userClean === aClean;
+    });
 
     if (correct) {
       player.solved.push(riddleId);
