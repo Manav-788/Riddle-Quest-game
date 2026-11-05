@@ -403,17 +403,38 @@
         .catch(() => { adminToken = ""; sessionStorage.removeItem("adminToken"); });
     }
 
-    // ── Load status ────────────────────────────
+    // ── Load status & leaderboard ──────────────
     function loadStatus() {
       authFetch("/api/status").then(data => {
         currentState = data.state;
         pinDisplay.textContent = data.pin;
         updateUI();
-        if (data.players.length > 0) {
-          document.getElementById("lobby-chips").innerHTML = data.players
+
+        // Update timer if in playing state
+        if (data.state === "playing" && data.timerRemaining !== undefined) {
+          const m = Math.floor(data.timerRemaining / 60).toString().padStart(2, "0");
+          const s = (data.timerRemaining % 60).toString().padStart(2, "0");
+          const bt = document.getElementById("big-timer");
+          bt.textContent = `${m}:${s}`;
+          bt.classList.toggle("danger", data.timerRemaining <= 30);
+        }
+
+        // Update lobby chips
+        const chips = document.getElementById("lobby-chips");
+        if (data.players && data.players.length > 0) {
+          chips.innerHTML = data.players
             .map(n => `<span class="lobby-chip">🧙 ${escHtml(n)}</span>`).join("");
           document.getElementById("start-btn").disabled = false;
+        } else {
+          chips.innerHTML = '<span style="color:var(--text-dim)">No players yet...</span>';
+          document.getElementById("start-btn").disabled = true;
         }
+      }).catch(() => {});
+
+      authFetch("/api/leaderboard").then(data => {
+        board = data;
+        renderStats();
+        renderTable();
       }).catch(() => {});
     }
 

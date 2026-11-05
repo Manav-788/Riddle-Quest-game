@@ -39,6 +39,30 @@ const finLbList     = document.getElementById("fin-leaderboard-list");
 let myName = "";
 let currentRiddleId = null;
 
+// ── Session Storage Helpers ──────────────────────────────────────
+const SESSION_KEY = "riddle_quest_player_session";
+
+function saveSession(data) {
+  try {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(data));
+  } catch (e) {}
+}
+
+function getSavedSession() {
+  try {
+    const raw = sessionStorage.getItem(SESSION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function clearSession() {
+  try {
+    sessionStorage.removeItem(SESSION_KEY);
+  } catch (e) {}
+}
+
 // ── Screens ──────────────────────────────────────────────────────
 function showScreen(screen) {
   [joinScreen, lobbyScreen, gameScreen, finishedScreen].forEach(s => s.classList.remove("active"));
@@ -70,6 +94,13 @@ nameInput.addEventListener("keydown", (e) => { if (e.key === "Enter") pinInput.f
 // ── Server: joined lobby ─────────────────────────────────────────
 socket.on("joined_lobby", (data) => {
   myName = data.name;
+  if (data.sessionId) {
+    saveSession({
+      sessionId: data.sessionId,
+      name: data.name,
+      pin: pinInput.value.trim() || (getSavedSession() || {}).pin || "",
+    });
+  }
   lobbyName.textContent = data.name;
   lobbyCount.textContent = data.playerCount;
   renderLobbyPlayers(data.players);
@@ -92,6 +123,14 @@ function renderLobbyPlayers(playersList) {
 
 // ── Server: game started ─────────────────────────────────────────
 socket.on("game_started", (data) => {
+  if (data.name) myName = data.name;
+  if (data.sessionId) {
+    saveSession({
+      sessionId: data.sessionId,
+      name: myName,
+      pin: pinInput.value.trim() || (getSavedSession() || {}).pin || "",
+    });
+  }
   displayName.textContent = myName;
   displayScore.textContent = data.score;
   displaySolved.textContent = data.solved;
@@ -102,17 +141,32 @@ socket.on("game_started", (data) => {
   else showComplete(data.score);
 });
 
-// ── Server: joined mid-game ─────────────────────────────────────
+// ── Server: joined mid-game / restored ───────────────────────────
 socket.on("joined", (data) => {
   myName = data.name;
+  if (data.sessionId) {
+    saveSession({
+      sessionId: data.sessionId,
+      name: data.name,
+      pin: pinInput.value.trim() || (getSavedSession() || {}).pin || "",
+    });
+  }
   displayName.textContent = data.name;
   displayScore.textContent = data.score;
   displaySolved.textContent = data.solved;
   displayTotal.textContent = data.total;
   timerDisplay.textContent = formatTime(data.timeRemaining);
   showScreen(gameScreen);
-  if (data.riddle) showRiddle(data.riddle);
-  else showComplete(data.score);
+  if (data.riddle) {
+    showRiddle(data.riddle);
+    if (data.hasHint && data.hint) {
+      hintText.textContent = data.hint;
+      hintArea.classList.remove("hidden");
+      hintBtn.disabled = true;
+    }
+  } else {
+    showComplete(data.score);
+  }
 });
 
 // ── Server: error ────────────────────────────────────────────────
@@ -120,6 +174,17 @@ socket.on("error_msg", (msg) => {
   joinError.textContent = msg;
   joinBtn.disabled = false;
   joinBtn.textContent = "Join Game";
+});
+
+// ── Server: session invalid / expired ────────────────────────────
+socket.on("session_invalid", (data) => {
+  clearSession();
+  myName = "";
+  currentRiddleId = null;
+  joinError.textContent = (data && data.message) ? data.message : "Session ended. Please join again.";
+  joinBtn.disabled = false;
+  joinBtn.textContent = "Join Game";
+  showScreen(joinScreen);
 });
 
 // ── Timer tick ───────────────────────────────────────────────────
@@ -130,6 +195,7 @@ socket.on("timer_tick", (remaining) => {
 
 // ── Game finished ────────────────────────────────────────────────
 socket.on("game_finished", (data) => {
+  if (!myName && getSavedSession()) myName = getSavedSession().name || "";
   const lb = data.leaderboard;
   const myEntry = lb.find(p => p.name === myName);
   const myRank = myEntry ? lb.indexOf(myEntry) + 1 : "—";
@@ -235,7 +301,11 @@ socket.on("leaderboard", (board) => {
 });
 
 // ── Game reset / state ───────────────────────────────────────────
-socket.on("game_reset", () => location.reload());
+socket.on("game_reset", () => {
+  clearSession();
+  location.reload();
+});
+
 socket.on("game_state", (data) => {
   if (data.state === "finished" && !myName) {
     joinError.textContent = "The game has ended. Ask the host to reset.";
@@ -248,3 +318,26 @@ function escHtml(str) {
   d.textContent = str;
   return d.innerHTML;
 }
+
+// ── Auto-resume saved session on reload ─────────────────────────
+(function checkSavedSession() {
+  const savedSession = getSavedSession();
+  if (savedSession && savedSession.sessionId) {
+    myName = savedSession.name || "";
+    nameInput.value = savedSession.name || "";
+    pinInput.value = savedSession.pin || "";
+    joinBtn.disabled = true;
+    joinBtn.textContent = "Reconnecting...";
+    joinError.textContent = "Resuming your session...";
+
+    function resume() {
+      socket.emit("resume_session", savedSession);
+    }
+
+    if (socket.connected) {
+      resume();
+    } else {
+      socket.on("connect", resume);
+    }
+  }
+})();

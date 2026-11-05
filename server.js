@@ -21,7 +21,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const ADMIN_PASSWORD = process.env.ADMIN_PASS || "admin123";  // Change this!
 
 // ── In-memory state ──────────────────────────────────────────────────
-const players = new Map();        // socketId → { name, score, solved[], usedHints[] }
+const players = new Map();        // sessionId → { sessionId, socketId, name, score, solved[], usedHints[], riddleOrder[], lastScoreTime, joinedAt, connected, disconnectTimer }
+const socketToSession = new Map();// socketId → sessionId
 const adminTokens = new Set();    // valid admin session tokens
 
 // Game state
@@ -58,8 +59,27 @@ function getLeaderboard() {
       score: p.score,
       solved: p.solved.length,
       total: riddles.length,
+      lastScoreTime: p.lastScoreTime || 0,
+      joinedAt: p.joinedAt || 0,
     }))
-    .sort((a, b) => b.score - a.score || b.solved - a.solved);
+    .sort((a, b) => {
+      // 1. Higher score first
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      // 2. Tie-break: faster time (earlier lastScoreTime) for players who scored
+      if (a.score > 0 && b.score > 0) {
+        if (a.lastScoreTime !== b.lastScoreTime) {
+          return a.lastScoreTime - b.lastScoreTime;
+        }
+      }
+      // 3. Fallback: more solved riddles
+      if (b.solved !== a.solved) {
+        return b.solved - a.solved;
+      }
+      // 4. Fallback: joined earlier, then alphabetical
+      return (a.joinedAt - b.joinedAt) || a.name.localeCompare(b.name);
+    });
 }
 
 // ── Helper: build lobby player list ──────────────────────────────────
@@ -187,17 +207,21 @@ app.post("/api/start", requireAdmin, (req, res) => {
   gameState = "playing";
   console.log(`🚀 Game started! Timer: ${seconds}s, Players: ${players.size}`);
 
-  for (const [socketId, player] of players) {
+  for (const player of players.values()) {
     const r = nextRiddle(player);
-    const s = io.sockets.sockets.get(socketId);
-    if (s) {
-      s.emit("game_started", {
-        riddle: r ? safeRiddle(r) : null,
-        total: riddles.length,
-        solved: 0,
-        score: 0,
-        timeRemaining: seconds,
-      });
+    if (player.socketId) {
+      const s = io.sockets.sockets.get(player.socketId);
+      if (s) {
+        s.emit("game_started", {
+          sessionId: player.sessionId,
+          name: player.name,
+          riddle: r ? safeRiddle(r) : null,
+          total: riddles.length,
+          solved: player.solved.length,
+          score: player.score,
+          timeRemaining: seconds,
+        });
+      }
     }
   }
 
@@ -227,7 +251,11 @@ app.post("/api/reset", requireAdmin, (_req, res) => {
   timerDuration = 0;
   timerRemaining = 0;
   gamePin = generatePin();
+  for (const player of players.values()) {
+    if (player.disconnectTimer) clearTimeout(player.disconnectTimer);
+  }
   players.clear();
+  socketToSession.clear();
   io.emit("game_reset");
   io.emit("leaderboard", []);
   io.emit("game_state", { state: "lobby" });
@@ -241,6 +269,16 @@ app.post("/api/reset", requireAdmin, (_req, res) => {
 io.on("connection", (socket) => {
   console.log(`⚡ Connected: ${socket.id}`);
   socket.emit("game_state", { state: gameState });
+  socket.emit("leaderboard", getLeaderboard());
+
+  if (gameState === "lobby") {
+    socket.emit("lobby_update", {
+      playerCount: players.size,
+      players: getLobbyList(),
+    });
+  } else if (gameState === "playing") {
+    socket.emit("timer_tick", timerRemaining);
+  }
 
   // ── Player joins with name + PIN ───────────────────────────────────
   socket.on("join", ({ name, pin }) => {
@@ -255,28 +293,91 @@ io.on("connection", (socket) => {
       return socket.emit("error_msg", "Wrong game PIN! Ask your teacher for the correct PIN.");
     }
 
-    // Check duplicate names
-    for (const [, p] of players) {
+    // Check duplicate names or reclaim disconnected session
+    let existingPlayer = null;
+    for (const p of players.values()) {
       if (p.name.toLowerCase() === name.toLowerCase()) {
-        return socket.emit("error_msg", "That name is already taken. Pick another!");
+        existingPlayer = p;
+        break;
       }
+    }
+
+    if (existingPlayer) {
+      // Disconnect previous socket if still lingering
+      if (existingPlayer.socketId && existingPlayer.socketId !== socket.id) {
+        const oldSock = io.sockets.sockets.get(existingPlayer.socketId);
+        if (oldSock) oldSock.disconnect(true);
+      }
+
+      // Reclaim disconnected session
+      if (existingPlayer.disconnectTimer) {
+        clearTimeout(existingPlayer.disconnectTimer);
+        existingPlayer.disconnectTimer = null;
+      }
+      existingPlayer.connected = true;
+      existingPlayer.socketId = socket.id;
+      socketToSession.set(socket.id, existingPlayer.sessionId);
+
+      console.log(`👤 ${name} reclaimed disconnected session`);
+
+      if (gameState === "lobby") {
+        socket.emit("joined_lobby", {
+          sessionId: existingPlayer.sessionId,
+          name: existingPlayer.name,
+          playerCount: players.size,
+          players: getLobbyList(),
+        });
+        io.emit("lobby_update", {
+          playerCount: players.size,
+          players: getLobbyList(),
+        });
+        io.emit("leaderboard", getLeaderboard());
+      } else if (gameState === "playing") {
+        const r = nextRiddle(existingPlayer);
+        const hasHint = r ? existingPlayer.usedHints.includes(r.id) : false;
+        socket.emit("joined", {
+          sessionId: existingPlayer.sessionId,
+          name: existingPlayer.name,
+          riddle: r ? safeRiddle(r) : null,
+          total: riddles.length,
+          solved: existingPlayer.solved.length,
+          score: existingPlayer.score,
+          timeRemaining: timerRemaining,
+          hasHint,
+          hint: hasHint && r ? r.hint : null,
+        });
+        io.emit("leaderboard", getLeaderboard());
+      } else if (gameState === "finished") {
+        socket.emit("game_finished", { leaderboard: getLeaderboard() });
+        io.emit("leaderboard", getLeaderboard());
+      }
+      return;
     }
 
     if (gameState === "finished") {
       return socket.emit("error_msg", "The game has already ended. Ask the host to reset.");
     }
 
+    const sessionId = generateToken();
     const player = {
+      sessionId,
+      socketId: socket.id,
       name,
       score: 0,
       solved: [],
       usedHints: [],
       riddleOrder: shuffle(riddles.map((r) => r.id)),
+      lastScoreTime: 0,
+      joinedAt: Date.now(),
+      connected: true,
+      disconnectTimer: null,
     };
-    players.set(socket.id, player);
+    players.set(sessionId, player);
+    socketToSession.set(socket.id, sessionId);
 
     if (gameState === "lobby") {
       socket.emit("joined_lobby", {
+        sessionId,
         name,
         playerCount: players.size,
         players: getLobbyList(),
@@ -285,15 +386,19 @@ io.on("connection", (socket) => {
         playerCount: players.size,
         players: getLobbyList(),
       });
+      io.emit("leaderboard", getLeaderboard());
     } else if (gameState === "playing") {
       const r = nextRiddle(player);
       socket.emit("joined", {
+        sessionId,
         name,
         riddle: r ? safeRiddle(r) : null,
         total: riddles.length,
         solved: 0,
         score: 0,
         timeRemaining: timerRemaining,
+        hasHint: false,
+        hint: null,
       });
       io.emit("leaderboard", getLeaderboard());
     }
@@ -301,10 +406,76 @@ io.on("connection", (socket) => {
     console.log(`👤 ${name} joined (PIN ✓)  (${players.size} online)`);
   });
 
+  // ── Resume session after page reload ──────────────────────────────
+  socket.on("resume_session", ({ sessionId, pin }) => {
+    if (!sessionId) {
+      return socket.emit("session_invalid", { message: "No active session." });
+    }
+
+    if (pin && pin !== gamePin) {
+      return socket.emit("session_invalid", { message: "Game PIN has changed or game was reset." });
+    }
+
+    const player = players.get(sessionId);
+    if (!player) {
+      return socket.emit("session_invalid", { message: "Session expired or not found. Please join again." });
+    }
+
+    // Disconnect old socket if different
+    if (player.socketId && player.socketId !== socket.id) {
+      const oldSock = io.sockets.sockets.get(player.socketId);
+      if (oldSock) oldSock.disconnect(true);
+    }
+
+    if (player.disconnectTimer) {
+      clearTimeout(player.disconnectTimer);
+      player.disconnectTimer = null;
+    }
+
+    player.connected = true;
+    player.socketId = socket.id;
+    socketToSession.set(socket.id, sessionId);
+
+    console.log(`🔄 ${player.name} resumed session (state: ${gameState})`);
+
+    if (gameState === "lobby") {
+      socket.emit("joined_lobby", {
+        sessionId: player.sessionId,
+        name: player.name,
+        playerCount: players.size,
+        players: getLobbyList(),
+      });
+      io.emit("lobby_update", {
+        playerCount: players.size,
+        players: getLobbyList(),
+      });
+      io.emit("leaderboard", getLeaderboard());
+    } else if (gameState === "playing") {
+      const r = nextRiddle(player);
+      const hasHint = r ? player.usedHints.includes(r.id) : false;
+      socket.emit("joined", {
+        sessionId: player.sessionId,
+        name: player.name,
+        riddle: r ? safeRiddle(r) : null,
+        total: riddles.length,
+        solved: player.solved.length,
+        score: player.score,
+        timeRemaining: timerRemaining,
+        hasHint,
+        hint: hasHint && r ? r.hint : null,
+      });
+      io.emit("leaderboard", getLeaderboard());
+    } else if (gameState === "finished") {
+      socket.emit("game_finished", { leaderboard: getLeaderboard() });
+      io.emit("leaderboard", getLeaderboard());
+    }
+  });
+
   // ── Request hint ───────────────────────────────────────────────────
   socket.on("hint", (riddleId) => {
     if (gameState !== "playing") return;
-    const player = players.get(socket.id);
+    const sessionId = socketToSession.get(socket.id);
+    const player = sessionId ? players.get(sessionId) : null;
     if (!player) return;
     const r = riddles.find((x) => x.id === riddleId);
     if (!r) return;
@@ -317,7 +488,8 @@ io.on("connection", (socket) => {
   // ── Submit answer ──────────────────────────────────────────────────
   socket.on("answer", ({ riddleId, answer }) => {
     if (gameState !== "playing") return;
-    const player = players.get(socket.id);
+    const sessionId = socketToSession.get(socket.id);
+    const player = sessionId ? players.get(sessionId) : null;
     if (!player) return;
     const r = riddles.find((x) => x.id === riddleId);
     if (!r) return;
@@ -330,6 +502,7 @@ io.on("connection", (socket) => {
       const usedHint = player.usedHints.includes(riddleId);
       const points = usedHint ? 5 : 10;
       player.score += points;
+      player.lastScoreTime = Date.now();
 
       const next = nextRiddle(player);
       socket.emit("result", {
@@ -349,17 +522,33 @@ io.on("connection", (socket) => {
 
   // ── Disconnect ─────────────────────────────────────────────────────
   socket.on("disconnect", () => {
-    const player = players.get(socket.id);
-    if (player) console.log(`👋 ${player.name} left`);
-    players.delete(socket.id);
+    const sessionId = socketToSession.get(socket.id);
+    socketToSession.delete(socket.id);
+    if (!sessionId) return;
+
+    const player = players.get(sessionId);
+    if (!player) return;
+
+    console.log(`👋 ${player.name} disconnected (state: ${gameState})`);
+    player.connected = false;
+    player.socketId = null;
+    io.emit("leaderboard", getLeaderboard());
 
     if (gameState === "lobby") {
-      io.emit("lobby_update", {
-        playerCount: players.size,
-        players: getLobbyList(),
-      });
+      // In lobby, give 30 seconds to reconnect before cleaning up
+      if (player.disconnectTimer) clearTimeout(player.disconnectTimer);
+      player.disconnectTimer = setTimeout(() => {
+        if (!player.connected && gameState === "lobby") {
+          players.delete(sessionId);
+          io.emit("lobby_update", {
+            playerCount: players.size,
+            players: getLobbyList(),
+          });
+          console.log(`🗑️ Removed inactive lobby player: ${player.name}`);
+        }
+      }, 30000);
     }
-    io.emit("leaderboard", getLeaderboard());
+    // During "playing" and "finished", player progress and scores remain saved!
   });
 });
 
