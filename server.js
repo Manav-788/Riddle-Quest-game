@@ -67,11 +67,25 @@ function getLobbyList() {
   return Array.from(players.values()).map((p) => p.name);
 }
 
+// ── Helper: shuffle an array (Fisher-Yates) ─────────────────────────
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 // ── Helper: pick the next unsolved riddle for a player ───────────────
 function nextRiddle(player) {
-  const unsolved = riddles.filter((r) => !player.solved.includes(r.id));
-  if (unsolved.length === 0) return null;
-  return unsolved[0];
+  // Use the player's personal shuffled order
+  for (const id of player.riddleOrder) {
+    if (!player.solved.includes(id)) {
+      return riddles.find((r) => r.id === id);
+    }
+  }
+  return null;
 }
 
 // ── Helper: sanitize riddle ──────────────────────────────────────────
@@ -257,6 +271,7 @@ io.on("connection", (socket) => {
       score: 0,
       solved: [],
       usedHints: [],
+      riddleOrder: shuffle(riddles.map((r) => r.id)),
     };
     players.set(socket.id, player);
 
