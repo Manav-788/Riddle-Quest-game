@@ -111,14 +111,25 @@ function nextRiddle(player) {
   return null;
 }
 
-// ── Helper: sanitize question (omit correct answer) ───────────────────
-function safeRiddle(r) {
+// ── Helper: sanitize question (omit correct answer & jumble options) ──
+function getPlayerQuestionOptions(player, r) {
+  if (!player.questionOptions) player.questionOptions = {};
+  if (!player.questionOptions[r.id]) {
+    player.questionOptions[r.id] = shuffle(r.options || []);
+  }
+  return player.questionOptions[r.id];
+}
+
+function safeRiddle(r, player = null) {
+  const options = player
+    ? getPlayerQuestionOptions(player, r)
+    : shuffle(r.options || []);
   return {
     id: r.id,
     question: r.question || r.riddle,
     riddle: r.question || r.riddle,
     category: r.category,
-    options: r.options || []
+    options,
   };
 }
 
@@ -224,7 +235,7 @@ app.post("/api/start", requireAdmin, (req, res) => {
         s.emit("game_started", {
           sessionId: player.sessionId,
           name: player.name,
-          riddle: r ? safeRiddle(r) : null,
+          riddle: r ? safeRiddle(r, player) : null,
           total: riddles.length,
           solved: player.solved.length,
           score: player.score,
@@ -346,7 +357,7 @@ io.on("connection", (socket) => {
         socket.emit("joined", {
           sessionId: existingPlayer.sessionId,
           name: existingPlayer.name,
-          riddle: r ? safeRiddle(r) : null,
+          riddle: r ? safeRiddle(r, existingPlayer) : null,
           total: riddles.length,
           solved: existingPlayer.solved.length,
           answered: (existingPlayer.answered || existingPlayer.solved).length,
@@ -374,6 +385,7 @@ io.on("connection", (socket) => {
       solved: [],
       answered: [],
       usedHints: [],
+      questionOptions: {},
       riddleOrder: shuffle(riddles.map((r) => r.id)),
       lastScoreTime: 0,
       joinedAt: Date.now(),
@@ -401,7 +413,7 @@ io.on("connection", (socket) => {
       socket.emit("joined", {
         sessionId,
         name,
-        riddle: r ? safeRiddle(r) : null,
+        riddle: r ? safeRiddle(r, player) : null,
         total: riddles.length,
         solved: 0,
         answered: 0,
@@ -463,7 +475,7 @@ io.on("connection", (socket) => {
       socket.emit("joined", {
         sessionId: player.sessionId,
         name: player.name,
-        riddle: r ? safeRiddle(r) : null,
+        riddle: r ? safeRiddle(r, player) : null,
         total: riddles.length,
         solved: player.solved.length,
         answered: (player.answered || player.solved).length,
@@ -552,7 +564,7 @@ io.on("connection", (socket) => {
       solved: player.solved.length,
       answered: player.answered.length,
       total: riddles.length,
-      nextRiddle: next ? safeRiddle(next) : null,
+      nextRiddle: next ? safeRiddle(next, player) : null,
     });
     io.emit("leaderboard", getLeaderboard());
   });
