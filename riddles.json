@@ -1,242 +1,212 @@
 [
   {
     "id": 1,
-    "riddle": "I am the most famous built-in Python function used to display text, messages, and calculation results onto the screen. What function am I?",
-    "hint": "You use me to say 'Hello, World!'. Starts with 'p'.",
-    "answer": "print",
-    "answers": ["print", "print()", "print function"],
+    "question": "Which built-in Python function is used to output text, variables, and calculation results onto the console?",
+    "options": ["print()", "output()", "display()", "write()"],
+    "answer": "print()",
     "category": "Python Basics"
   },
   {
     "id": 2,
-    "riddle": "I am the built-in Python function that pauses execution and prompts the user to enter text from the keyboard. What function am I?",
-    "hint": "I always return the entered user data as a string.",
-    "answer": "input",
-    "answers": ["input", "input()", "input function"],
+    "question": "Which built-in function pauses execution and reads user input from the keyboard as a string?",
+    "options": ["input()", "read()", "scanf()", "get()"],
+    "answer": "input()",
     "category": "Python Basics"
   },
   {
     "id": 3,
-    "riddle": "I am the 3-letter Python keyword typed at the beginning of a line to create and define a new custom function. What keyword am I?",
-    "hint": "Short for 'define'. Precedes the function name and parentheses.",
+    "question": "Which keyword is used in Python to define a new custom function?",
+    "options": ["def", "function", "fun", "define"],
     "answer": "def",
-    "answers": ["def", "def keyword"],
-    "category": "Python Functions"
+    "category": "Functions"
   },
   {
     "id": 4,
-    "riddle": "I am the built-in Python function that returns the total number of items in a list, characters in a string, or elements in a tuple. What function am I?",
-    "hint": "Short for 'length'. Three letters: l _ n.",
-    "answer": "len",
-    "answers": ["len", "len()", "length", "len function"],
-    "category": "Python Built-ins"
+    "question": "Which built-in function returns the total number of items in a list or characters in a string?",
+    "options": ["len()", "size()", "count()", "length()"],
+    "answer": "len()",
+    "category": "Built-in Functions"
   },
   {
     "id": 5,
-    "riddle": "I am an ordered, mutable collection in Python enclosed in square brackets [] where items can be modified, added, or removed. What data type am I?",
-    "hint": "Created like `data = [1, 2, 3]`. You can append items to me.",
+    "question": "Which collection data type in Python is ordered, mutable (can be changed), and written with square brackets []?",
+    "options": ["list", "tuple", "set", "dictionary"],
     "answer": "list",
-    "answers": ["list", "lists", "a list"],
-    "category": "Python Data Structures"
+    "category": "Data Structures"
   },
   {
     "id": 6,
-    "riddle": "I am an ordered collection in Python enclosed in round parentheses (). Unlike a list, my elements are immutable and cannot be modified after creation. What am I?",
-    "hint": "Rhymes with 'couple'. Created like `point = (10, 20)`.",
+    "question": "Which Python data structure is ordered and enclosed in parentheses (), but is immutable (cannot be modified after creation)?",
+    "options": ["tuple", "list", "array", "dictionary"],
     "answer": "tuple",
-    "answers": ["tuple", "tuples", "a tuple"],
-    "category": "Python Data Structures"
+    "category": "Data Structures"
   },
   {
     "id": 7,
-    "riddle": "I store data in key-value pairs separated by colons and enclosed in curly braces {}. What built-in Python data structure am I?",
-    "hint": "Examples: `{'force': 100, 'mass': 10}`. Often abbreviated as 'dict'.",
+    "question": "Which data structure in Python stores values in key-value pairs enclosed within curly braces {}?",
+    "options": ["dictionary", "list", "tuple", "set"],
     "answer": "dictionary",
-    "answers": ["dictionary", "dict", "dictionaries", "a dictionary"],
-    "category": "Python Data Structures"
+    "category": "Data Structures"
   },
   {
     "id": 8,
-    "riddle": "I am the loop keyword commonly used in Python to iterate over a sequence, such as `for i in range(10):`. What keyword am I?",
-    "hint": "Three letters. Followed by 'in' and a sequence or range.",
-    "answer": "for",
-    "answers": ["for", "for loop", "for keyword"],
-    "category": "Python Loops"
+    "question": "Which loop construct in Python is typically used to iterate over a sequence (such as a list, string, or range)?",
+    "options": ["for loop", "while loop", "do-while loop", "repeat loop"],
+    "answer": "for loop",
+    "category": "Loops & Control Flow"
   },
   {
     "id": 9,
-    "riddle": "I am the loop keyword in Python that repeatedly executes a block of code as long as a given condition remains True. What keyword am I?",
-    "hint": "Five letters. If the condition never turns False, I run infinitely.",
-    "answer": "while",
-    "answers": ["while", "while loop", "while keyword"],
-    "category": "Python Loops"
+    "question": "Which loop executes a block of code repeatedly as long as a specified test condition remains True?",
+    "options": ["while loop", "for loop", "if-else loop", "until loop"],
+    "answer": "while loop",
+    "category": "Loops & Control Flow"
   },
   {
     "id": 10,
-    "riddle": "I am the fundamental conditional keyword in Python that checks if a condition is True before executing an indented block of code. What keyword am I?",
-    "hint": "Two letters. Often paired with 'elif' and 'else'.",
+    "question": "Which conditional statement executes a block of code only when its evaluated condition is True?",
+    "options": ["if", "switch", "case", "when"],
     "answer": "if",
-    "answers": ["if", "if statement", "if condition", "if keyword", "if else"],
-    "category": "Python Conditions"
+    "category": "Conditional Statements"
   },
   {
     "id": 11,
-    "riddle": "I am a built-in Python type commonly used with for loops to generate an arithmetic sequence of numbers from start to stop. What am I?",
-    "hint": "`range(5)` generates numbers 0, 1, 2, 3, and 4.",
-    "answer": "range",
-    "answers": ["range", "range()", "range function"],
-    "category": "Python Built-ins"
+    "question": "What sequence of integer values is produced by range(1, 6)?",
+    "options": ["1, 2, 3, 4, 5", "1, 2, 3, 4, 5, 6", "0, 1, 2, 3, 4, 5", "2, 3, 4, 5, 6"],
+    "answer": "1, 2, 3, 4, 5",
+    "category": "Built-in Functions"
   },
   {
     "id": 12,
-    "riddle": "In engineering calculations involving stress, strain, temperature, and decimals, what numeric data type in Python represents numbers with fractional decimal points?",
-    "hint": "Examples include 3.14159, 9.81, and 0.05. Short for floating-point.",
+    "question": "In engineering calculations (e.g. stress = 245.75 MPa), which Python numeric type represents numbers with decimal points?",
+    "options": ["float", "int", "decimal_int", "double_precision"],
     "answer": "float",
-    "answers": ["float", "floating point", "floating point number", "floats"],
-    "category": "Python Data Types"
+    "category": "Data Types"
   },
   {
     "id": 13,
-    "riddle": "What numeric data type in Python represents whole positive or negative numbers without any decimal point, such as 42, -5, or 100?",
-    "hint": "Short for 'integer'. Three letters.",
+    "question": "Which Python numeric data type represents whole integers without any decimal point (e.g. 42, -5)?",
+    "options": ["int", "float", "complex", "char"],
     "answer": "int",
-    "answers": ["int", "integer", "integers"],
-    "category": "Python Data Types"
+    "category": "Data Types"
   },
   {
     "id": 14,
-    "riddle": "I am the Python data type used for storing text and characters, always enclosed in single ('...') or double (\"...\") quotation marks. What am I?",
-    "hint": "Short for 'string'. Three letters in Python: `str`.",
-    "answer": "string",
-    "answers": ["string", "str", "strings"],
-    "category": "Python Data Types"
+    "question": "Which data type in Python is used for sequences of text characters enclosed in single or double quotes?",
+    "options": ["str", "char", "text", "varchar"],
+    "answer": "str",
+    "category": "Data Types"
   },
   {
     "id": 15,
-    "riddle": "I am the Python data type that can hold only two possible values: True or False. What data type am I?",
-    "hint": "Four letters in Python: `bool`.",
-    "answer": "bool",
-    "answers": ["bool", "boolean", "booleans"],
-    "category": "Python Data Types"
+    "question": "What are the two truth values that a Python Boolean (bool) type can hold?",
+    "options": ["True or False", "1 or 0 only", "YES or NO", "NULL or VOID"],
+    "answer": "True or False",
+    "category": "Data Types"
   },
   {
     "id": 16,
-    "riddle": "I am the keyword used at the beginning of a Python file to load and access external libraries and modules like `import math`. What keyword am I?",
-    "hint": "Six letters: i _ p _ _ t.",
+    "question": "Which keyword is used to load and access external Python modules and packages (e.g. _______ math)?",
+    "options": ["import", "include", "require", "using"],
     "answer": "import",
-    "answers": ["import", "import keyword"],
-    "category": "Python Modules"
+    "category": "Modules & Libraries"
   },
   {
     "id": 17,
-    "riddle": "I am the most popular Python library for numerical computing, used by engineers to work with fast multi-dimensional arrays, matrices, and linear algebra. What library am I?",
-    "hint": "Usually imported with `import ______ as np`.",
-    "answer": "numpy",
-    "answers": ["numpy", "np"],
+    "question": "Which popular scientific Python library is used by engineers for fast multi-dimensional arrays, matrices, and linear algebra?",
+    "options": ["NumPy", "Tkinter", "Django", "Flask"],
+    "answer": "NumPy",
     "category": "Engineering Libraries"
   },
   {
     "id": 18,
-    "riddle": "Mechanical engineers use me to plot stress-strain curves, velocity graphs, and experimental data in Python. What plotting library am I?",
-    "hint": "Commonly imported with `import _______.pyplot as plt`.",
-    "answer": "matplotlib",
-    "answers": ["matplotlib", "plt", "pyplot"],
+    "question": "Which Python library is standard for creating 2D graphs and plots (such as stress vs. strain or heat distribution curves)?",
+    "options": ["Matplotlib", "PyGame", "Requests", "BeautifulSoup"],
+    "answer": "Matplotlib",
     "category": "Engineering Libraries"
   },
   {
     "id": 19,
-    "riddle": "I am the standard Python module that provides common engineering mathematical functions like `sqrt()`, `sin()`, `cos()`, and the constant `pi`. What module am I?",
-    "hint": "Four letters. `import ______; print(math.pi)`.",
+    "question": "Which standard library module contains mathematical constants and functions like pi, sqrt(), sin(), and cos()?",
+    "options": ["math", "cmath", "calc", "scipy_basic"],
     "answer": "math",
-    "answers": ["math", "math module"],
-    "category": "Python Modules"
+    "category": "Modules & Libraries"
   },
   {
     "id": 20,
-    "riddle": "When placed inside a for or while loop, I immediately terminate the entire loop and jump execution to the code after the loop. What keyword am I?",
-    "hint": "Five letters. I 'break' the loop.",
+    "question": "Which keyword immediately terminates a loop and moves execution to the statement immediately following the loop?",
+    "options": ["break", "continue", "pass", "exit()"],
     "answer": "break",
-    "answers": ["break", "break keyword"],
-    "category": "Python Control Flow"
+    "category": "Loops & Control Flow"
   },
   {
     "id": 21,
-    "riddle": "When placed inside a loop, I skip the rest of the current iteration and jump straight to the next iteration of the loop. What keyword am I?",
-    "hint": "Eight letters: starts with 'c'. Keeps the loop going.",
+    "question": "Which keyword skips the rest of the current loop iteration and moves immediately to the next iteration?",
+    "options": ["continue", "break", "pass", "skip"],
     "answer": "continue",
-    "answers": ["continue", "continue keyword"],
-    "category": "Python Control Flow"
+    "category": "Loops & Control Flow"
   },
   {
     "id": 22,
-    "riddle": "I am the keyword inside a Python function used to exit the function and send a calculated result back to wherever the function was called. What keyword am I?",
-    "hint": "Six letters. Without me, a Python function returns `None`.",
+    "question": "Which keyword inside a Python function sends a computed result back to the caller?",
+    "options": ["return", "yield", "send", "give"],
     "answer": "return",
-    "answers": ["return", "return keyword"],
-    "category": "Python Functions"
+    "category": "Functions"
   },
   {
     "id": 23,
-    "riddle": "Unlike C or Java that use curly braces {} to group code blocks, Python uniquely uses spaces or tabs at the beginning of lines to define code hierarchy. What is this called?",
-    "hint": "Usually 4 spaces. If misaligned, Python throws an IndentationError.",
-    "answer": "indentation",
-    "answers": ["indentation", "indent", "indents", "spacing"],
+    "question": "Unlike C/C++ which uses curly braces {}, how does Python define code blocks and hierarchy?",
+    "options": ["Indentation (whitespace / spaces)", "Semicolons (;)", "Square brackets []", "Begin...End keywords"],
+    "answer": "Indentation (whitespace / spaces)",
     "category": "Python Syntax"
   },
   {
     "id": 24,
-    "riddle": "I am the built-in Python function that inspects an object and returns its data type (e.g. `type(3.14)` returns float). What function am I?",
-    "hint": "Four letters: t _ _ e.",
-    "answer": "type",
-    "answers": ["type", "type()", "type function"],
-    "category": "Python Built-ins"
+    "question": "What is the output of the expression type(9.81) in Python?",
+    "options": ["<class 'float'>", "<class 'int'>", "<class 'number'>", "<class 'double'>"],
+    "answer": "<class 'float'>",
+    "category": "Built-in Functions"
   },
   {
     "id": 25,
-    "riddle": "In Python, any explanatory note that begins with the hash symbol `#` is ignored by the computer. What is this line called?",
-    "hint": "Starts with 'c'. Used by engineers to explain equations in code.",
-    "answer": "comment",
-    "answers": ["comment", "comments", "code comment"],
+    "question": "Which character is used to start a single-line comment in Python?",
+    "options": ["#", "//", "/*", "--"],
+    "answer": "#",
     "category": "Python Syntax"
   },
   {
     "id": 26,
-    "riddle": "I am the list method used to add a single new element onto the very end of an existing Python list (e.g. `data.append(50)`). What method am I?",
-    "hint": "Six letters. Starts with 'app'.",
-    "answer": "append",
-    "answers": ["append", "append()", "list.append"],
-    "category": "Python Lists"
+    "question": "Which list method appends a new element to the end of an existing list?",
+    "options": ["append()", "add()", "push()", "insert()"],
+    "answer": "append()",
+    "category": "Lists & Methods"
   },
   {
     "id": 27,
-    "riddle": "I am the list method that removes and returns the last element from a Python list. What method am I?",
-    "hint": "Three letters. It 'pops' the item off the list.",
-    "answer": "pop",
-    "answers": ["pop", "pop()"],
-    "category": "Python Lists"
+    "question": "Which list method removes and returns the last element from a Python list?",
+    "options": ["pop()", "remove()", "delete()", "discard()"],
+    "answer": "pop()",
+    "category": "Lists & Methods"
   },
   {
     "id": 28,
-    "riddle": "In Python, what operator with two asterisks is used to raise a number to a power (for example: `2 ** 3 = 8`)?",
-    "hint": "Two asterisks: `**`. Also known as exponent or power.",
+    "question": "Which arithmetic operator in Python is used for exponentiation (raising a number to a power)?",
+    "options": ["**", "^", "^^", "exp()"],
     "answer": "**",
-    "answers": ["**", "power", "exponent", "exponentiation", "pow"],
-    "category": "Python Operators"
+    "category": "Operators"
   },
   {
     "id": 29,
-    "riddle": "In Python, what operator represented by the percent symbol `%` calculates and returns the remainder of a division (for example: `10 % 3 = 1`)?",
-    "hint": "Often called modulus or modulo. The symbol is `%`.",
-    "answer": "%",
-    "answers": ["%", "modulus", "modulo", "mod", "remainder"],
-    "category": "Python Operators"
+    "question": "What is the result of the Python modulo expression 17 % 5?",
+    "options": ["2", "3", "3.4", "1"],
+    "answer": "2",
+    "category": "Operators"
   },
   {
     "id": 30,
-    "riddle": "While a single `=` assigns a value to a variable in Python, what comparison operator with two equal signs checks if two values are equal?",
-    "hint": "Two equal signs: `==`. Evaluates to True or False.",
+    "question": "Which comparison operator checks whether two values are equal in Python?",
+    "options": ["==", "=", "===", "equals"],
     "answer": "==",
-    "answers": ["==", "equal", "equals", "equality", "double equal"],
-    "category": "Python Operators"
+    "category": "Operators"
   }
 ]

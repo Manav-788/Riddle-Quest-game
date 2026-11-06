@@ -1,46 +1,48 @@
 /* ═══════════════════════════════════════════════════════════════
-   Riddle Quest — Client
+   Python MCQ Exam — Student Client
    ═══════════════════════════════════════════════════════════════ */
 const socket = io();
 
 // ── DOM refs ─────────────────────────────────────────────────────
-const joinScreen    = document.getElementById("join-screen");
-const lobbyScreen   = document.getElementById("lobby-screen");
-const gameScreen    = document.getElementById("game-screen");
-const finishedScreen= document.getElementById("finished-screen");
-const nameInput     = document.getElementById("player-name");
-const pinInput      = document.getElementById("game-pin");
-const joinBtn       = document.getElementById("join-btn");
-const joinError     = document.getElementById("join-error");
-const lobbyName     = document.getElementById("lobby-name");
-const lobbyCount    = document.getElementById("lobby-count");
-const lobbyPlayers  = document.getElementById("lobby-players");
-const displayName   = document.getElementById("display-name");
-const displayScore  = document.getElementById("display-score");
-const displaySolved = document.getElementById("display-solved");
-const displayTotal  = document.getElementById("display-total");
-const timerDisplay  = document.getElementById("timer-display");
-const riddleCard    = document.getElementById("riddle-card");
-const completeCard  = document.getElementById("complete-card");
-const riddleCat     = document.getElementById("riddle-category");
-const riddleText    = document.getElementById("riddle-text");
-const hintArea      = document.getElementById("hint-area");
-const hintText      = document.getElementById("hint-text");
-const hintBtn       = document.getElementById("hint-btn");
-const answerInput   = document.getElementById("answer-input");
-const submitBtn     = document.getElementById("submit-btn");
-const feedback      = document.getElementById("feedback");
-const lbList        = document.getElementById("leaderboard-list");
-const finalScore    = document.getElementById("final-score");
-const finFinalScore = document.getElementById("fin-final-score");
-const finFinalRank  = document.getElementById("fin-final-rank");
-const finLbList     = document.getElementById("fin-leaderboard-list");
+const joinScreen     = document.getElementById("join-screen");
+const lobbyScreen    = document.getElementById("lobby-screen");
+const gameScreen     = document.getElementById("game-screen");
+const finishedScreen = document.getElementById("finished-screen");
+const nameInput      = document.getElementById("player-name");
+const pinInput       = document.getElementById("game-pin");
+const joinBtn        = document.getElementById("join-btn");
+const joinError      = document.getElementById("join-error");
+const lobbyName      = document.getElementById("lobby-name");
+const lobbyCount     = document.getElementById("lobby-count");
+const lobbyPlayers   = document.getElementById("lobby-players");
+const displayName    = document.getElementById("display-name");
+const displayScore   = document.getElementById("display-score");
+const displaySolved  = document.getElementById("display-solved");
+const displayTotal   = document.getElementById("display-total");
+const timerDisplay   = document.getElementById("timer-display");
+const riddleCard     = document.getElementById("riddle-card");
+const completeCard   = document.getElementById("complete-card");
+const riddleCat      = document.getElementById("riddle-category");
+const riddleText     = document.getElementById("riddle-text");
+const qCurrNum       = document.getElementById("q-curr-num");
+const qTotalNum      = document.getElementById("q-total-num");
+const optionsContainer = document.getElementById("options-container");
+const submitBtn      = document.getElementById("submit-btn");
+const feedback       = document.getElementById("feedback");
+const lbList         = document.getElementById("leaderboard-list");
+const finalScore     = document.getElementById("final-score");
+const finFinalScore  = document.getElementById("fin-final-score");
+const finFinalRank   = document.getElementById("fin-final-rank");
+const finLbList      = document.getElementById("fin-leaderboard-list");
 const tabWarningModal = document.getElementById("tab-warning-modal");
 const warningCountNum = document.getElementById("warning-count-num");
 const resumeQuizBtn   = document.getElementById("resume-quiz-btn");
 
 let myName = "";
 let currentRiddleId = null;
+let selectedOption = null;
+let totalQuestions = 30;
+let answeredCount = 0;
 let tabSwitchCount = 0;
 let lastTabSwitchTime = 0;
 
@@ -85,7 +87,7 @@ function joinGame() {
   const name = nameInput.value.trim();
   const pin = pinInput.value.trim();
   if (!name) { joinError.textContent = "Please enter your name!"; return; }
-  if (!pin)  { joinError.textContent = "Please enter the game PIN!"; return; }
+  if (!pin)  { joinError.textContent = "Please enter the Exam PIN!"; return; }
   joinBtn.disabled = true;
   joinBtn.textContent = "Joining...";
   joinError.textContent = "";
@@ -121,7 +123,7 @@ function renderLobbyPlayers(playersList) {
   lobbyPlayers.innerHTML = playersList
     .map(name => {
       const isMe = name === myName ? " is-me" : "";
-      return `<div class="lobby-player${isMe}">🧙 ${escHtml(name)}</div>`;
+      return `<div class="lobby-player${isMe}">🧑‍💻 ${escHtml(name)}</div>`;
     })
     .join("");
 }
@@ -137,9 +139,11 @@ socket.on("game_started", (data) => {
     });
   }
   displayName.textContent = myName;
-  displayScore.textContent = data.score;
-  displaySolved.textContent = data.solved;
-  displayTotal.textContent = data.total;
+  displayScore.textContent = data.score || 0;
+  totalQuestions = data.total || 30;
+  answeredCount = data.answered || data.solved || 0;
+  displaySolved.textContent = answeredCount;
+  displayTotal.textContent = totalQuestions;
   timerDisplay.textContent = formatTime(data.timeRemaining);
   showScreen(gameScreen);
   if (data.riddle) showRiddle(data.riddle);
@@ -157,45 +161,40 @@ socket.on("joined", (data) => {
     });
   }
   displayName.textContent = data.name;
-  displayScore.textContent = data.score;
-  displaySolved.textContent = data.solved;
-  displayTotal.textContent = data.total;
+  displayScore.textContent = data.score || 0;
+  totalQuestions = data.total || 30;
+  answeredCount = (data.answered != null) ? data.answered : (data.solved || 0);
+  displaySolved.textContent = answeredCount;
+  displayTotal.textContent = totalQuestions;
   timerDisplay.textContent = formatTime(data.timeRemaining);
   showScreen(gameScreen);
-  if (data.riddle) {
-    showRiddle(data.riddle);
-    if (data.hasHint && data.hint) {
-      hintText.textContent = data.hint;
-      hintArea.classList.remove("hidden");
-      hintBtn.disabled = true;
-    }
-  } else {
-    showComplete(data.score);
-  }
+  if (data.riddle) showRiddle(data.riddle);
+  else showComplete(data.score);
 });
 
-// ── Server: error ────────────────────────────────────────────────
+// ── Server: error msg ────────────────────────────────────────────
 socket.on("error_msg", (msg) => {
   joinError.textContent = msg;
   joinBtn.disabled = false;
-  joinBtn.textContent = "Join Game";
+  joinBtn.textContent = "Join Exam";
 });
 
-// ── Server: session invalid / expired ────────────────────────────
-socket.on("session_invalid", (data) => {
+// ── Server: session invalid ──────────────────────────────────────
+socket.on("session_invalid", () => {
   clearSession();
-  myName = "";
-  currentRiddleId = null;
-  joinError.textContent = (data && data.message) ? data.message : "Session ended. Please join again.";
-  joinBtn.disabled = false;
-  joinBtn.textContent = "Join Game";
   showScreen(joinScreen);
+  joinBtn.disabled = false;
+  joinBtn.textContent = "Join Exam";
 });
 
 // ── Timer tick ───────────────────────────────────────────────────
 socket.on("timer_tick", (remaining) => {
   timerDisplay.textContent = formatTime(remaining);
-  timerDisplay.classList.toggle("timer-danger", remaining <= 30);
+  if (remaining <= 60) {
+    timerDisplay.classList.add("danger");
+  } else {
+    timerDisplay.classList.remove("danger");
+  }
 });
 
 // ── Game finished ────────────────────────────────────────────────
@@ -205,8 +204,10 @@ socket.on("game_finished", (data) => {
   const lb = data.leaderboard;
   const myEntry = lb.find(p => p.name === myName);
   const myRank = myEntry ? lb.indexOf(myEntry) + 1 : "—";
-  finFinalScore.textContent = myEntry ? myEntry.score : 0;
-  finFinalRank.textContent = myRank;
+  const myScore = myEntry ? myEntry.score : 0;
+
+  finFinalScore.textContent = myScore;
+  finFinalRank.textContent = myRank === 1 ? "🥇 1st" : myRank === 2 ? "🥈 2nd" : myRank === 3 ? "🥉 3rd" : `#${myRank}`;
 
   finLbList.innerHTML = lb.map((p, i) => {
     const rank = i + 1;
@@ -216,80 +217,132 @@ socket.on("game_finished", (data) => {
     return `<div class="lb-row${rankClass}${meClass}">
       <span class="lb-rank">${medal}</span>
       <span class="lb-name">${escHtml(p.name)}</span>
-      <span class="lb-solved">${p.solved}/${p.total}</span>
+      <span class="lb-solved">${p.answered || p.solved}/${p.total}</span>
       <span class="lb-score">${p.score}</span>
     </div>`;
   }).join("");
   showScreen(finishedScreen);
 });
 
-// ── Riddle display ───────────────────────────────────────────────
+// ── MCQ Question display ─────────────────────────────────────────
 function showRiddle(r) {
   currentRiddleId = r.id;
-  riddleCat.textContent = "🐍 " + r.category;
-  riddleText.textContent = r.riddle;
-  answerInput.value = "";
-  hintArea.classList.add("hidden");
-  hintBtn.disabled = false;
+  selectedOption = null;
+  submitBtn.disabled = true;
+  submitBtn.dataset.submitting = "false";
+  submitBtn.textContent = "Submit Answer ➔";
+
+  riddleCat.textContent = "🐍 " + (r.category || "Python Basics");
+  riddleText.textContent = r.question || r.riddle;
+
+  if (qCurrNum) qCurrNum.textContent = Math.min(answeredCount + 1, totalQuestions);
+  if (qTotalNum) qTotalNum.textContent = totalQuestions;
+
   feedback.classList.add("hidden");
   feedback.className = "feedback hidden";
   riddleCard.classList.remove("hidden");
   completeCard.classList.add("hidden");
-  answerInput.focus();
+
+  const letters = ["A", "B", "C", "D"];
+  const opts = r.options || [];
+
+  optionsContainer.innerHTML = opts.map((opt, i) => {
+    const letter = letters[i] || (i + 1);
+    return `
+      <button class="option-card" type="button" data-val="${escHtml(opt)}">
+        <span class="option-tag">${letter}</span>
+        <span class="option-label">${escHtml(opt)}</span>
+      </button>
+    `;
+  }).join("");
+
+  // Attach selection handlers to options
+  const cards = optionsContainer.querySelectorAll(".option-card");
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      if (submitBtn.dataset.submitting === "true") return;
+      cards.forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      selectedOption = card.getAttribute("data-val");
+      submitBtn.disabled = false;
+    });
+  });
 }
 
 function showComplete(score) {
   riddleCard.classList.add("hidden");
   completeCard.classList.remove("hidden");
   finalScore.textContent = score;
+  displaySolved.textContent = totalQuestions;
 }
-
-// ── Hint ─────────────────────────────────────────────────────────
-hintBtn.addEventListener("click", () => {
-  if (currentRiddleId == null) return;
-  socket.emit("hint", currentRiddleId);
-  hintBtn.disabled = true;
-});
-socket.on("hint_response", (data) => {
-  hintText.textContent = data.hint;
-  hintArea.classList.remove("hidden");
-});
 
 // ── Submit answer ────────────────────────────────────────────────
 function submitAnswer() {
-  const answer = answerInput.value.trim();
-  if (!answer || currentRiddleId == null) return;
-  socket.emit("answer", { riddleId: currentRiddleId, answer });
+  if (!selectedOption || currentRiddleId == null) return;
+  if (submitBtn.dataset.submitting === "true") return;
+
+  submitBtn.dataset.submitting = "true";
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Checking...";
+
+  // Disable options during submission
+  const cards = optionsContainer.querySelectorAll(".option-card");
+  cards.forEach(c => c.disabled = true);
+
+  socket.emit("answer", { riddleId: currentRiddleId, answer: selectedOption });
 }
+
 submitBtn.addEventListener("click", submitAnswer);
-answerInput.addEventListener("keydown", (e) => { if (e.key === "Enter") submitAnswer(); });
 
 // ── Result ───────────────────────────────────────────────────────
 socket.on("result", (data) => {
   feedback.classList.remove("hidden", "correct", "wrong");
-  if (data.correct) {
-    const note = data.usedHint ? " (hint used)" : " (no hint bonus!)";
-    feedback.classList.add("correct");
-    feedback.textContent = `✅ Correct! +${data.points} points${note}`;
+  submitBtn.dataset.submitting = "false";
+
+  if (data.answered != null) {
+    answeredCount = data.answered;
+    displaySolved.textContent = answeredCount;
+  }
+  if (data.score != null) {
     displayScore.textContent = data.score;
-    displaySolved.textContent = data.solved;
-    setTimeout(() => {
-      if (data.nextRiddle) showRiddle(data.nextRiddle);
-      else showComplete(data.score);
-    }, 1500);
+  }
+
+  const cards = optionsContainer.querySelectorAll(".option-card");
+  cards.forEach(c => {
+    const val = c.getAttribute("data-val");
+    if (val === selectedOption) {
+      if (data.correct) {
+        c.classList.add("correct");
+      } else {
+        c.classList.add("wrong");
+      }
+    }
+    if (!data.correct && val === data.correctAnswer) {
+      c.classList.add("correct");
+    }
+  });
+
+  if (data.correct) {
+    feedback.classList.add("correct");
+    feedback.textContent = `✅ Correct! (+${data.points} pts)`;
   } else {
     feedback.classList.add("wrong");
-    feedback.textContent = "❌ Wrong answer! Try again.";
-    answerInput.value = "";
-    answerInput.focus();
-    setTimeout(() => feedback.classList.add("hidden"), 2000);
+    feedback.textContent = `❌ Incorrect (0 pts). Correct answer: ${data.correctAnswer}`;
   }
+
+  setTimeout(() => {
+    if (data.nextRiddle) {
+      showRiddle(data.nextRiddle);
+    } else {
+      showComplete(data.score);
+    }
+  }, 1300);
 });
 
 // ── Leaderboard ──────────────────────────────────────────────────
 socket.on("leaderboard", (board) => {
   if (!board.length) {
-    lbList.innerHTML = '<p class="lb-empty">Waiting for players...</p>';
+    lbList.innerHTML = '<p class="lb-empty">Waiting for students...</p>';
     return;
   }
   lbList.innerHTML = board.map((p, i) => {
@@ -300,7 +353,7 @@ socket.on("leaderboard", (board) => {
     return `<div class="lb-row${rankClass}${meClass}">
       <span class="lb-rank">${medal}</span>
       <span class="lb-name">${escHtml(p.name)}</span>
-      <span class="lb-solved">${p.solved}/${p.total}</span>
+      <span class="lb-solved">${p.answered || p.solved}/${p.total}</span>
       <span class="lb-score">${p.score}</span>
     </div>`;
   }).join("");
@@ -314,7 +367,7 @@ socket.on("game_reset", () => {
 
 socket.on("game_state", (data) => {
   if (data.state === "finished" && !myName) {
-    joinError.textContent = "The game has ended. Ask the host to reset.";
+    joinError.textContent = "The exam has ended. Ask the instructor to reset.";
     joinBtn.disabled = true;
   }
 });
@@ -329,7 +382,6 @@ function escHtml(str) {
 if (resumeQuizBtn) {
   resumeQuizBtn.addEventListener("click", () => {
     if (tabWarningModal) tabWarningModal.classList.add("hidden");
-    if (answerInput) answerInput.focus();
   });
 }
 
@@ -373,18 +425,10 @@ if (riddleCard) {
     myName = savedSession.name || "";
     nameInput.value = savedSession.name || "";
     pinInput.value = savedSession.pin || "";
-    joinBtn.disabled = true;
-    joinBtn.textContent = "Reconnecting...";
-    joinError.textContent = "Resuming your session...";
-
-    function resume() {
-      socket.emit("resume_session", savedSession);
-    }
-
-    if (socket.connected) {
-      resume();
-    } else {
-      socket.on("connect", resume);
-    }
+    console.log("Resuming student session:", savedSession);
+    socket.emit("resume_session", {
+      sessionId: savedSession.sessionId,
+      pin: savedSession.pin,
+    });
   }
 })();

@@ -58,6 +58,7 @@ function getLeaderboard() {
       name: p.name,
       score: p.score,
       solved: p.solved.length,
+      answered: (p.answered || p.solved).length,
       total: riddles.length,
       lastScoreTime: p.lastScoreTime || 0,
       joinedAt: p.joinedAt || 0,
@@ -74,7 +75,7 @@ function getLeaderboard() {
           return a.lastScoreTime - b.lastScoreTime;
         }
       }
-      // 3. Fallback: more solved riddles
+      // 3. Fallback: more solved questions
       if (b.solved !== a.solved) {
         return b.solved - a.solved;
       }
@@ -98,20 +99,27 @@ function shuffle(arr) {
   return a;
 }
 
-// ── Helper: pick the next unsolved riddle for a player ───────────────
+// ── Helper: pick the next unsolved question for a player ─────────────
 function nextRiddle(player) {
+  if (!player.answered) player.answered = [];
   // Use the player's personal shuffled order
   for (const id of player.riddleOrder) {
-    if (!player.solved.includes(id)) {
+    if (!player.answered.includes(id)) {
       return riddles.find((r) => r.id === id);
     }
   }
   return null;
 }
 
-// ── Helper: sanitize riddle ──────────────────────────────────────────
+// ── Helper: sanitize question (omit correct answer) ───────────────────
 function safeRiddle(r) {
-  return { id: r.id, riddle: r.riddle, category: r.category };
+  return {
+    id: r.id,
+    question: r.question || r.riddle,
+    riddle: r.question || r.riddle,
+    category: r.category,
+    options: r.options || []
+  };
 }
 
 // ── Timer helpers ────────────────────────────────────────────────────
@@ -335,17 +343,15 @@ io.on("connection", (socket) => {
         io.emit("leaderboard", getLeaderboard());
       } else if (gameState === "playing") {
         const r = nextRiddle(existingPlayer);
-        const hasHint = r ? existingPlayer.usedHints.includes(r.id) : false;
         socket.emit("joined", {
           sessionId: existingPlayer.sessionId,
           name: existingPlayer.name,
           riddle: r ? safeRiddle(r) : null,
           total: riddles.length,
           solved: existingPlayer.solved.length,
+          answered: (existingPlayer.answered || existingPlayer.solved).length,
           score: existingPlayer.score,
           timeRemaining: timerRemaining,
-          hasHint,
-          hint: hasHint && r ? r.hint : null,
         });
         io.emit("leaderboard", getLeaderboard());
       } else if (gameState === "finished") {
@@ -366,6 +372,7 @@ io.on("connection", (socket) => {
       name,
       score: 0,
       solved: [],
+      answered: [],
       usedHints: [],
       riddleOrder: shuffle(riddles.map((r) => r.id)),
       lastScoreTime: 0,
@@ -397,10 +404,9 @@ io.on("connection", (socket) => {
         riddle: r ? safeRiddle(r) : null,
         total: riddles.length,
         solved: 0,
+        answered: 0,
         score: 0,
         timeRemaining: timerRemaining,
-        hasHint: false,
-        hint: null,
       });
       io.emit("leaderboard", getLeaderboard());
     }
@@ -454,17 +460,15 @@ io.on("connection", (socket) => {
       io.emit("leaderboard", getLeaderboard());
     } else if (gameState === "playing") {
       const r = nextRiddle(player);
-      const hasHint = r ? player.usedHints.includes(r.id) : false;
       socket.emit("joined", {
         sessionId: player.sessionId,
         name: player.name,
         riddle: r ? safeRiddle(r) : null,
         total: riddles.length,
         solved: player.solved.length,
+        answered: (player.answered || player.solved).length,
         score: player.score,
         timeRemaining: timerRemaining,
-        hasHint,
-        hint: hasHint && r ? r.hint : null,
       });
       io.emit("leaderboard", getLeaderboard());
     } else if (gameState === "finished") {
@@ -507,7 +511,11 @@ io.on("connection", (socket) => {
     if (!player) return;
     const r = riddles.find((x) => x.id === riddleId);
     if (!r) return;
-    if (player.solved.includes(riddleId)) return;
+
+    if (!player.answered) player.answered = [];
+    if (player.answered.includes(riddleId)) return; // Already answered
+
+    player.answered.push(riddleId);
 
     const normalize = (s) => String(s || "").trim().toLowerCase();
     const cleanPunct = (s) => normalize(s).replace(/[.,!?;:'"()[\]{}]/g, "").replace(/\s+/g, " ");
@@ -519,33 +527,34 @@ io.on("connection", (socket) => {
       ? r.answers
       : (Array.isArray(r.answer) ? r.answer : [r.answer]);
 
-    const correct = acceptedList.some((ans) => {
+    const isCorrect = acceptedList.some((ans) => {
       const aRaw = normalize(ans);
       const aClean = cleanPunct(ans);
       return userRaw === aRaw || userClean === aClean;
     });
 
-    if (correct) {
-      player.solved.push(riddleId);
-      const usedHint = player.usedHints.includes(riddleId);
-      const points = usedHint ? 5 : 10;
-      player.score += points;
+    let pointsAwarded = 0;
+    if (isCorrect) {
+      if (!player.solved.includes(riddleId)) {
+        player.solved.push(riddleId);
+      }
+      pointsAwarded = 10;
+      player.score += pointsAwarded;
       player.lastScoreTime = Date.now();
-
-      const next = nextRiddle(player);
-      socket.emit("result", {
-        correct: true,
-        points,
-        usedHint,
-        score: player.score,
-        solved: player.solved.length,
-        total: riddles.length,
-        nextRiddle: next ? safeRiddle(next) : null,
-      });
-      io.emit("leaderboard", getLeaderboard());
-    } else {
-      socket.emit("result", { correct: false });
     }
+
+    const next = nextRiddle(player);
+    socket.emit("result", {
+      correct: isCorrect,
+      correctAnswer: r.answer,
+      points: pointsAwarded,
+      score: player.score,
+      solved: player.solved.length,
+      answered: player.answered.length,
+      total: riddles.length,
+      nextRiddle: next ? safeRiddle(next) : null,
+    });
+    io.emit("leaderboard", getLeaderboard());
   });
 
   // ── Disconnect ─────────────────────────────────────────────────────

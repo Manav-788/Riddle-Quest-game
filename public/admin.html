@@ -296,7 +296,7 @@
       </div>
       <div style="overflow-x:auto;">
         <table>
-          <thead><tr><th>Rank</th><th>Player</th><th>Solved</th><th>Progress</th><th>Score</th></tr></thead>
+          <thead><tr><th>Rank</th><th>Student</th><th>Progress</th><th>Completion</th><th>Score</th></tr></thead>
           <tbody id="lb-body"><tr><td colspan="5" class="empty-state">Waiting for players to join...</td></tr></tbody>
         </table>
       </div>
@@ -518,7 +518,7 @@
       }
       document.getElementById("stat-avg").textContent = Math.round(board.reduce((s,p)=>s+p.score,0)/board.length);
       document.getElementById("stat-top").textContent = board[0].name;
-      document.getElementById("stat-done").textContent = board.filter(p=>p.solved>=p.total).length;
+      document.getElementById("stat-done").textContent = board.filter(p=>(p.answered!=null?p.answered:p.solved)>=p.total).length;
     }
 
     function renderTable(filter="") {
@@ -529,9 +529,10 @@
         const rank = board.indexOf(p)+1;
         const medal = rank===1?"🥇":rank===2?"🥈":rank===3?"🥉":rank;
         const rc = rank<=3?` class="rank-${rank}"`:"";
-        const pct = Math.round(p.solved/p.total*100);
+        const answered = p.answered != null ? p.answered : p.solved;
+        const pct = Math.round(answered/p.total*100);
         const warnings = p.tabSwitches ? ` <span title="Tab switches: ${p.tabSwitches}" style="color:var(--accent);font-size:0.75rem;background:rgba(233,69,96,0.18);padding:2px 7px;border-radius:10px;font-weight:700;margin-left:6px;">⚠️ ${p.tabSwitches}</span>` : "";
-        return `<tr${rc}><td>${medal}</td><td>${escHtml(p.name)}${warnings}</td><td>${p.solved}/${p.total}</td><td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div></td><td class="score-col">${p.score}</td></tr>`;
+        return `<tr${rc}><td>${medal}</td><td>${escHtml(p.name)}${warnings}</td><td>${answered}/${p.total} (${p.solved} correct)</td><td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div></td><td class="score-col">${p.score}</td></tr>`;
       }).join("");
     }
 
