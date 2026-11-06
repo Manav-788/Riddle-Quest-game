@@ -1,242 +1,242 @@
 [
   {
     "id": 1,
-    "riddle": "Nagini whispers it, and Lord Voldemort commands it through Parseltongue. In the coding world, it is one of the most beloved languages for beginners, data science, and AI.",
-    "hint": "Named after a famous reptile (and Monty Python). Famous for clean indentation.",
-    "answer": "python",
-    "answers": ["python", "python3", "python language", "py"],
-    "category": "Harry Potter"
+    "riddle": "I am a named storage location in computer memory that holds data. My value can change as the program executes. What am I?",
+    "hint": "Declared with keywords like let, var, or const. The opposite of a constant.",
+    "answer": "variable",
+    "answers": ["variable", "variables", "var", "a variable"],
+    "category": "Programming Basics"
   },
   {
     "id": 2,
-    "riddle": "Aragorn receives the royal bloodline, the blade Andúril, and the crown of Gondor. In Object-Oriented Programming, what mechanism allows a child class to receive properties and methods from its parent class?",
-    "hint": "One of the 4 pillars of OOP. A subclass ______s from a superclass.",
-    "answer": "inheritance",
-    "answers": ["inheritance", "inherit", "subclassing", "derived class"],
-    "category": "Lord of the Rings"
+    "riddle": "I repeat a designated block of code over and over until a specific condition evaluates to false. What control structure am I?",
+    "hint": "Common types include 'for', 'while', and 'do-while'.",
+    "answer": "loop",
+    "answers": ["loop", "loops", "for loop", "while loop", "a loop", "iteration"],
+    "category": "Programming Basics"
   },
   {
     "id": 3,
-    "riddle": "Nearly Headless Nick floats through Hogwarts corridors as a spirit with no physical form. In code, this keyword represents a variable that exists but intentionally points to no object or memory address.",
-    "hint": "In C, Java, and JS it is ____; in Python it is called None.",
-    "answer": "null",
-    "answers": ["null", "nil", "none", "nullptr", "undefined"],
-    "category": "Harry Potter"
+    "riddle": "I am a binary data type that can only hold one of two possible values: true or false. What data type am I?",
+    "hint": "Named after mathematician George Boole. Often abbreviated as 'bool'.",
+    "answer": "boolean",
+    "answers": ["boolean", "bool", "booleans", "boolean type"],
+    "category": "Programming Basics"
   },
   {
     "id": 4,
-    "riddle": "Harry's Invisibility Cloak hides his body while keeping him functional. In OOP, what core principle bundles data with methods while hiding internal variables using private access modifiers?",
-    "hint": "Think of enclosing medicine in a capsule. Protected with getters and setters.",
-    "answer": "encapsulation",
-    "answers": ["encapsulation", "data hiding", "encapsulate"],
-    "category": "Harry Potter"
+    "riddle": "I am a named, reusable block of code designed to perform a specific task. You pass inputs into me as parameters and I return an output. What am I?",
+    "hint": "Defined with 'def' in Python or 'function' in JavaScript. In OOP, called a method.",
+    "answer": "function",
+    "answers": ["function", "functions", "method", "methods", "procedure", "a function"],
+    "category": "Programming Basics"
   },
   {
     "id": 5,
-    "riddle": "A Boggart morphs into whatever form strikes fear into the viewer. In Object-Oriented Programming, what principle allows a single method name to take multiple forms across different classes?",
-    "hint": "Greek roots: 'Poly' means many, 'morph' means form.",
-    "answer": "polymorphism",
-    "answers": ["polymorphism", "polymorphic"],
-    "category": "Harry Potter"
+    "riddle": "I am a programming technique where a function calls itself to solve a smaller subproblem, continuing until reaching a base case. What am I?",
+    "hint": "Without a proper base case, I cause a Stack Overflow error.",
+    "answer": "recursion",
+    "answers": ["recursion", "recursive", "recursive function", "recurse"],
+    "category": "Programming Basics"
   },
   {
     "id": 6,
-    "riddle": "Hedwig and Hogwarts owls fly messages between distant wizards. In modern software, this messenger lets two separate applications communicate by sending requests and returning data.",
-    "hint": "Three letters. Application Programming Interface. REST and GraphQL are popular types.",
-    "answer": "api",
-    "answers": ["api", "apis", "rest api", "web api", "application programming interface"],
-    "category": "Harry Potter"
+    "riddle": "I happen when code violates the grammar and structural rules of a programming language, such as an unclosed bracket or misspelled keyword. What error am I?",
+    "hint": "Detected by the parser or compiler before the program can execute.",
+    "answer": "syntax error",
+    "answers": ["syntax error", "syntax", "syntax errors"],
+    "category": "Programming Basics"
   },
   {
     "id": 7,
-    "riddle": "Tony Stark keeps his most frequently used tools in quick-draw arm pods so he doesn't have to retrieve them from Avengers tower. In computing, what high-speed temporary storage layer stores recent data for fast retrieval?",
-    "hint": "Pronounced like 'cash'. L1, L2, and browser versions exist.",
-    "answer": "cache",
-    "answers": ["cache", "caching", "cache memory", "web cache", "a cache"],
-    "category": "Marvel"
+    "riddle": "I am text written inside source code to explain what the code does for human programmers. The compiler and interpreter completely ignore me. What am I?",
+    "hint": "Written with // or /* */ in C/Java/JS, and # in Python.",
+    "answer": "comment",
+    "answers": ["comment", "comments", "code comment", "code comments"],
+    "category": "Programming Basics"
   },
   {
     "id": 8,
-    "riddle": "Gandalf searches the grand archives of Minas Tirith by halving the remaining scrolls with each comparison. What logarithmic O(log n) search algorithm divides a sorted collection in half repeatedly?",
-    "hint": "Two words. Requires an already sorted array. Divide and conquer.",
-    "answer": "binary search",
-    "answers": ["binary search", "binary search algorithm", "bsearch"],
-    "category": "Lord of the Rings"
+    "riddle": "I am a data identifier whose value is assigned once and cannot be altered or reassigned throughout program execution. What am I?",
+    "hint": "Declared with keywords like 'const' in JavaScript/C++ or 'final' in Java.",
+    "answer": "constant",
+    "answers": ["constant", "const", "constants", "immutable", "final"],
+    "category": "Programming Basics"
   },
   {
     "id": 9,
-    "riddle": "King T'Challa of Wakanda shares vibranium technology freely with the entire world. In tech, this famous open-source Unix-like operating system kernel powers servers, Android phones, and supercomputers with a penguin mascot.",
-    "hint": "Created in 1991 by Linus Torvalds. Tux the penguin is its mascot.",
-    "answer": "linux",
-    "answers": ["linux", "gnu/linux", "linux kernel", "linux os"],
-    "category": "Marvel"
+    "riddle": "I store a collection of elements in contiguous memory locations, where each item can be accessed directly using an integer index starting from 0. What data structure am I?",
+    "hint": "Accessed using square brackets []. Offers O(1) random access time.",
+    "answer": "array",
+    "answers": ["array", "arrays", "an array", "list", "lists"],
+    "category": "Data Structures"
   },
   {
     "id": 10,
-    "riddle": "Spider-Man spins clean, lightweight webs between buildings to transport payloads across the city. On the web, what lightweight text format uses curly braces and key-value pairs to exchange data between client and server?",
-    "hint": "Four letters: JavaScript Object Notation.",
-    "answer": "json",
-    "answers": ["json", "javascript object notation"],
-    "category": "Spider-Man"
+    "riddle": "I am a linear data structure that follows the Last-In, First-Out (LIFO) principle. Items can only be added or removed from the top. What am I?",
+    "hint": "My two primary operations are 'push' and 'pop'.",
+    "answer": "stack",
+    "answers": ["stack", "stacks", "call stack", "a stack"],
+    "category": "Data Structures"
   },
   {
     "id": 11,
-    "riddle": "The Alohomora spell unlocks doors, but adding a lock protects the room. On the internet, what secure communication protocol adds TLS encryption to HTTP to safeguard web browsing with a padlock icon?",
-    "hint": "Five letters. Ends in 'S' for Secure. https://...",
-    "answer": "https",
-    "answers": ["https", "http", "http/https", "hypertext transfer protocol secure"],
-    "category": "Harry Potter"
+    "riddle": "I am a linear data structure that follows the First-In, First-Out (FIFO) principle. Items enter at the rear and leave from the front. What am I?",
+    "hint": "Used in printer queues and task scheduling. Operations are enqueue and dequeue.",
+    "answer": "queue",
+    "answers": ["queue", "queues", "fifo", "a queue"],
+    "category": "Data Structures"
   },
   {
     "id": 12,
-    "riddle": "The Map of Middle-earth translates friendly names like 'The Shire' into exact geographical coordinates. On the internet, what system translates human-friendly domain names like google.com into numerical IP addresses?",
-    "hint": "Three letters. Domain Name System.",
-    "answer": "dns",
-    "answers": ["dns", "domain name system", "domain name server"],
-    "category": "Lord of the Rings"
+    "riddle": "I am a linear data structure composed of nodes, where each node contains data and a pointer or reference to the next node in the sequence. What am I?",
+    "hint": "Unlike arrays, my elements do not need to be stored in contiguous memory.",
+    "answer": "linked list",
+    "answers": ["linked list", "linkedlist", "linked lists", "singly linked list"],
+    "category": "Data Structures"
   },
   {
     "id": 13,
-    "riddle": "Hyperspace docking stations guide Millennium Falcon flights along safe navigational routes. In home networks and the internet, what hardware device forwards data packets between different networks?",
-    "hint": "Has antennas. Connects your laptop to your modem or ISP.",
-    "answer": "router",
-    "answers": ["router", "routers", "network router", "wi-fi router", "wifi router"],
-    "category": "Star Wars"
+    "riddle": "I am a hierarchical data structure with a single root node at the top, which branches down into parent, child, and leaf nodes. What data structure am I?",
+    "hint": "Common types include Binary Search Tree, AVL Tree, and Red-Black Tree.",
+    "answer": "tree",
+    "answers": ["tree", "trees", "binary tree", "a tree", "tree data structure"],
+    "category": "Data Structures"
   },
   {
     "id": 14,
-    "riddle": "A deceitful Death Eater sends a fake Ministry letter tricking wizards into revealing their Gringotts vault keys. In cybersecurity, what is this fraudulent attempt to steal credentials through deceptive emails called?",
-    "hint": "Sounds like fishing with a rod, but spelled with 'Ph'.",
-    "answer": "phishing",
-    "answers": ["phishing", "phishing attack", "phishing scam", "spear phishing"],
-    "category": "Harry Potter"
+    "riddle": "I am a non-linear data structure consisting of a finite set of vertices (or nodes) connected together by pairs called edges. What data structure am I?",
+    "hint": "Used to model social networks, road maps, and networks. Can be directed or undirected.",
+    "answer": "graph",
+    "answers": ["graph", "graphs", "a graph", "graph data structure"],
+    "category": "Data Structures"
   },
   {
     "id": 15,
-    "riddle": "Ultron corrupts and infects computers across the globe, replicating uncontrollably to cause damage. In computing, what broad term describes malicious software designed to disrupt, steal, or harm devices?",
-    "hint": "A portmanteau of 'malicious' and 'software'.",
-    "answer": "malware",
-    "answers": ["malware", "virus", "computer virus", "malicious software"],
-    "category": "Marvel"
+    "riddle": "I am an efficient search algorithm that repeatedly divides a sorted collection in half to find a target value in logarithmic O(log n) time. What algorithm am I?",
+    "hint": "Two words. Requires an already sorted array. Divide and conquer.",
+    "answer": "binary search",
+    "answers": ["binary search", "binary search algorithm", "bsearch"],
+    "category": "Algorithms"
   },
   {
     "id": 16,
-    "riddle": "Thorin Oakenshield carries the ancient Key of Thrór — the single unique key that opens the secret door of Erebor. In a relational database table, what column uniquely identifies each individual row or record?",
-    "hint": "Two words: ______ Key. Often an auto-incrementing ID or UUID.",
-    "answer": "primary key",
-    "answers": ["primary key", "key", "pk", "primary keys"],
-    "category": "Lord of the Rings"
+    "riddle": "I am the computational process of rearranging a collection of items into a specific systematic order, such as numerical or alphabetical. What process am I?",
+    "hint": "Bubble, Quick, Merge, and Heap are well-known algorithms designed for this.",
+    "answer": "sorting",
+    "answers": ["sorting", "sort", "sorting algorithm", "sort algorithm"],
+    "category": "Algorithms"
   },
   {
     "id": 17,
-    "riddle": "The Grand Army of the Republic counts clone troopers in exact whole numbers like 1, 42, and 66, with no decimal parts. In computer programming, what data type represents whole numbers?",
-    "hint": "Shortened to 'int' in languages like C++, Java, and Python.",
-    "answer": "integer",
-    "answers": ["integer", "int", "integers", "int type"],
-    "category": "Star Wars"
+    "riddle": "I am a user-defined blueprint or prototype from which individual objects are created in Object-Oriented Programming. What am I?",
+    "hint": "Used with the 'new' keyword to instantiate objects. In Python: class Dog: ...",
+    "answer": "class",
+    "answers": ["class", "classes", "blueprint", "a class"],
+    "category": "Object-Oriented Programming"
   },
   {
     "id": 18,
-    "riddle": "Calculating the exact fractional hyperdrive speed requires decimals like 0.5 past lightspeed. In programming, what data type represents numbers with fractional decimal points?",
-    "hint": "Short for floating-point number. Often called 'float' or 'double'.",
-    "answer": "float",
-    "answers": ["float", "floating point", "double", "floating point number"],
-    "category": "Star Wars"
+    "riddle": "I am an OOP pillar that allows a new subclass to acquire all attributes and methods of an existing superclass, promoting code reuse. What concept am I?",
+    "hint": "A child class ______s from a parent class.",
+    "answer": "inheritance",
+    "answers": ["inheritance", "inherit", "subclassing", "derived class"],
+    "category": "Object-Oriented Programming"
   },
   {
     "id": 19,
-    "riddle": "Treebeard the ancient Ent stands tall in Fangorn Forest with massive roots and branching limbs. In computer science, what hierarchical data structure consists of a root node, child nodes, and leaves?",
-    "hint": "Non-linear data structure. Common types include Binary Tree and AVL Tree.",
-    "answer": "tree",
-    "answers": ["tree", "trees", "binary tree", "a tree", "tree data structure"],
-    "category": "Lord of the Rings"
+    "riddle": "I am an OOP principle that binds data and methods together inside a class while restricting direct access to internal variables using private access modifiers. What am I?",
+    "hint": "Also known as data hiding. Access is managed through public getters and setters.",
+    "answer": "encapsulation",
+    "answers": ["encapsulation", "data hiding", "encapsulate"],
+    "category": "Object-Oriented Programming"
   },
   {
     "id": 20,
-    "riddle": "The machines map all connected human pods with interconnected pathways and nodes. In discrete mathematics and CS, what data structure consists of vertices (nodes) connected by edges?",
-    "hint": "Can be directed or undirected. Dijkstra searches the shortest path on this.",
-    "answer": "graph",
-    "answers": ["graph", "graphs", "a graph", "graph data structure"],
-    "category": "The Matrix"
+    "riddle": "I am an OOP principle derived from Greek meaning 'many forms', allowing a single interface or method name to perform different actions for different object types. What am I?",
+    "hint": "Commonly achieved through method overloading and method overriding.",
+    "answer": "polymorphism",
+    "answers": ["polymorphism", "polymorphic"],
+    "category": "Object-Oriented Programming"
   },
   {
     "id": 21,
-    "riddle": "J.A.R.V.I.S. acts as the central master software that coordinates Iron Man's thrusters, weapon sensors, display graphics, and memory. In computing, what foundational software manages computer hardware and system resources?",
-    "hint": "Two words or two letters: OS. Windows, macOS, and Linux are examples.",
-    "answer": "operating system",
-    "answers": ["operating system", "os", "an operating system"],
-    "category": "Marvel"
+    "riddle": "I am the standard markup language used to build the foundational structure of web pages on the internet using tags enclosed in angle brackets. What am I?",
+    "hint": "Four letters: HyperText Markup Language.",
+    "answer": "html",
+    "answers": ["html", "html5", "hypertext markup language"],
+    "category": "Web Development"
   },
   {
     "id": 22,
-    "riddle": "Ant-Man shrinks down past the atomic level into eight tiny subatomic particles grouped as one unit. In computing, what unit of digital information consists of a group of 8 bits?",
-    "hint": "Rhymes with 'bite'. Kilobytes and Megabytes are made of them.",
-    "answer": "byte",
-    "answers": ["byte", "bytes", "a byte"],
-    "category": "Marvel"
+    "riddle": "I am the style sheet language responsible for the visual presentation, styling, colors, and layout of web pages written in HTML. What am I?",
+    "hint": "Three letters: Cascading Style Sheets.",
+    "answer": "css",
+    "answers": ["css", "css3", "cascading style sheets"],
+    "category": "Web Development"
   },
   {
     "id": 23,
-    "riddle": "Hermione scolds Ron: 'It's Levi-O-sa, not Levio-SA!' If a programmer misspells a keyword, forgets a parenthesis, or breaks grammar rules, what kind of error prevents the code from compiling?",
-    "hint": "Two words: ______ Error. The grammar rules of a programming language.",
-    "answer": "syntax error",
-    "answers": ["syntax error", "syntax", "syntax errors"],
-    "category": "Harry Potter"
+    "riddle": "I am an intermediary set of rules and protocols that allows two separate software applications to communicate and exchange data with each other. What am I?",
+    "hint": "Three letters. Application Programming Interface. REST and GraphQL are popular types.",
+    "answer": "api",
+    "answers": ["api", "apis", "rest api", "web api", "application programming interface"],
+    "category": "Web Development"
   },
   {
     "id": 24,
-    "riddle": "Captain America's vibranium shield is forged so its atomic composition never bends or alters. In programming, what keyword declares an immutable variable whose value cannot be reassigned once defined?",
-    "hint": "Keywords like 'const' or 'final'.",
-    "answer": "constant",
-    "answers": ["constant", "const", "constants", "immutable", "final"],
-    "category": "Marvel"
+    "riddle": "I am often called the phonebook of the internet. I translate human-friendly domain names (like google.com) into numerical IP addresses. What service am I?",
+    "hint": "Three letters: Domain Name System.",
+    "answer": "dns",
+    "answers": ["dns", "domain name system", "domain name server"],
+    "category": "Networking"
   },
   {
     "id": 25,
-    "riddle": "The Faceless Men of Braavos take any human visage and compress it into a unique, fixed-size mask that cannot be reversed. In computer science, what mathematical function converts arbitrary input data into a fixed-length string of characters?",
-    "hint": "Used in MD5, SHA-256, and hash tables.",
-    "answer": "hash",
-    "answers": ["hash", "hashing", "hash function", "hash map", "hashing function"],
-    "category": "Game of Thrones"
+    "riddle": "I am a unique numerical label assigned to every device connected to a computer network that uses the Internet Protocol for communication. What am I?",
+    "hint": "Examples include IPv4 (e.g., 192.168.1.1) and IPv6.",
+    "answer": "ip address",
+    "answers": ["ip address", "ip", "ip addresses", "internet protocol address"],
+    "category": "Networking"
   },
   {
     "id": 26,
-    "riddle": "Hermione flips straight to the index at the back of Hogwarts: A History to locate goblin rebellions in seconds without reading page by page. In databases, what data structure speeds up querying rows on specific columns?",
-    "hint": "Think of an index in a book. Created with CREATE INDEX on a table.",
-    "answer": "index",
-    "answers": ["index", "indexes", "indices", "database index"],
-    "category": "Harry Potter"
+    "riddle": "I am a networking hardware device that directs data packets between different computer networks, ensuring traffic reaches its correct destination. What am I?",
+    "hint": "Connects your local home Wi-Fi network to your Internet Service Provider.",
+    "answer": "router",
+    "answers": ["router", "routers", "network router", "wi-fi router", "wifi router"],
+    "category": "Networking"
   },
   {
     "id": 27,
-    "riddle": "Bruce Wayne doesn't build gadgets from raw plastic; Lucius Fox provides pre-assembled foundations, architecture, and libraries. In software development, what pre-built structural platform (like React, Django, or Spring) provides scaffolding for building apps?",
-    "hint": "Starts with 'F'. Differs from a library because it enforces control flow (inversion of control).",
-    "answer": "framework",
-    "answers": ["framework", "frameworks", "software framework", "a framework"],
-    "category": "Batman"
+    "riddle": "I am the standard domain-specific language used for managing, creating, and querying data held in relational database management systems. What language am I?",
+    "hint": "Three letters. Structured Query Language. Famous for commands like SELECT, INSERT, and UPDATE.",
+    "answer": "sql",
+    "answers": ["sql", "structured query language", "sequel"],
+    "category": "Databases"
   },
   {
     "id": 28,
-    "riddle": "Behind the simulated illusion of the Matrix, the hidden subterranean machine city of Zion runs the servers, databases, and core power. In web development, what side of an application runs on the server handling business logic and databases?",
-    "hint": "Opposite of frontend. Node.js, Django, and Spring Boot run here.",
-    "answer": "backend",
-    "answers": ["backend", "back-end", "back end", "server side", "serverside"],
-    "category": "The Matrix"
+    "riddle": "In a relational database table, I am a specific column or set of columns that uniquely identifies every single row or record, with no null or duplicate values allowed. What am I?",
+    "hint": "Two words. Often abbreviated as PK.",
+    "answer": "primary key",
+    "answers": ["primary key", "key", "pk", "primary keys"],
+    "category": "Databases"
   },
   {
     "id": 29,
-    "riddle": "The Matrix renders buildings, streets, and human clothing for the human eye to perceive. In web development, what part of the application consists of the user interface (UI), buttons, and styling that users interact with directly?",
-    "hint": "Opposite of backend. Built with HTML, CSS, and clientside JavaScript.",
-    "answer": "frontend",
-    "answers": ["frontend", "front-end", "front end", "client side", "clientside", "ui"],
-    "category": "The Matrix"
+    "riddle": "I am a computer program that translates source code written in a high-level programming language entirely into low-level machine code or binary before execution. What am I?",
+    "hint": "Unlike an interpreter that reads line-by-line, I translate the whole program upfront. GCC and Clang are examples.",
+    "answer": "compiler",
+    "answers": ["compiler", "compilers"],
+    "category": "Systems & Architecture"
   },
   {
     "id": 30,
-    "riddle": "Obi-Wan Kenobi waves his hand and tells the stormtroopers, 'These are not the droids you are looking for.' What famous 3-digit HTTP status code tells web users that the requested page or resource could not be found?",
-    "hint": "Three numbers: 4_4. Every broken internet link displays this.",
-    "answer": "404",
-    "answers": ["404", "404 not found", "not found", "error 404", "http 404"],
-    "category": "Star Wars"
+    "riddle": "I am the core system software that manages computer hardware, memory, processor scheduling, files, and peripheral devices, providing a platform for applications to run. What am I?",
+    "hint": "Commonly abbreviated as OS. Windows, macOS, and Linux are prominent examples.",
+    "answer": "operating system",
+    "answers": ["operating system", "os", "an operating system"],
+    "category": "Systems & Architecture"
   }
 ]

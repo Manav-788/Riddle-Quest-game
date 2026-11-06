@@ -220,7 +220,7 @@ socket.on("game_finished", (data) => {
 // ── Riddle display ───────────────────────────────────────────────
 function showRiddle(r) {
   currentRiddleId = r.id;
-  riddleCat.textContent = "🎬 " + r.category;
+  riddleCat.textContent = "💻 " + r.category;
   riddleText.textContent = r.riddle;
   answerInput.value = "";
   hintArea.classList.add("hidden");
