@@ -35,9 +35,14 @@ const finalScore    = document.getElementById("final-score");
 const finFinalScore = document.getElementById("fin-final-score");
 const finFinalRank  = document.getElementById("fin-final-rank");
 const finLbList     = document.getElementById("fin-leaderboard-list");
+const tabWarningModal = document.getElementById("tab-warning-modal");
+const warningCountNum = document.getElementById("warning-count-num");
+const resumeQuizBtn   = document.getElementById("resume-quiz-btn");
 
 let myName = "";
 let currentRiddleId = null;
+let tabSwitchCount = 0;
+let lastTabSwitchTime = 0;
 
 // ── Session Storage Helpers ──────────────────────────────────────
 const SESSION_KEY = "riddle_quest_player_session";
@@ -195,6 +200,7 @@ socket.on("timer_tick", (remaining) => {
 
 // ── Game finished ────────────────────────────────────────────────
 socket.on("game_finished", (data) => {
+  if (tabWarningModal) tabWarningModal.classList.add("hidden");
   if (!myName && getSavedSession()) myName = getSavedSession().name || "";
   const lb = data.leaderboard;
   const myEntry = lb.find(p => p.name === myName);
@@ -220,7 +226,7 @@ socket.on("game_finished", (data) => {
 // ── Riddle display ───────────────────────────────────────────────
 function showRiddle(r) {
   currentRiddleId = r.id;
-  riddleCat.textContent = "💻 " + r.category;
+  riddleCat.textContent = "🐍 " + r.category;
   riddleText.textContent = r.riddle;
   answerInput.value = "";
   hintArea.classList.add("hidden");
@@ -317,6 +323,47 @@ function escHtml(str) {
   const d = document.createElement("div");
   d.textContent = str;
   return d.innerHTML;
+}
+
+// ── Tab Switching Prevention / Detection ────────────────────────
+if (resumeQuizBtn) {
+  resumeQuizBtn.addEventListener("click", () => {
+    if (tabWarningModal) tabWarningModal.classList.add("hidden");
+    if (answerInput) answerInput.focus();
+  });
+}
+
+function handleTabSwitch() {
+  // Only monitor while player is in active quiz gameplay
+  if (!gameScreen.classList.contains("active")) return;
+  if (completeCard && !completeCard.classList.contains("hidden")) return;
+  if (finishedScreen && finishedScreen.classList.contains("active")) return;
+
+  const now = Date.now();
+  if (now - lastTabSwitchTime < 1500) return; // Debounce 1.5s
+  lastTabSwitchTime = now;
+
+  tabSwitchCount++;
+  if (warningCountNum) warningCountNum.textContent = tabSwitchCount;
+  if (tabWarningModal) tabWarningModal.classList.remove("hidden");
+
+  socket.emit("tab_switch", { count: tabSwitchCount });
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    handleTabSwitch();
+  }
+});
+
+window.addEventListener("blur", () => {
+  handleTabSwitch();
+});
+
+// Prevent selecting or copying questions
+if (riddleCard) {
+  riddleCard.addEventListener("contextmenu", (e) => e.preventDefault());
+  riddleCard.addEventListener("copy", (e) => e.preventDefault());
 }
 
 // ── Auto-resume saved session on reload ─────────────────────────

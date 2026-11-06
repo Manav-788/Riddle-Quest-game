@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>⚡ Riddle Quest — Computer Science Quiz</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <title>🐍 Riddle Quest — Python Programming Quiz</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- ═══════════════ JOIN SCREEN ═══════════════ -->
   <div id="join-screen" class="screen active">
     <div class="join-card">
-      <div class="logo">⚡</div>
+      <div class="logo">🐍</div>
       <h1>Riddle Quest</h1>
-      <p class="subtitle">Computer Science Knowledge Challenge</p>
+      <p class="subtitle">Python for Engineers Quiz</p>
       <div class="input-group">
         <input type="text" id="player-name" placeholder="Enter your name..." maxlength="30" autocomplete="off" />
         <input type="text" id="game-pin" placeholder="Enter Game PIN..." maxlength="4" autocomplete="off" inputmode="numeric" />
@@ -62,7 +62,7 @@
     <main class="game-main">
       <section class="riddle-panel">
         <div id="riddle-card" class="riddle-card">
-          <div class="category-badge" id="riddle-category">Computer Science</div>
+          <div class="category-badge" id="riddle-category">Python Basics</div>
           <p class="riddle-text" id="riddle-text">Loading...</p>
           <div id="hint-area" class="hint-area hidden">
             <div class="hint-box">
@@ -131,6 +131,19 @@
         </div>
         <div id="fin-leaderboard-list" class="lb-list"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ TAB SWITCH WARNING MODAL ═══════════════ -->
+  <div id="tab-warning-modal" class="modal-overlay hidden">
+    <div class="warning-modal-card">
+      <div class="modal-icon">⚠️</div>
+      <h2>Tab Switch Detected!</h2>
+      <p class="warning-desc">Switching tabs, minimizing the browser, or leaving the quiz window is strictly monitored.</p>
+      <div class="warning-count-badge">
+        Warning <span id="warning-count-num">1</span> (Recorded by Host)
+      </div>
+      <button id="resume-quiz-btn" class="btn-resume">Return to Quiz</button>
     </div>
   </div>
 

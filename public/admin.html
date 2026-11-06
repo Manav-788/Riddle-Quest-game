@@ -530,7 +530,8 @@
         const medal = rank===1?"🥇":rank===2?"🥈":rank===3?"🥉":rank;
         const rc = rank<=3?` class="rank-${rank}"`:"";
         const pct = Math.round(p.solved/p.total*100);
-        return `<tr${rc}><td>${medal}</td><td>${escHtml(p.name)}</td><td>${p.solved}/${p.total}</td><td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div></td><td class="score-col">${p.score}</td></tr>`;
+        const warnings = p.tabSwitches ? ` <span title="Tab switches: ${p.tabSwitches}" style="color:var(--accent);font-size:0.75rem;background:rgba(233,69,96,0.18);padding:2px 7px;border-radius:10px;font-weight:700;margin-left:6px;">⚠️ ${p.tabSwitches}</span>` : "";
+        return `<tr${rc}><td>${medal}</td><td>${escHtml(p.name)}${warnings}</td><td>${p.solved}/${p.total}</td><td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div></td><td class="score-col">${p.score}</td></tr>`;
       }).join("");
     }
 

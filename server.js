@@ -61,6 +61,7 @@ function getLeaderboard() {
       total: riddles.length,
       lastScoreTime: p.lastScoreTime || 0,
       joinedAt: p.joinedAt || 0,
+      tabSwitches: p.tabSwitches || 0,
     }))
     .sort((a, b) => {
       // 1. Higher score first
@@ -371,6 +372,7 @@ io.on("connection", (socket) => {
       joinedAt: Date.now(),
       connected: true,
       disconnectTimer: null,
+      tabSwitches: 0,
     };
     players.set(sessionId, player);
     socketToSession.set(socket.id, sessionId);
@@ -469,6 +471,18 @@ io.on("connection", (socket) => {
       socket.emit("game_finished", { leaderboard: getLeaderboard() });
       io.emit("leaderboard", getLeaderboard());
     }
+  });
+
+  // ── Tab switch detected ────────────────────────────────────────────
+  socket.on("tab_switch", () => {
+    if (gameState !== "playing") return;
+    const sessionId = socketToSession.get(socket.id);
+    const player = sessionId ? players.get(sessionId) : null;
+    if (!player) return;
+
+    player.tabSwitches = (player.tabSwitches || 0) + 1;
+    console.log(`⚠️ Tab switch detected: ${player.name} (${player.tabSwitches}x)`);
+    io.emit("leaderboard", getLeaderboard());
   });
 
   // ── Request hint ───────────────────────────────────────────────────
