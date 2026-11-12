@@ -232,7 +232,7 @@ function showRiddle(r) {
   submitBtn.dataset.submitting = "false";
   submitBtn.textContent = "Submit Answer ➔";
 
-  riddleCat.textContent = "🐍 " + (r.category || "Python Basics");
+  riddleCat.textContent = "💻 " + (r.category || "Computer Engineering");
   riddleText.textContent = r.question || r.riddle;
 
   if (qCurrNum) qCurrNum.textContent = Math.min(answeredCount + 1, totalQuestions);

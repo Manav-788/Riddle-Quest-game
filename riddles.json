@@ -1,212 +1,212 @@
 [
   {
     "id": 1,
-    "question": "Which of the following is a valid Python variable name to store a shaft diameter?",
-    "options": ["shaft_diameter", "2nd_diameter", "shaft-diameter", "shaft diameter"],
-    "answer": "shaft_diameter",
-    "category": "Python Variables"
+    "question": "Which component of a computer system is known as the 'brain' that executes instructions and coordinates hardware operations?",
+    "options": ["Central Processing Unit (CPU)", "Hard Disk Drive (HDD)", "Random Access Memory (RAM)", "Graphics Processing Unit (GPU)"],
+    "answer": "Central Processing Unit (CPU)",
+    "category": "Computer Architecture"
   },
   {
     "id": 2,
-    "question": "Which operator in Python performs integer floor division, discarding the decimal fraction (e.g. 7 // 2 = 3)?",
-    "options": ["//", "/", "%", "**"],
-    "answer": "//",
-    "category": "Python Operators"
+    "question": "Which sub-unit of the CPU is specifically responsible for performing arithmetic calculations and logical comparisons?",
+    "options": ["Arithmetic Logic Unit (ALU)", "Control Unit (CU)", "Memory Management Unit (MMU)", "Registers"],
+    "answer": "Arithmetic Logic Unit (ALU)",
+    "category": "Computer Architecture"
   },
   {
     "id": 3,
-    "question": "Which built-in Python function returns the absolute (positive) magnitude of a number (e.g. -9.81 becomes 9.81)?",
-    "options": ["abs()", "mag()", "fabs()", "positive()"],
-    "answer": "abs()",
-    "category": "Built-in Functions"
+    "question": "Which type of computer memory loses its stored data immediately when the power supply is turned off (volatile memory)?",
+    "options": ["Random Access Memory (RAM)", "Read-Only Memory (ROM)", "Flash Memory", "Hard Disk Drive"],
+    "answer": "Random Access Memory (RAM)",
+    "category": "Memory Systems"
   },
   {
     "id": 4,
-    "question": "In the standard math module, which function is used to calculate the square root of a value?",
-    "options": ["math.sqrt()", "math.root()", "math.sq()", "math.square()"],
-    "answer": "math.sqrt()",
-    "category": "Python Math"
+    "question": "Where are the permanent startup firmware instructions (such as BIOS / UEFI) stored on the motherboard?",
+    "options": ["Read-Only Memory (ROM)", "Cache Memory", "Virtual Memory", "Random Access Memory (RAM)"],
+    "answer": "Read-Only Memory (ROM)",
+    "category": "Memory Systems"
   },
   {
     "id": 5,
-    "question": "In Python, what is the index number of the very first element in any list?",
-    "options": ["0", "1", "-1", "first"],
-    "answer": "0",
-    "category": "Lists & Indexing"
+    "question": "Which level of memory is the fastest and positioned directly inside the CPU to reduce access latency?",
+    "options": ["CPU Cache", "System RAM", "Solid State Drive (SSD)", "Optical Drive"],
+    "answer": "CPU Cache",
+    "category": "Computer Architecture"
   },
   {
     "id": 6,
-    "question": "Which negative index is used in Python to access the very last element of a list?",
-    "options": ["-1", "0", "-0", "-last"],
-    "answer": "-1",
-    "category": "Lists & Indexing"
+    "question": "How many bits are grouped together to form one standard byte of computer data?",
+    "options": ["8 bits", "4 bits", "16 bits", "32 bits"],
+    "answer": "8 bits",
+    "category": "Number Systems"
   },
   {
     "id": 7,
-    "question": "Given the list rpm = [1000, 1500, 2000, 2500], what value does len(rpm) return?",
-    "options": ["4", "3", "5", "2500"],
-    "answer": "4",
-    "category": "Lists & Indexing"
+    "question": "In digital computer architecture, what is a unit of 4 bits called?",
+    "options": ["Nibble", "Byte", "Word", "Block"],
+    "answer": "Nibble",
+    "category": "Number Systems"
   },
   {
     "id": 8,
-    "question": "What is the output of the string slicing operation 'MECHANICAL'[0:4] in Python?",
-    "options": ["'MECH'", "'MECHA'", "'MEC'", "'ECHA'"],
-    "answer": "'MECH'",
-    "category": "Strings"
+    "question": "What is the base (radix) of the hexadecimal number system widely used in computer memory addressing?",
+    "options": ["16", "10", "8", "2"],
+    "answer": "16",
+    "category": "Number Systems"
   },
   {
     "id": 9,
-    "question": "Which prefix letter is placed before quotation marks to create formatted f-strings (e.g. prefix\"Force: {f}\")?",
-    "options": ["f", "s", "p", "v"],
-    "answer": "f",
-    "category": "Strings"
+    "question": "What is the decimal equivalent of the 4-bit binary number 1010?",
+    "options": ["10", "8", "12", "14"],
+    "answer": "10",
+    "category": "Number Systems"
   },
   {
     "id": 10,
-    "question": "Which built-in function converts a numeric string like '120.5' into a floating-point decimal number?",
-    "options": ["float()", "int()", "str()", "dec()"],
-    "answer": "float()",
-    "category": "Data Types"
+    "question": "Which standard character encoding scheme uses 7 bits to represent 128 characters including English letters and digits?",
+    "options": ["ASCII", "Unicode (UTF-32)", "BCD", "EBCDIC"],
+    "answer": "ASCII",
+    "category": "Data Representation"
   },
   {
     "id": 11,
-    "question": "Which comparison operator tests whether two values are NOT equal in Python?",
-    "options": ["!=", "<>", "not==", "!=="],
-    "answer": "!=",
-    "category": "Python Operators"
+    "question": "Which logic gate outputs a binary 1 (HIGH) if and only if its two inputs are different?",
+    "options": ["XOR Gate", "AND Gate", "OR Gate", "NAND Gate"],
+    "answer": "XOR Gate",
+    "category": "Digital Logic"
   },
   {
     "id": 12,
-    "question": "Which logical keyword evaluates to True only when BOTH conditions on either side are True?",
-    "options": ["and", "or", "&", "both"],
-    "answer": "and",
-    "category": "Logical Operators"
+    "question": "Which of the following logic gates is classified as a 'Universal Gate' because any Boolean circuit can be built using it alone?",
+    "options": ["NAND Gate", "AND Gate", "OR Gate", "XOR Gate"],
+    "answer": "NAND Gate",
+    "category": "Digital Logic"
   },
   {
     "id": 13,
-    "question": "Which logical keyword evaluates to True if at least ONE of the two conditions is True?",
-    "options": ["or", "and", "||", "any"],
-    "answer": "or",
-    "category": "Logical Operators"
+    "question": "Which software translator converts an entire high-level program into machine code all at once before execution?",
+    "options": ["Compiler", "Interpreter", "Assembler", "Linker"],
+    "answer": "Compiler",
+    "category": "Software & Languages"
   },
   {
     "id": 14,
-    "question": "What sequence of integers is generated by list(range(0, 10, 2))?",
-    "options": ["[0, 2, 4, 6, 8]", "[0, 2, 4, 6, 8, 10]", "[2, 4, 6, 8, 10]", "[0, 1, 2, 3, 4]"],
-    "answer": "[0, 2, 4, 6, 8]",
-    "category": "Loops & Sequences"
+    "question": "Which language translator analyzes and executes source code line-by-line rather than creating a standalone executable file?",
+    "options": ["Interpreter", "Compiler", "Assembler", "Loader"],
+    "answer": "Interpreter",
+    "category": "Software & Languages"
   },
   {
     "id": 15,
-    "question": "In NumPy (import numpy as np), which function creates an array filled entirely with zeros?",
-    "options": ["np.zeros()", "np.empty_zero()", "np.make_zeros()", "np.nulls()"],
-    "answer": "np.zeros()",
-    "category": "NumPy"
+    "question": "What is the central, foundational component of an Operating System that manages system resources and hardware access?",
+    "options": ["Kernel", "Shell", "File Manager", "Desktop Environment"],
+    "answer": "Kernel",
+    "category": "Operating Systems"
   },
   {
     "id": 16,
-    "question": "Which NumPy function creates an array of evenly spaced numbers over a specified range (e.g. 50 points between 0 and 10)?",
-    "options": ["np.linspace()", "np.stepspace()", "np.range()", "np.divide()"],
-    "answer": "np.linspace()",
-    "category": "NumPy"
+    "question": "Which of the following operating systems is free, open-source, and widely used for servers, cloud platforms, and supercomputers?",
+    "options": ["Linux", "Windows 11", "macOS", "MS-DOS"],
+    "answer": "Linux",
+    "category": "Operating Systems"
   },
   {
     "id": 17,
-    "question": "In Matplotlib (import matplotlib.pyplot as plt), which function creates a 2D line plot of x vs y data?",
-    "options": ["plt.plot(x, y)", "plt.line(x, y)", "plt.draw(x, y)", "plt.graph(x, y)"],
-    "answer": "plt.plot(x, y)",
-    "category": "Matplotlib"
+    "question": "What technique uses secondary storage (such as an SSD or HDD) to simulate extra RAM when physical memory is full?",
+    "options": ["Virtual Memory", "Cache Paging", "Flash Buffer", "Dynamic RAM"],
+    "answer": "Virtual Memory",
+    "category": "Operating Systems"
   },
   {
     "id": 18,
-    "question": "Which command displays the generated plot window in Matplotlib?",
-    "options": ["plt.show()", "plt.render()", "plt.display()", "plt.open()"],
-    "answer": "plt.show()",
-    "category": "Matplotlib"
-  },
-  {
-    "id": 19,
-    "question": "When opening a file with open('data.txt', mode), which mode string is used for reading only?",
-    "options": ["'r'", "'w'", "'a'", "'x'"],
-    "answer": "'r'",
-    "category": "File Handling"
-  },
-  {
-    "id": 20,
-    "question": "Which mode string in open() opens a file for writing, replacing any existing content?",
-    "options": ["'w'", "'r'", "'read'", "'create'"],
-    "answer": "'w'",
-    "category": "File Handling"
-  },
-  {
-    "id": 21,
-    "question": "Which built-in function returns the largest value from a collection of numbers?",
-    "options": ["max()", "largest()", "top()", "maximum()"],
-    "answer": "max()",
-    "category": "Built-in Functions"
-  },
-  {
-    "id": 22,
-    "question": "Which built-in function returns the smallest value from a list of numbers?",
-    "options": ["min()", "lowest()", "bottom()", "minimum()"],
-    "answer": "min()",
-    "category": "Built-in Functions"
-  },
-  {
-    "id": 23,
-    "question": "Which built-in function computes the total sum of all numeric items in a list?",
-    "options": ["sum()", "total()", "add()", "aggregate()"],
-    "answer": "sum()",
-    "category": "Built-in Functions"
-  },
-  {
-    "id": 24,
-    "question": "What is the result of round(3.14159, 2) in Python?",
-    "options": ["3.14", "3.1", "3.142", "3.0"],
-    "answer": "3.14",
-    "category": "Built-in Functions"
-  },
-  {
-    "id": 25,
-    "question": "Which Python keyword acts as an intentional placeholder or 'do-nothing' statement where code is syntactically expected?",
-    "options": ["pass", "skip", "null", "continue"],
-    "answer": "pass",
-    "category": "Python Syntax"
-  },
-  {
-    "id": 26,
-    "question": "Which list method inserts an element at a specified index position in Python?",
-    "options": ["insert()", "push()", "place()", "add()"],
-    "answer": "insert()",
-    "category": "Lists & Methods"
-  },
-  {
-    "id": 27,
-    "question": "Which operator tests whether a specific item exists inside a list, tuple, or string in Python?",
-    "options": ["in", "has", "exists", "contains"],
-    "answer": "in",
-    "category": "Python Operators"
-  },
-  {
-    "id": 28,
-    "question": "Given material = {'name': 'Steel', 'E': 200}, which syntax retrieves the elastic modulus 200?",
-    "options": ["material['E']", "material(E)", "material.value(200)", "material[1]"],
-    "answer": "material['E']",
+    "question": "Which data structure follows the Last-In, First-Out (LIFO) operational principle?",
+    "options": ["Stack", "Queue", "Array", "Linked List"],
+    "answer": "Stack",
     "category": "Data Structures"
   },
   {
+    "id": 19,
+    "question": "Which linear data structure follows the First-In, First-Out (FIFO) principle, where insertions happen at the rear and removals at the front?",
+    "options": ["Queue", "Stack", "Binary Tree", "Hash Map"],
+    "answer": "Queue",
+    "category": "Data Structures"
+  },
+  {
+    "id": 20,
+    "question": "What is a collection of elements of the same data type stored at contiguous memory locations called?",
+    "options": ["Array", "Linked List", "Graph", "Tree"],
+    "answer": "Array",
+    "category": "Data Structures"
+  },
+  {
+    "id": 21,
+    "question": "What is a finite, step-by-step sequence of unambiguous instructions designed to solve a specific problem called?",
+    "options": ["Algorithm", "Pseudocode", "Flowchart", "Syntax"],
+    "answer": "Algorithm",
+    "category": "Algorithms"
+  },
+  {
+    "id": 22,
+    "question": "In standard algorithm flowcharts, which geometric shape represents a conditional decision point (such as True/False)?",
+    "options": ["Diamond", "Rectangle", "Oval", "Parallelogram"],
+    "answer": "Diamond",
+    "category": "Algorithms"
+  },
+  {
+    "id": 23,
+    "question": "What is the total length of an IPv4 address in bits?",
+    "options": ["32 bits", "64 bits", "128 bits", "16 bits"],
+    "answer": "32 bits",
+    "category": "Computer Networks"
+  },
+  {
+    "id": 24,
+    "question": "Which unique hardware address is permanently assigned to a device's Network Interface Card (NIC) by its manufacturer?",
+    "options": ["MAC Address", "IP Address", "Port Number", "Subnet Mask"],
+    "answer": "MAC Address",
+    "category": "Computer Networks"
+  },
+  {
+    "id": 25,
+    "question": "Which network protocol serves as the standard communication foundation for transferring web pages on the World Wide Web?",
+    "options": ["HTTP", "FTP", "SMTP", "SSH"],
+    "answer": "HTTP",
+    "category": "Computer Networks"
+  },
+  {
+    "id": 26,
+    "question": "Which network service translates human-friendly domain names (e.g. google.com) into machine-readable IP addresses?",
+    "options": ["Domain Name System (DNS)", "Dynamic Host Configuration (DHCP)", "Simple Mail Transfer (SMTP)", "File Transfer Protocol (FTP)"],
+    "answer": "Domain Name System (DNS)",
+    "category": "Computer Networks"
+  },
+  {
+    "id": 27,
+    "question": "Which security barrier monitors and filters incoming and outgoing network traffic based on configured security rules?",
+    "options": ["Firewall", "Antivirus", "Proxy Tunnel", "Spam Filter"],
+    "answer": "Firewall",
+    "category": "Cybersecurity"
+  },
+  {
+    "id": 28,
+    "question": "In programming, what is a named memory location used to store data that can be altered during execution called?",
+    "options": ["Variable", "Constant", "Function", "Literal"],
+    "answer": "Variable",
+    "category": "Programming Basics"
+  },
+  {
     "id": 29,
-    "question": "How is the mathematical constant pi (3.14159...) accessed from the Python math module?",
-    "options": ["math.pi", "math.PI()", "math.get_pi()", "math.pi_const"],
-    "answer": "math.pi",
-    "category": "Python Math"
+    "question": "Which type of error occurs when source code violates the grammatical rules of the programming language?",
+    "options": ["Syntax Error", "Logic Error", "Runtime Error", "Semantic Error"],
+    "answer": "Syntax Error",
+    "category": "Programming Basics"
   },
   {
     "id": 30,
-    "question": "What is the evaluated output of the Python expression 3 ** 2?",
-    "options": ["9", "6", "5", "8"],
-    "answer": "9",
-    "category": "Python Operators"
+    "question": "In a relational database table, what column or set of columns uniquely identifies each row record?",
+    "options": ["Primary Key", "Foreign Key", "Index Key", "Candidate Key"],
+    "answer": "Primary Key",
+    "category": "Database Systems"
   }
 ]
