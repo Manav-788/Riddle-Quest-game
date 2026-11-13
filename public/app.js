@@ -41,7 +41,7 @@ const resumeQuizBtn   = document.getElementById("resume-quiz-btn");
 let myName = "";
 let currentRiddleId = null;
 let selectedOption = null;
-let totalQuestions = 30;
+let totalQuestions = 40;
 let answeredCount = 0;
 let tabSwitchCount = 0;
 let lastTabSwitchTime = 0;
@@ -140,7 +140,7 @@ socket.on("game_started", (data) => {
   }
   displayName.textContent = myName;
   displayScore.textContent = data.score || 0;
-  totalQuestions = data.total || 30;
+  totalQuestions = data.total || 40;
   answeredCount = data.answered || data.solved || 0;
   displaySolved.textContent = answeredCount;
   displayTotal.textContent = totalQuestions;
@@ -162,7 +162,7 @@ socket.on("joined", (data) => {
   }
   displayName.textContent = data.name;
   displayScore.textContent = data.score || 0;
-  totalQuestions = data.total || 30;
+  totalQuestions = data.total || 40;
   answeredCount = (data.answered != null) ? data.answered : (data.solved || 0);
   displaySolved.textContent = answeredCount;
   displayTotal.textContent = totalQuestions;

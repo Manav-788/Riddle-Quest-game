@@ -358,5 +358,125 @@
     ],
     "answer": "Presentation Layer",
     "category": "OSI Model"
+  },
+  {
+    "id": 31,
+    "question": "What is an IP (Internet Protocol) address used for in computer networks?",
+    "options": [
+      "Uniquely identifying a device logically on a network for routing data",
+      "Measuring the physical temperature of the CPU",
+      "Storing operating system files permanently on the hard drive",
+      "Providing physical electric power to the network card"
+    ],
+    "answer": "Uniquely identifying a device logically on a network for routing data",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 32,
+    "question": "What is the bit length of a standard IPv4 address compared to an IPv6 address?",
+    "options": [
+      "IPv4 is 32 bits, while IPv6 is 128 bits",
+      "IPv4 is 16 bits, while IPv6 is 32 bits",
+      "IPv4 is 64 bits, while IPv6 is 128 bits",
+      "IPv4 is 128 bits, while IPv6 is 256 bits"
+    ],
+    "answer": "IPv4 is 32 bits, while IPv6 is 128 bits",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 33,
+    "question": "What is a MAC address and what is its standard length in bits?",
+    "options": [
+      "A 48-bit physical hardware address permanently assigned to a NIC",
+      "A 32-bit logical address assigned dynamically by an ISP",
+      "A 128-bit security password used for Wi-Fi encryption",
+      "An 8-bit subnet mask configured on a router"
+    ],
+    "answer": "A 48-bit physical hardware address permanently assigned to a NIC",
+    "category": "MAC Addressing"
+  },
+  {
+    "id": 34,
+    "question": "What is the primary function of the ARP (Address Resolution Protocol) in a local network?",
+    "options": [
+      "Resolving a known IP address to its corresponding physical MAC address",
+      "Encrypting web traffic between a browser and a server",
+      "Assigning dynamic IP addresses automatically to newly joined hosts",
+      "Translating domain names into numerical IP addresses"
+    ],
+    "answer": "Resolving a known IP address to its corresponding physical MAC address",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 35,
+    "question": "Which network protocol automatically assigns IP addresses, subnet masks, and default gateways to devices?",
+    "options": [
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "DNS (Domain Name System)",
+      "HTTP (HyperText Transfer Protocol)",
+      "ARP (Address Resolution Protocol)"
+    ],
+    "answer": "DHCP (Dynamic Host Configuration Protocol)",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 36,
+    "question": "What is the primary role of DNS (Domain Name System) on the Internet?",
+    "options": [
+      "Translating human-friendly domain names (e.g., www.google.com) into numerical IP addresses",
+      "Securing file transfers with password encryption",
+      "Assigning hardware MAC addresses to network switches",
+      "Compressing image files for faster web loading"
+    ],
+    "answer": "Translating human-friendly domain names (e.g., www.google.com) into numerical IP addresses",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 37,
+    "question": "What is the crucial difference between HTTP and HTTPS?",
+    "options": [
+      "HTTPS encrypts data transfers using SSL/TLS, whereas HTTP sends data in unencrypted plain text",
+      "HTTP is for secure banking, while HTTPS is only for public web browsing",
+      "HTTP uses port 443, while HTTPS uses port 80",
+      "HTTP is connection-oriented, while HTTPS is completely connectionless"
+    ],
+    "answer": "HTTPS encrypts data transfers using SSL/TLS, whereas HTTP sends data in unencrypted plain text",
+    "category": "Web Protocols"
+  },
+  {
+    "id": 38,
+    "question": "What standard port numbers are used by default for HTTP and HTTPS web traffic?",
+    "options": [
+      "HTTP uses port 80, and HTTPS uses port 443",
+      "HTTP uses port 21, and HTTPS uses port 22",
+      "HTTP uses port 53, and HTTPS uses port 67",
+      "HTTP uses port 25, and HTTPS uses port 110"
+    ],
+    "answer": "HTTP uses port 80, and HTTPS uses port 443",
+    "category": "Web Protocols"
+  },
+  {
+    "id": 39,
+    "question": "How many layers comprise the standard TCP/IP network model, and what are they called?",
+    "options": [
+      "4 layers: Network Access, Internet, Transport, and Application",
+      "7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application",
+      "3 layers: Hardware, Software, and Network",
+      "5 layers: User, Session, Packet, Frame, and Bit"
+    ],
+    "answer": "4 layers: Network Access, Internet, Transport, and Application",
+    "category": "TCP/IP Model"
+  },
+  {
+    "id": 40,
+    "question": "What is the fundamental difference between TCP and UDP at the Transport layer?",
+    "options": [
+      "TCP is reliable and connection-oriented, while UDP is faster, connectionless, and best-effort",
+      "TCP is connectionless, while UDP guarantees 100% acknowledged packet delivery",
+      "TCP operates at Layer 2, while UDP operates at Layer 7",
+      "TCP is used exclusively for video streaming, while UDP is used for web browsing"
+    ],
+    "answer": "TCP is reliable and connection-oriented, while UDP is faster, connectionless, and best-effort",
+    "category": "TCP/IP Model"
   }
 ]
