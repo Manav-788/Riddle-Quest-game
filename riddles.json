@@ -1,571 +1,19 @@
 [
   {
     "id": 1,
-    "question": "How many total bits make up a standard IPv4 address?",
+    "question": "What is the primary definition of a computer network?",
     "options": [
-      "32 bits",
-      "64 bits",
-      "128 bits",
-      "16 bits"
+      "A collection of autonomous computing devices connected together to share data and resources",
+      "A standalone supercomputer executing multiple background threads without external connections",
+      "A single display monitor connected directly to multiple local video input cables",
+      "A software compiler that translates high-level code into machine instructions"
     ],
-    "answer": "32 bits",
-    "category": "IPv4 Basics"
+    "answer": "A collection of autonomous computing devices connected together to share data and resources",
+    "category": "Network Fundamentals"
   },
   {
     "id": 2,
-    "question": "An IPv4 address is formatted as four decimal octets. How many bits are in each octet?",
-    "options": [
-      "8 bits",
-      "4 bits",
-      "16 bits",
-      "32 bits"
-    ],
-    "answer": "8 bits",
-    "category": "IPv4 Basics"
-  },
-  {
-    "id": 3,
-    "question": "What are the two logical parts that make up an IPv4 address in classful addressing?",
-    "options": [
-      "Network part and Host part",
-      "Header part and Trailer part",
-      "MAC part and IP part",
-      "Physical part and Virtual part"
-    ],
-    "answer": "Network part and Host part",
-    "category": "IPv4 Basics"
-  },
-  {
-    "id": 4,
-    "question": "What was classful addressing originally designed to do in early computer networks?",
-    "options": [
-      "Divide the IPv4 address space into fixed-size network classes",
-      "Dynamically encrypt all packets sent across the Internet",
-      "Eliminate the need for IP routers in a network",
-      "Convert IPv4 addresses automatically to IPv6 addresses"
-    ],
-    "answer": "Divide the IPv4 address space into fixed-size network classes",
-    "category": "IPv4 Basics"
-  },
-  {
-    "id": 5,
-    "question": "In classful addressing, which part of an IPv4 address identifies its class and default network size?",
-    "options": [
-      "The first octet / leading bits",
-      "The last octet",
-      "The middle two octets",
-      "The host portion exclusively"
-    ],
-    "answer": "The first octet / leading bits",
-    "category": "IPv4 Basics"
-  },
-  {
-    "id": 6,
-    "question": "Which of the following is a valid example of an IPv4 address written in dotted-decimal notation?",
-    "options": [
-      "192.168.1.10",
-      "192:168:1:10",
-      "192.168.1",
-      "300.168.1.10"
-    ],
-    "answer": "192.168.1.10",
-    "category": "IPv4 Basics"
-  },
-  {
-    "id": 7,
-    "question": "How many primary classes (Class A through Class E) are defined in IPv4 classful addressing?",
-    "options": [
-      "5 classes",
-      "3 classes",
-      "4 classes",
-      "7 classes"
-    ],
-    "answer": "5 classes",
-    "category": "Address Classes"
-  },
-  {
-    "id": 8,
-    "question": "What is the leading bit pattern in binary for a Class A IPv4 address?",
-    "options": [
-      "0",
-      "10",
-      "110",
-      "1110"
-    ],
-    "answer": "0",
-    "category": "Address Classes"
-  },
-  {
-    "id": 9,
-    "question": "What are the leading bits in binary for a Class B IPv4 address?",
-    "options": [
-      "10",
-      "0",
-      "110",
-      "1110"
-    ],
-    "answer": "10",
-    "category": "Address Classes"
-  },
-  {
-    "id": 10,
-    "question": "What are the leading bits in binary for a Class C IPv4 address?",
-    "options": [
-      "110",
-      "10",
-      "0",
-      "1110"
-    ],
-    "answer": "110",
-    "category": "Address Classes"
-  },
-  {
-    "id": 11,
-    "question": "What are the leading bits in binary for a Class D IPv4 address?",
-    "options": [
-      "1110",
-      "110",
-      "10",
-      "1111"
-    ],
-    "answer": "1110",
-    "category": "Address Classes"
-  },
-  {
-    "id": 12,
-    "question": "What are the leading bits in binary for a Class E IPv4 address?",
-    "options": [
-      "1111",
-      "1110",
-      "110",
-      "10"
-    ],
-    "answer": "1111",
-    "category": "Address Classes"
-  },
-  {
-    "id": 13,
-    "question": "What is the typical purpose and application of Class D IPv4 addresses?",
-    "options": [
-      "Multicast communication",
-      "Large enterprise unicast networks",
-      "Small office unicast networks",
-      "Host loopback testing"
-    ],
-    "answer": "Multicast communication",
-    "category": "Address Classes"
-  },
-  {
-    "id": 14,
-    "question": "What is the designated purpose of Class E IPv4 addresses?",
-    "options": [
-      "Experimental / reserved",
-      "Multicast audio and video streaming",
-      "Standard public website hosting",
-      "Small local commercial networks"
-    ],
-    "answer": "Experimental / reserved",
-    "category": "Address Classes"
-  },
-  {
-    "id": 15,
-    "question": "What is the first-octet decimal range for Class A IPv4 addresses?",
-    "options": [
-      "1–126",
-      "128–191",
-      "192–223",
-      "224–239"
-    ],
-    "answer": "1–126",
-    "category": "Address Classes"
-  },
-  {
-    "id": 16,
-    "question": "What is the first-octet decimal range for Class B IPv4 addresses?",
-    "options": [
-      "128–191",
-      "1–126",
-      "192–223",
-      "224–239"
-    ],
-    "answer": "128–191",
-    "category": "Address Classes"
-  },
-  {
-    "id": 17,
-    "question": "What is the first-octet decimal range for Class C IPv4 addresses?",
-    "options": [
-      "192–223",
-      "128–191",
-      "1–126",
-      "240–255"
-    ],
-    "answer": "192–223",
-    "category": "Address Classes"
-  },
-  {
-    "id": 18,
-    "question": "What is the first-octet decimal range for Class D multicast addresses?",
-    "options": [
-      "224–239",
-      "192–223",
-      "240–255",
-      "128–191"
-    ],
-    "answer": "224–239",
-    "category": "Address Classes"
-  },
-  {
-    "id": 19,
-    "question": "What is the first-octet decimal range for Class E reserved addresses?",
-    "options": [
-      "240–255",
-      "224–239",
-      "192–223",
-      "1–126"
-    ],
-    "answer": "240–255",
-    "category": "Address Classes"
-  },
-  {
-    "id": 20,
-    "question": "Why is the first-octet block 127 (e.g. 127.0.0.1) omitted from standard Class A host networks?",
-    "options": [
-      "It is reserved for internal loopback testing",
-      "It is reserved exclusively for the military",
-      "It represents the global broadcast address",
-      "It is allocated for Class D multicast"
-    ],
-    "answer": "It is reserved for internal loopback testing",
-    "category": "Special & Reserved Addresses"
-  },
-  {
-    "id": 21,
-    "question": "What is the default subnet mask for a Class A IPv4 network?",
-    "options": [
-      "255.0.0.0",
-      "255.255.0.0",
-      "255.255.255.0",
-      "255.255.255.255"
-    ],
-    "answer": "255.0.0.0",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 22,
-    "question": "What is the default subnet mask for a Class B IPv4 network?",
-    "options": [
-      "255.255.0.0",
-      "255.0.0.0",
-      "255.255.255.0",
-      "255.255.255.128"
-    ],
-    "answer": "255.255.0.0",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 23,
-    "question": "What is the default subnet mask for a Class C IPv4 network?",
-    "options": [
-      "255.255.255.0",
-      "255.255.0.0",
-      "255.0.0.0",
-      "255.255.255.240"
-    ],
-    "answer": "255.255.255.0",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 24,
-    "question": "In CIDR prefix notation, how is the default mask of a Class A network (255.0.0.0) represented?",
-    "options": [
-      "/8",
-      "/16",
-      "/24",
-      "/32"
-    ],
-    "answer": "/8",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 25,
-    "question": "In CIDR prefix notation, how is the default mask of a Class B network (255.255.0.0) represented?",
-    "options": [
-      "/16",
-      "/8",
-      "/24",
-      "/20"
-    ],
-    "answer": "/16",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 26,
-    "question": "In CIDR prefix notation, how is the default mask of a Class C network (255.255.255.0) represented?",
-    "options": [
-      "/24",
-      "/16",
-      "/8",
-      "/27"
-    ],
-    "answer": "/24",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 27,
-    "question": "How many network bits and host bits are allocated in a default Class A network?",
-    "options": [
-      "8 network bits and 24 host bits",
-      "16 network bits and 16 host bits",
-      "24 network bits and 8 host bits",
-      "4 network bits and 28 host bits"
-    ],
-    "answer": "8 network bits and 24 host bits",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 28,
-    "question": "How many network bits and host bits are allocated in a default Class B network?",
-    "options": [
-      "16 network bits and 16 host bits",
-      "8 network bits and 24 host bits",
-      "24 network bits and 8 host bits",
-      "12 network bits and 20 host bits"
-    ],
-    "answer": "16 network bits and 16 host bits",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 29,
-    "question": "How many network bits and host bits are allocated in a default Class C network?",
-    "options": [
-      "24 network bits and 8 host bits",
-      "16 network bits and 16 host bits",
-      "8 network bits and 24 host bits",
-      "30 network bits and 2 host bits"
-    ],
-    "answer": "24 network bits and 8 host bits",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 30,
-    "question": "What formula calculates the total number of usable host addresses per IPv4 network?",
-    "options": [
-      "2^(host bits) − 2",
-      "2^(network bits) − 2",
-      "2^(host bits)",
-      "2^(network bits) + 2"
-    ],
-    "answer": "2^(host bits) − 2",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 31,
-    "question": "Why must 2 addresses be subtracted when computing usable hosts on an IPv4 network?",
-    "options": [
-      "One is reserved for the network address and one for the broadcast address",
-      "One is reserved for the router and one for the DNS server",
-      "Two addresses are reserved for the loopback interface",
-      "Two addresses are reserved for multicast streaming"
-    ],
-    "answer": "One is reserved for the network address and one for the broadcast address",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 32,
-    "question": "How many usable host addresses are available in a single Class C network (2^8 − 2)?",
-    "options": [
-      "254 hosts",
-      "65,534 hosts",
-      "16,777,214 hosts",
-      "512 hosts"
-    ],
-    "answer": "254 hosts",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 33,
-    "question": "How many usable host addresses are available in a single Class B network (2^16 − 2)?",
-    "options": [
-      "65,534 hosts",
-      "254 hosts",
-      "16,777,214 hosts",
-      "32,768 hosts"
-    ],
-    "answer": "65,534 hosts",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 34,
-    "question": "How many usable host addresses are available in a single Class A network (2^24 − 2)?",
-    "options": [
-      "16,777,214 hosts",
-      "65,534 hosts",
-      "254 hosts",
-      "1,048,576 hosts"
-    ],
-    "answer": "16,777,214 hosts",
-    "category": "Default Masks & Network Sizes"
-  },
-  {
-    "id": 35,
-    "question": "Which address class does the IP address 172.16.5.4 belong to?",
-    "options": [
-      "Class B",
-      "Class A",
-      "Class C",
-      "Class D"
-    ],
-    "answer": "Class B",
-    "category": "Worked Examples"
-  },
-  {
-    "id": 36,
-    "question": "For the Class C address 192.168.10.25, what are the network address and host ID under its default mask?",
-    "options": [
-      "Network: 192.168.10.0, Host ID: 25",
-      "Network: 192.168.0.0, Host ID: 10.25",
-      "Network: 192.0.0.0, Host ID: 168.10.25",
-      "Network: 192.168.10.255, Host ID: 0"
-    ],
-    "answer": "Network: 192.168.10.0, Host ID: 25",
-    "category": "Worked Examples"
-  },
-  {
-    "id": 37,
-    "question": "Which of the following IP addresses belongs to Class A?",
-    "options": [
-      "10.50.120.7",
-      "172.20.1.1",
-      "192.168.1.1",
-      "224.0.0.5"
-    ],
-    "answer": "10.50.120.7",
-    "category": "Worked Examples"
-  },
-  {
-    "id": 38,
-    "question": "What was the primary limitation of classful addressing that led to the adoption of CIDR?",
-    "options": [
-      "Fixed network sizes caused massive waste of unallocated IP addresses",
-      "It could only transmit data over copper cables rather than fiber",
-      "It restricted networks from using switches or routers",
-      "It prevented computers from having alphanumeric hostnames"
-    ],
-    "answer": "Fixed network sizes caused massive waste of unallocated IP addresses",
-    "category": "Limitations & CIDR"
-  },
-  {
-    "id": 39,
-    "question": "What does the networking acronym CIDR stand for?",
-    "options": [
-      "Classless Inter-Domain Routing",
-      "Computer Internet Domain Routing",
-      "Central Integrated Data Router",
-      "Classful Interior Dynamic Routing"
-    ],
-    "answer": "Classless Inter-Domain Routing",
-    "category": "Limitations & CIDR"
-  },
-  {
-    "id": 40,
-    "question": "What is the key takeaway distinguishing classful addressing from modern CIDR?",
-    "options": [
-      "Classful uses fixed classes; CIDR uses flexible, variable-length prefixes",
-      "Classful is 64-bit; CIDR is 32-bit",
-      "Classful is wireless; CIDR is wired",
-      "Classful is hardware-based; CIDR is software-only"
-    ],
-    "answer": "Classful uses fixed classes; CIDR uses flexible, variable-length prefixes",
-    "category": "Limitations & CIDR"
-  },
-  {
-    "id": 41,
-    "question": "Which software tool introduced in the workshop provides network simulation, device configuration, and packet analysis?",
-    "options": [
-      "Cisco Packet Tracer",
-      "Adobe Illustrator",
-      "Visual Studio Code",
-      "VirtualBox Manager"
-    ],
-    "answer": "Cisco Packet Tracer",
-    "category": "Simulation & Tools"
-  },
-  {
-    "id": 42,
-    "question": "According to networking foundations, what is a computer network?",
-    "options": [
-      "A group of connected devices that exchange data and share resources using agreed protocols",
-      "A single isolated personal workstation operating completely offline",
-      "A collection of external monitors plugged into the same power strip",
-      "A software program designed specifically for text document formatting"
-    ],
-    "answer": "A group of connected devices that exchange data and share resources using agreed protocols",
-    "category": "Network Foundations"
-  },
-  {
-    "id": 43,
-    "question": "In computer networks, what term refers to the agreed-upon rules used by connected devices to exchange data?",
-    "options": [
-      "Protocols",
-      "Compilers",
-      "Algorithms",
-      "Topologies"
-    ],
-    "answer": "Protocols",
-    "category": "Network Foundations"
-  },
-  {
-    "id": 44,
-    "question": "Which three core capabilities represent the primary functions and purposes of computer networks?",
-    "options": [
-      "Communicate, Share, and Connect",
-      "Calculate, Compile, and Execute",
-      "Encrypt, Compress, and Delete",
-      "Power, Cool, and Overclock"
-    ],
-    "answer": "Communicate, Share, and Connect",
-    "category": "Network Foundations"
-  },
-  {
-    "id": 45,
-    "question": "Connecting a smartphone to Bluetooth earbuds is an example of which network classification?",
-    "options": [
-      "PAN (Personal Area Network)",
-      "WAN (Wide Area Network)",
-      "MAN (Metropolitan Area Network)",
-      "SAN (Storage Area Network)"
-    ],
-    "answer": "PAN (Personal Area Network)",
-    "category": "Network Types"
-  },
-  {
-    "id": 46,
-    "question": "A network established within a college lab, classroom, or office building is classified as a:",
-    "options": [
-      "LAN (Local Area Network)",
-      "MAN (Metropolitan Area Network)",
-      "WAN (Wide Area Network)",
-      "PAN (Personal Area Network)"
-    ],
-    "answer": "LAN (Local Area Network)",
-    "category": "Network Types"
-  },
-  {
-    "id": 47,
-    "question": "Which type of network spans a city-wide area such as a municipal metro network?",
-    "options": [
-      "MAN (Metropolitan Area Network)",
-      "LAN (Local Area Network)",
-      "PAN (Personal Area Network)",
-      "WLAN (Wireless Local Area Network)"
-    ],
-    "answer": "MAN (Metropolitan Area Network)",
-    "category": "Network Types"
-  },
-  {
-    "id": 48,
-    "question": "Which network type spans across broad geographical regions, connecting cities, nations, or the entire globe?",
+    "question": "Which network classification spans broad geographic distances such as across states, nations, or globally?",
     "options": [
       "WAN (Wide Area Network)",
       "LAN (Local Area Network)",
@@ -576,147 +24,339 @@
     "category": "Network Types"
   },
   {
-    "id": 49,
-    "question": "In which network topology do all endpoint devices connect directly to a central switch?",
+    "id": 3,
+    "question": "In which network topology are all host devices connected directly to a central node such as a switch or hub?",
     "options": [
       "Star Topology",
       "Bus Topology",
-      "Mesh Topology",
-      "Ring Topology"
+      "Ring Topology",
+      "Mesh Topology"
     ],
     "answer": "Star Topology",
     "category": "Network Topologies"
   },
   {
-    "id": 50,
-    "question": "In which network topology do all connected devices share a single common backbone cable?",
+    "id": 4,
+    "question": "Which network topology connects every node to every other node, providing the highest level of redundancy and fault tolerance?",
     "options": [
-      "Bus Topology",
-      "Star Topology",
-      "Mesh Topology",
-      "Hybrid Topology"
+      "Full Mesh Topology",
+      "Linear Bus Topology",
+      "Single Ring Topology",
+      "Hierarchical Star Topology"
     ],
-    "answer": "Bus Topology",
+    "answer": "Full Mesh Topology",
     "category": "Network Topologies"
   },
   {
-    "id": 51,
-    "question": "Which network topology features multiple interconnected links to provide alternate redundant paths if a link fails?",
+    "id": 5,
+    "question": "In data communications, which transmission mode allows simultaneous, two-way data transmission between two communicating devices?",
     "options": [
-      "Mesh Topology",
-      "Bus Topology",
-      "Star Topology",
-      "Tree Topology"
+      "Full-duplex",
+      "Half-duplex",
+      "Simplex",
+      "Multiplex"
     ],
-    "answer": "Mesh Topology",
-    "category": "Network Topologies"
+    "answer": "Full-duplex",
+    "category": "Transmission Modes"
   },
   {
-    "id": 52,
-    "question": "What is a network topology called when it combines two or more different topologies together?",
+    "id": 6,
+    "question": "How many layers comprise the standard Open Systems Interconnection (OSI) reference model?",
     "options": [
-      "Hybrid Topology",
-      "Composite Topology",
-      "Dual Topology",
-      "Complex Topology"
+      "7",
+      "4",
+      "5",
+      "6"
     ],
-    "answer": "Hybrid Topology",
-    "category": "Network Topologies"
+    "answer": "7",
+    "category": "OSI Model"
   },
   {
-    "id": 53,
-    "question": "Which hardware device regenerates incoming electrical or optical signals to extend transmission distance?",
+    "id": 7,
+    "question": "What is the Protocol Data Unit (PDU) called at the Data Link layer (Layer 2) of the OSI model?",
     "options": [
-      "Repeater",
-      "Firewall",
-      "Bridge",
-      "Router"
+      "Frame",
+      "Packet",
+      "Segment",
+      "Bit"
     ],
-    "answer": "Repeater",
-    "category": "Networking Devices"
+    "answer": "Frame",
+    "category": "OSI Model"
   },
   {
-    "id": 54,
-    "question": "Which legacy networking device operates as a multiport repeater, sending incoming data out to all ports?",
+    "id": 8,
+    "question": "Which layer of the OSI model is responsible for logical addressing (IP addresses) and path determination (routing)?",
     "options": [
-      "Hub",
+      "Network Layer",
+      "Transport Layer",
+      "Data Link Layer",
+      "Session Layer"
+    ],
+    "answer": "Network Layer",
+    "category": "OSI Model"
+  },
+  {
+    "id": 9,
+    "question": "Which OSI layer provides reliable end-to-end communication, segmentation, flow control, and error recovery?",
+    "options": [
+      "Transport Layer",
+      "Physical Layer",
+      "Presentation Layer",
+      "Network Layer"
+    ],
+    "answer": "Transport Layer",
+    "category": "OSI Model"
+  },
+  {
+    "id": 10,
+    "question": "Which layer of the OSI reference model handles data formatting, character code conversion, data compression, and encryption?",
+    "options": [
+      "Presentation Layer",
+      "Application Layer",
+      "Session Layer",
+      "Transport Layer"
+    ],
+    "answer": "Presentation Layer",
+    "category": "OSI Model"
+  },
+  {
+    "id": 11,
+    "question": "How many layers are defined in the standard TCP/IP architecture model?",
+    "options": [
+      "4",
+      "7",
+      "5",
+      "3"
+    ],
+    "answer": "4",
+    "category": "TCP/IP Model"
+  },
+  {
+    "id": 12,
+    "question": "What is the primary functional difference between Transmission Control Protocol (TCP) and User Datagram Protocol (UDP)?",
+    "options": [
+      "TCP is connection-oriented and reliable, while UDP is connectionless and unacknowledged",
+      "UDP provides guaranteed delivery with acknowledgments, while TCP drops lost packets",
+      "TCP operates only at the Network layer, while UDP operates at the Physical layer",
+      "UDP encrypts all payload data automatically, while TCP sends plaintext data"
+    ],
+    "answer": "TCP is connection-oriented and reliable, while UDP is connectionless and unacknowledged",
+    "category": "Transport Layer"
+  },
+  {
+    "id": 13,
+    "question": "What is the Protocol Data Unit (PDU) at the Transport layer when using TCP called?",
+    "options": [
+      "Segment",
+      "Packet",
+      "Frame",
+      "Datagram"
+    ],
+    "answer": "Segment",
+    "category": "Transport Layer"
+  },
+  {
+    "id": 14,
+    "question": "What is the total bit length of a standard IPv4 address?",
+    "options": [
+      "32 bits",
+      "64 bits",
+      "128 bits",
+      "16 bits"
+    ],
+    "answer": "32 bits",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 15,
+    "question": "How many bits constitute a standard IPv6 address?",
+    "options": [
+      "128 bits",
+      "32 bits",
+      "64 bits",
+      "256 bits"
+    ],
+    "answer": "128 bits",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 16,
+    "question": "What is the default subnet mask for a standard Class C IPv4 network?",
+    "options": [
+      "255.255.255.0",
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.255"
+    ],
+    "answer": "255.255.255.0",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 17,
+    "question": "Which special IPv4 address range is designated for host loopback testing and diagnostics?",
+    "options": [
+      "127.0.0.0 to 127.255.255.255",
+      "10.0.0.0 to 10.255.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "169.254.0.0 to 169.254.255.255"
+    ],
+    "answer": "127.0.0.0 to 127.255.255.255",
+    "category": "IP Addressing"
+  },
+  {
+    "id": 18,
+    "question": "What is the length of a hardware MAC (Media Access Control) address?",
+    "options": [
+      "48 bits (6 bytes)",
+      "32 bits (4 bytes)",
+      "64 bits (8 bytes)",
+      "128 bits (16 bytes)"
+    ],
+    "answer": "48 bits (6 bytes)",
+    "category": "Data Link Layer"
+  },
+  {
+    "id": 19,
+    "question": "What is the primary function of the Address Resolution Protocol (ARP)?",
+    "options": [
+      "To map a known IP address to a physical MAC address on a local network",
+      "To map a human-readable domain name to an IP address",
+      "To dynamically assign IP addresses to new network hosts",
+      "To route IP packets between distinct autonomous systems"
+    ],
+    "answer": "To map a known IP address to a physical MAC address on a local network",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 20,
+    "question": "Which network device operates at Layer 2 to divide a network into multiple collision domains while maintaining a single broadcast domain?",
+    "options": [
       "Layer-2 Switch",
-      "Router",
-      "Bridge"
-    ],
-    "answer": "Hub",
-    "category": "Networking Devices"
-  },
-  {
-    "id": 55,
-    "question": "Which networking device connects separate LAN segments and filters traffic based on MAC addresses?",
-    "options": [
-      "Bridge",
-      "Repeater",
-      "Modem",
-      "Hub"
-    ],
-    "answer": "Bridge",
-    "category": "Networking Devices"
-  },
-  {
-    "id": 56,
-    "question": "Which device forwards Ethernet frames within a local network using physical MAC addresses?",
-    "options": [
-      "Layer-2 Switch",
-      "Repeater",
       "Hub",
+      "Repeater",
       "Modem"
     ],
     "answer": "Layer-2 Switch",
     "category": "Networking Devices"
   },
   {
-    "id": 57,
-    "question": "According to the golden rule of networking devices, what is the key distinction between a switch and a router?",
+    "id": 21,
+    "question": "Why is an Ethernet switch more efficient than an Ethernet hub?",
     "options": [
-      "A switch connects devices within a LAN; a router connects different networks",
-      "A router connects devices within a LAN; a switch connects different networks",
-      "A hub connects devices within a LAN; a repeater connects different networks",
-      "A bridge connects devices within a LAN; a switch connects different networks"
+      "A switch inspects MAC addresses to forward frames only to the designated recipient port",
+      "A switch broadcasts incoming signals to all connected physical ports simultaneously",
+      "A switch eliminates the need for physical cabling by using radio waves",
+      "A switch operates exclusively at the Physical layer without storing frames"
     ],
-    "answer": "A switch connects devices within a LAN; a router connects different networks",
+    "answer": "A switch inspects MAC addresses to forward frames only to the designated recipient port",
     "category": "Networking Devices"
   },
   {
-    "id": 58,
-    "question": "Which security device monitors and allows or blocks network traffic using security rules?",
+    "id": 22,
+    "question": "Which networking device inspects IP addresses to forward packets across different logical networks?",
     "options": [
-      "Firewall",
+      "Router",
       "Repeater",
       "Hub",
       "Bridge"
     ],
-    "answer": "Firewall",
+    "answer": "Router",
     "category": "Networking Devices"
   },
   {
-    "id": 59,
-    "question": "What is the primary conceptual distinction between the OSI model and the TCP/IP model?",
+    "id": 23,
+    "question": "At which layer of the OSI model does a network repeater operate to regenerate weak signals?",
     "options": [
-      "OSI is a 7-layer reference model, while TCP/IP is the practical architecture used by the Internet",
-      "OSI is only for wireless networks, while TCP/IP is only for wired networks",
-      "OSI has 4 layers, while TCP/IP has 7 layers",
-      "OSI is hardware-based, while TCP/IP is completely software-independent"
+      "Physical Layer",
+      "Data Link Layer",
+      "Network Layer",
+      "Transport Layer"
     ],
-    "answer": "OSI is a 7-layer reference model, while TCP/IP is the practical architecture used by the Internet",
-    "category": "Network Models"
+    "answer": "Physical Layer",
+    "category": "Networking Devices"
   },
   {
-    "id": 60,
-    "question": "In the TCP/IP model, which protocols operate at the Internet layer for addressing, routing, and diagnostics?",
+    "id": 24,
+    "question": "What is the primary role of a network firewall?",
     "options": [
-      "IP and ICMP",
-      "HTTP and HTTPS",
-      "TCP and UDP",
-      "Ethernet and Wi-Fi"
+      "To monitor and control incoming and outgoing network traffic according to security rules",
+      "To boost wireless signal strength over long physical distances",
+      "To convert digital computer signals into analog telephone frequencies",
+      "To provide physical electrical power to connected wireless access points"
     ],
-    "answer": "IP and ICMP",
-    "category": "TCP/IP Model"
+    "answer": "To monitor and control incoming and outgoing network traffic according to security rules",
+    "category": "Network Security"
+  },
+  {
+    "id": 25,
+    "question": "Which protocol translates human-friendly domain names (e.g., www.example.com) into numerical IP addresses?",
+    "options": [
+      "DNS (Domain Name System)",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "FTP (File Transfer Protocol)",
+      "SNMP (Simple Network Management Protocol)"
+    ],
+    "answer": "DNS (Domain Name System)",
+    "category": "Application Protocols"
+  },
+  {
+    "id": 26,
+    "question": "Which network protocol automatically assigns IP configurations (IP address, subnet mask, default gateway) to client devices?",
+    "options": [
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "DNS (Domain Name System)",
+      "ARP (Address Resolution Protocol)",
+      "ICMP (Internet Control Message Protocol)"
+    ],
+    "answer": "DHCP (Dynamic Host Configuration Protocol)",
+    "category": "Application Protocols"
+  },
+  {
+    "id": 27,
+    "question": "Which standard transport-layer port is assigned by default to HTTPS (Hypertext Transfer Protocol Secure)?",
+    "options": [
+      "443",
+      "80",
+      "21",
+      "25"
+    ],
+    "answer": "443",
+    "category": "Application Protocols"
+  },
+  {
+    "id": 28,
+    "question": "Which standard port number does the Secure Shell (SSH) protocol use for secure remote management?",
+    "options": [
+      "22",
+      "23",
+      "53",
+      "110"
+    ],
+    "answer": "22",
+    "category": "Application Protocols"
+  },
+  {
+    "id": 29,
+    "question": "In computer networking, which metric measures the actual amount of data successfully transferred across a network per unit of time?",
+    "options": [
+      "Throughput",
+      "Theoretical Bandwidth",
+      "Latency",
+      "Jitter"
+    ],
+    "answer": "Throughput",
+    "category": "Network Performance"
+  },
+  {
+    "id": 30,
+    "question": "Which protocol does the diagnostic utility 'ping' utilize to verify network connectivity between two endpoints?",
+    "options": [
+      "ICMP (Internet Control Message Protocol)",
+      "IGMP (Internet Group Management Protocol)",
+      "BGP (Border Gateway Protocol)",
+      "SMTP (Simple Mail Transfer Protocol)"
+    ],
+    "answer": "ICMP (Internet Control Message Protocol)",
+    "category": "Network Utilities"
   }
 ]
