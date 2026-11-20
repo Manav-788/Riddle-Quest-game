@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "question": "What is the primary definition of a computer network?",
+    "question": "A network security architect is hired by a newly established startup to design an IT infrastructure that allows employees across different departments to share database servers, printers, and collaborative files using standardized communication protocols. What fundamental concept does this interconnected system represent?",
     "options": [
-      "A collection of autonomous computing devices connected together to share data and resources",
-      "A standalone supercomputer executing multiple background threads without external connections",
-      "A single display monitor connected directly to multiple local video input cables",
-      "A software compiler that translates high-level code into machine instructions"
+      "A computer network",
+      "A standalone multiprocessor mainframe",
+      "A peripheral bus extension",
+      "A compiled software microcode engine"
     ],
-    "answer": "A collection of autonomous computing devices connected together to share data and resources",
+    "answer": "A computer network",
     "category": "Network Fundamentals"
   },
   {
     "id": 2,
-    "question": "Which network classification spans broad geographic distances such as across states, nations, or globally?",
+    "question": "An ethical hacker is tasked with assessing the security posture of an international logistics corporation that links branch offices across Europe, Asia, and North America. Which network classification best describes this enterprise-wide infrastructure?",
     "options": [
       "WAN (Wide Area Network)",
       "LAN (Local Area Network)",
@@ -25,55 +25,43 @@
   },
   {
     "id": 3,
-    "question": "In which network topology are all host devices connected directly to a central node such as a switch or hub?",
-    "options": [
-      "Star Topology",
-      "Bus Topology",
-      "Ring Topology",
-      "Mesh Topology"
-    ],
-    "answer": "Star Topology",
-    "category": "Network Topologies"
-  },
-  {
-    "id": 4,
-    "question": "Which network topology connects every node to every other node, providing the highest level of redundancy and fault tolerance?",
+    "question": "A mission-critical financial clearinghouse requires a network topology where every core database server is directly interconnected to every other server via dedicated links, ensuring zero single points of failure and alternate data paths if any line is severed. Which topology should the engineer implement?",
     "options": [
       "Full Mesh Topology",
       "Linear Bus Topology",
       "Single Ring Topology",
-      "Hierarchical Star Topology"
+      "Star Topology"
     ],
     "answer": "Full Mesh Topology",
     "category": "Network Topologies"
   },
   {
-    "id": 5,
-    "question": "In data communications, which transmission mode allows simultaneous, two-way data transmission between two communicating devices?",
+    "id": 4,
+    "question": "A security engineer is inspecting a gigabit Ethernet switch uplink connecting two core data centers. Both endpoints can simultaneously transmit and receive high-volume traffic without channel collisions. Which transmission mode is being utilized?",
     "options": [
       "Full-duplex",
       "Half-duplex",
       "Simplex",
-      "Multiplex"
+      "Asynchronous multiplex"
     ],
     "answer": "Full-duplex",
-    "category": "Transmission Modes"
+    "category": "Network Fundamentals"
   },
   {
-    "id": 6,
-    "question": "How many layers comprise the standard Open Systems Interconnection (OSI) reference model?",
+    "id": 5,
+    "question": "During a penetration testing engagement, an ethical hacker describes an attack by mapping their findings from the physical cabling and transmission signals up to the user-facing web browser interface. According to the ISO/IEC 7498-1 standard, into how many hierarchical layers is this reference model partitioned?",
     "options": [
-      "7",
-      "4",
-      "5",
-      "6"
+      "7 layers",
+      "4 layers",
+      "5 layers",
+      "6 layers"
     ],
-    "answer": "7",
+    "answer": "7 layers",
     "category": "OSI Model"
   },
   {
-    "id": 7,
-    "question": "What is the Protocol Data Unit (PDU) called at the Data Link layer (Layer 2) of the OSI model?",
+    "id": 6,
+    "question": "While performing raw packet capture analysis on an Ethernet local area network using Wireshark, a security analyst examines data encapsulated at Layer 2 containing source and destination MAC addresses and a Frame Check Sequence (FCS). What is this Layer 2 Protocol Data Unit (PDU) called?",
     "options": [
       "Frame",
       "Packet",
@@ -84,8 +72,8 @@
     "category": "OSI Model"
   },
   {
-    "id": 8,
-    "question": "Which layer of the OSI model is responsible for logical addressing (IP addresses) and path determination (routing)?",
+    "id": 7,
+    "question": "A penetration tester attempts to discover path traversal anomalies between two distinct corporate branches. At which layer of the OSI model does the router evaluate logical IP addresses and consult its routing table to forward the packets?",
     "options": [
       "Network Layer",
       "Transport Layer",
@@ -96,116 +84,56 @@
     "category": "OSI Model"
   },
   {
-    "id": 9,
-    "question": "Which OSI layer provides reliable end-to-end communication, segmentation, flow control, and error recovery?",
+    "id": 8,
+    "question": "A cybersecurity consultant is reviewing corporate network firewall configurations designed around the DoD/DARPA reference architecture. How many architectural layers compose the standard TCP/IP model?",
     "options": [
-      "Transport Layer",
-      "Physical Layer",
-      "Presentation Layer",
-      "Network Layer"
+      "4 layers: Network Access, Internet, Transport, Application",
+      "7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application",
+      "5 layers: Physical, Internet, Transport, Session, Application",
+      "3 layers: Hardware, Network, User"
     ],
-    "answer": "Transport Layer",
-    "category": "OSI Model"
-  },
-  {
-    "id": 10,
-    "question": "Which layer of the OSI reference model handles data formatting, character code conversion, data compression, and encryption?",
-    "options": [
-      "Presentation Layer",
-      "Application Layer",
-      "Session Layer",
-      "Transport Layer"
-    ],
-    "answer": "Presentation Layer",
-    "category": "OSI Model"
-  },
-  {
-    "id": 11,
-    "question": "How many layers are defined in the standard TCP/IP architecture model?",
-    "options": [
-      "4",
-      "7",
-      "5",
-      "3"
-    ],
-    "answer": "4",
+    "answer": "4 layers: Network Access, Internet, Transport, Application",
     "category": "TCP/IP Model"
   },
   {
+    "id": 9,
+    "question": "A security administrator is evaluating two internal streaming services: one requires reliable database synchronization with zero packet loss, while the other broadcasts live VoIP conferencing where minor dropouts are acceptable in exchange for low latency. Which protocol pair matches these requirements?",
+    "options": [
+      "TCP for reliable connection-oriented delivery, and UDP for lightweight connectionless streaming",
+      "UDP for reliable connection-oriented delivery, and TCP for lightweight connectionless streaming",
+      "TCP exclusively at the Data Link layer, and UDP exclusively at the Physical layer",
+      "UDP for automatic payload encryption, and TCP for cleartext transmissions"
+    ],
+    "answer": "TCP for reliable connection-oriented delivery, and UDP for lightweight connectionless streaming",
+    "category": "TCP/IP Model"
+  },
+  {
+    "id": 10,
+    "question": "A systems administrator notices that network eavesdropping with a simple sniffer was previously trivial because an old hub broadcast all frames to every workstation. After replacing the hub with a modern networking device, frames are forwarded strictly to the specific port matching the destination MAC address. What device was installed?",
+    "options": [
+      "Layer-2 Switch",
+      "Passive Hub",
+      "Signal Repeater",
+      "Analog Gateway"
+    ],
+    "answer": "Layer-2 Switch",
+    "category": "Network Devices"
+  },
+  {
+    "id": 11,
+    "question": "An organization is migrating its perimeter infrastructure to overcome address space limitations. The security engineer compares the legacy 32-bit dotted-decimal addressing format with the newer hexadecimal format. How many total bits comprise an IPv6 address compared to an IPv4 address?",
+    "options": [
+      "IPv6 is 128 bits, whereas IPv4 is 32 bits",
+      "IPv6 is 64 bits, whereas IPv4 is 32 bits",
+      "IPv6 is 256 bits, whereas IPv4 is 64 bits",
+      "IPv6 is 128 bits, whereas IPv4 is 64 bits"
+    ],
+    "answer": "IPv6 is 128 bits, whereas IPv4 is 32 bits",
+    "category": "Network Addressing"
+  },
+  {
     "id": 12,
-    "question": "What is the primary functional difference between Transmission Control Protocol (TCP) and User Datagram Protocol (UDP)?",
-    "options": [
-      "TCP is connection-oriented and reliable, while UDP is connectionless and unacknowledged",
-      "UDP provides guaranteed delivery with acknowledgments, while TCP drops lost packets",
-      "TCP operates only at the Network layer, while UDP operates at the Physical layer",
-      "UDP encrypts all payload data automatically, while TCP sends plaintext data"
-    ],
-    "answer": "TCP is connection-oriented and reliable, while UDP is connectionless and unacknowledged",
-    "category": "Transport Layer"
-  },
-  {
-    "id": 13,
-    "question": "What is the Protocol Data Unit (PDU) at the Transport layer when using TCP called?",
-    "options": [
-      "Segment",
-      "Packet",
-      "Frame",
-      "Datagram"
-    ],
-    "answer": "Segment",
-    "category": "Transport Layer"
-  },
-  {
-    "id": 14,
-    "question": "What is the total bit length of a standard IPv4 address?",
-    "options": [
-      "32 bits",
-      "64 bits",
-      "128 bits",
-      "16 bits"
-    ],
-    "answer": "32 bits",
-    "category": "IP Addressing"
-  },
-  {
-    "id": 15,
-    "question": "How many bits constitute a standard IPv6 address?",
-    "options": [
-      "128 bits",
-      "32 bits",
-      "64 bits",
-      "256 bits"
-    ],
-    "answer": "128 bits",
-    "category": "IP Addressing"
-  },
-  {
-    "id": 16,
-    "question": "What is the default subnet mask for a standard Class C IPv4 network?",
-    "options": [
-      "255.255.255.0",
-      "255.0.0.0",
-      "255.255.0.0",
-      "255.255.255.255"
-    ],
-    "answer": "255.255.255.0",
-    "category": "IP Addressing"
-  },
-  {
-    "id": 17,
-    "question": "Which special IPv4 address range is designated for host loopback testing and diagnostics?",
-    "options": [
-      "127.0.0.0 to 127.255.255.255",
-      "10.0.0.0 to 10.255.255.255",
-      "192.168.0.0 to 192.168.255.255",
-      "169.254.0.0 to 169.254.255.255"
-    ],
-    "answer": "127.0.0.0 to 127.255.255.255",
-    "category": "IP Addressing"
-  },
-  {
-    "id": 18,
-    "question": "What is the length of a hardware MAC (Media Access Control) address?",
+    "question": "During a physical security assessment, an ethical hacker spots a label on a victim network interface card showing '00:1A:2B:3C:4D:5E'. The tester notes this unique hardware identifier into their report. What is the standard bit length of this MAC address?",
     "options": [
       "48 bits (6 bytes)",
       "32 bits (4 bytes)",
@@ -213,150 +141,462 @@
       "128 bits (16 bytes)"
     ],
     "answer": "48 bits (6 bytes)",
-    "category": "Data Link Layer"
+    "category": "Network Addressing"
+  },
+  {
+    "id": 13,
+    "question": "A host on an enterprise subnet needs to deliver an IP packet to a local file server whose IP address (192.168.1.50) is known, but whose physical hardware address is missing from the host local cache. Which protocol broadcasts a request to discover the destination MAC address?",
+    "options": [
+      "ARP (Address Resolution Protocol)",
+      "DNS (Domain Name System)",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "BGP (Border Gateway Protocol)"
+    ],
+    "answer": "ARP (Address Resolution Protocol)",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 14,
+    "question": "A penetration tester connects a rogue laptop to a corporate Ethernet jack and observes the automated network configuration handshake across UDP ports 67 and 68. What is the standard 4-step message sequence utilized by the client and DHCP server?",
+    "options": [
+      "Discover, Offer, Request, Acknowledge",
+      "Detect, Obtain, Renew, Accept",
+      "Demand, Order, Reserve, Allocate",
+      "Declare, Option, Receive, Authorize"
+    ],
+    "answer": "Discover, Offer, Request, Acknowledge",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 15,
+    "question": "While examining egress firewall logs, a security analyst spots anomalous outbound queries over UDP port 53 resolving external hostnames into numerical IP addresses. Which application-layer protocol is being observed?",
+    "options": [
+      "DNS (Domain Name System)",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "SNMP (Simple Network Management Protocol)",
+      "FTP (File Transfer Protocol)"
+    ],
+    "answer": "DNS (Domain Name System)",
+    "category": "Network Protocols"
+  },
+  {
+    "id": 16,
+    "question": "A network administrator designs a new departmental subnet using the formula 2^h - 2 to calculate the number of assignable host IP addresses. Why does the administrator subtract 2 from the total mathematical capacity?",
+    "options": [
+      "The first address represents the Network ID and the last address represents the Directed Broadcast Address",
+      "One address is reserved for the default gateway router and one for the primary DNS server",
+      "One address is reserved for the DHCP server and one for the hardware firewall interface",
+      "One address is reserved for the loopback interface and one for the switch management port"
+    ],
+    "answer": "The first address represents the Network ID and the last address represents the Directed Broadcast Address",
+    "category": "Subnetting"
+  },
+  {
+    "id": 17,
+    "question": "An engineer configures a perimeter router interface with the subnet allocation 192.168.10.0/26. How many usable host IP addresses are available on this subnet, and what is its dotted-decimal subnet mask?",
+    "options": [
+      "62 usable hosts with a subnet mask of 255.255.255.192",
+      "64 usable hosts with a subnet mask of 255.255.255.128",
+      "30 usable hosts with a subnet mask of 255.255.255.224",
+      "126 usable hosts with a subnet mask of 255.255.255.192"
+    ],
+    "answer": "62 usable hosts with a subnet mask of 255.255.255.192",
+    "category": "Subnetting"
+  },
+  {
+    "id": 18,
+    "question": "During an eavesdropping assessment on open Wi-Fi, an ethical hacker captures web traffic directed to TCP port 443. The payload data cannot be viewed in plaintext because TLS/SSL encryption protects session confidentiality and integrity. What protocol is being analyzed?",
+    "options": [
+      "HTTPS (Hypertext Transfer Protocol Secure)",
+      "HTTP (Hypertext Transfer Protocol)",
+      "FTP (File Transfer Protocol)",
+      "Telnet (Teletype Network)"
+    ],
+    "answer": "HTTPS (Hypertext Transfer Protocol Secure)",
+    "category": "Network Protocols"
   },
   {
     "id": 19,
-    "question": "What is the primary function of the Address Resolution Protocol (ARP)?",
+    "question": "A systems administrator deprecates legacy Telnet on internal Linux management servers due to its cleartext credential vulnerabilities and mandates an encrypted replacement protocol running on TCP port 22. Which protocol was adopted?",
     "options": [
-      "To map a known IP address to a physical MAC address on a local network",
-      "To map a human-readable domain name to an IP address",
-      "To dynamically assign IP addresses to new network hosts",
-      "To route IP packets between distinct autonomous systems"
+      "SSH (Secure Shell)",
+      "RDP (Remote Desktop Protocol)",
+      "TFTP (Trivial File Transfer Protocol)",
+      "SNMP (Simple Network Management Protocol)"
     ],
-    "answer": "To map a known IP address to a physical MAC address on a local network",
+    "answer": "SSH (Secure Shell)",
     "category": "Network Protocols"
   },
   {
     "id": 20,
-    "question": "Which network device operates at Layer 2 to divide a network into multiple collision domains while maintaining a single broadcast domain?",
+    "question": "An incident response team analyzes an older file repository server and notices two distinct connections established during a single user session: TCP port 21 is used for issuing commands and control directives, while TCP port 20 is opened for data file payload transfer. What protocol is operating in this manner?",
     "options": [
-      "Layer-2 Switch",
-      "Hub",
-      "Repeater",
-      "Modem"
+      "FTP (File Transfer Protocol)",
+      "SMTP (Simple Mail Transfer Protocol)",
+      "HTTP (Hypertext Transfer Protocol)",
+      "DNS (Domain Name System)"
     ],
-    "answer": "Layer-2 Switch",
-    "category": "Networking Devices"
+    "answer": "FTP (File Transfer Protocol)",
+    "category": "Network Protocols"
   },
   {
     "id": 21,
-    "question": "Why is an Ethernet switch more efficient than an Ethernet hub?",
+    "question": "A Chief Information Security Officer (CISO) is formulating an enterprise information security policy based on EC-Council five core elements of information security to ensure data well-being and protect assets against theft, tampering, and disruption. Which five elements must the policy address?",
     "options": [
-      "A switch inspects MAC addresses to forward frames only to the designated recipient port",
-      "A switch broadcasts incoming signals to all connected physical ports simultaneously",
-      "A switch eliminates the need for physical cabling by using radio waves",
-      "A switch operates exclusively at the Physical layer without storing frames"
+      "Confidentiality, Integrity, Availability, Authenticity, and Non-Repudiation",
+      "Confidentiality, Integrity, Authorization, Auditing, and Accounting",
+      "Authentication, Authorization, Availability, Accuracy, and Administration",
+      "Cryptography, Inspection, Access Control, Firewalls, and Backups"
     ],
-    "answer": "A switch inspects MAC addresses to forward frames only to the designated recipient port",
-    "category": "Networking Devices"
+    "answer": "Confidentiality, Integrity, Availability, Authenticity, and Non-Repudiation",
+    "category": "Information Security Concepts"
   },
   {
     "id": 22,
-    "question": "Which networking device inspects IP addresses to forward packets across different logical networks?",
+    "question": "A customer disputes an online financial wire transfer, claiming that their account was never used to authorize the transaction. The bank forensic team reviews the transaction log and proves the customer signed the request with their digital certificate and private key, meaning they cannot deny sending it. Which element of information security is demonstrated?",
     "options": [
-      "Router",
-      "Repeater",
-      "Hub",
-      "Bridge"
+      "Non-Repudiation",
+      "Confidentiality",
+      "Availability",
+      "Redundancy"
     ],
-    "answer": "Router",
-    "category": "Networking Devices"
+    "answer": "Non-Repudiation",
+    "category": "Information Security Concepts"
   },
   {
     "id": 23,
-    "question": "At which layer of the OSI model does a network repeater operate to regenerate weak signals?",
+    "question": "A cyber threat analyst briefing corporate stakeholders explains that an attack does not happen in a vacuum; it requires an adversary with an objective, a technical approach (TTP), and an unpatched system flaw. According to the CEH curriculum, which formula represents this relationship?",
     "options": [
-      "Physical Layer",
-      "Data Link Layer",
-      "Network Layer",
-      "Transport Layer"
+      "Attacks = Motive (Goal) + Method (TTP) + Vulnerability",
+      "Attacks = Threat + Vulnerability + Impact",
+      "Attacks = Likelihood × Consequence × Asset Value",
+      "Attacks = Exploitation + Privilege Escalation + Persistence"
     ],
-    "answer": "Physical Layer",
-    "category": "Networking Devices"
+    "answer": "Attacks = Motive (Goal) + Method (TTP) + Vulnerability",
+    "category": "Information Security Concepts"
   },
   {
     "id": 24,
-    "question": "What is the primary role of a network firewall?",
+    "question": "During a threat hunting debrief, an analyst distinguishes between an attacker overarching strategy throughout an intrusion campaign versus the technical tools used for individual steps. According to CEH definitions of TTPs, what does the term 'Tactics' specifically define?",
     "options": [
-      "To monitor and control incoming and outgoing network traffic according to security rules",
-      "To boost wireless signal strength over long physical distances",
-      "To convert digital computer signals into analog telephone frequencies",
-      "To provide physical electrical power to connected wireless access points"
+      "The overarching strategy adopted by an attacker to execute the attack from beginning to end",
+      "The specific technical methods used by an attacker to achieve intermediate results during the attack",
+      "The systematic step-by-step sequence adopted by threat actors to launch an exploit",
+      "The automated software tools and scripts used to extract victim data"
     ],
-    "answer": "To monitor and control incoming and outgoing network traffic according to security rules",
-    "category": "Network Security"
+    "answer": "The overarching strategy adopted by an attacker to execute the attack from beginning to end",
+    "category": "TTPs & Threat Profiling"
   },
   {
     "id": 25,
-    "question": "Which protocol translates human-friendly domain names (e.g., www.example.com) into numerical IP addresses?",
+    "question": "A security architect audits an enterprise network and discovers legacy services including unencrypted HTTP, cleartext FTP, and unauthenticated SNMPv1 active across internal subnets. According to the CEH module, why do these legacy protocols represent an inherent technological vulnerability?",
     "options": [
-      "DNS (Domain Name System)",
-      "DHCP (Dynamic Host Configuration Protocol)",
-      "FTP (File Transfer Protocol)",
-      "SNMP (Simple Network Management Protocol)"
+      "They lack native encryption and authentication mechanisms by design",
+      "They can only operate over physical token ring network topologies",
+      "They force connected network switches to enter half-duplex repeater mode",
+      "They prevent modern host operating systems from applying security patches"
     ],
-    "answer": "DNS (Domain Name System)",
-    "category": "Application Protocols"
+    "answer": "They lack native encryption and authentication mechanisms by design",
+    "category": "Vulnerabilities"
   },
   {
     "id": 26,
-    "question": "Which network protocol automatically assigns IP configurations (IP address, subnet mask, default gateway) to client devices?",
+    "question": "An organization incident response policy aligns its taxonomy with the Information Assurance Technical Framework (IATF). The framework divides security attacks into five distinct classifications depending on the vector and proximity of the threat actor. Which five categories are defined?",
     "options": [
-      "DHCP (Dynamic Host Configuration Protocol)",
-      "DNS (Domain Name System)",
-      "ARP (Address Resolution Protocol)",
-      "ICMP (Internet Control Message Protocol)"
+      "Passive, Active, Close-in, Insider, and Distribution",
+      "Physical, Network, Application, Wireless, and Social",
+      "Strategic, Tactical, Operational, Technical, and Behavioral",
+      "Reconnaissance, Exploitation, Installation, Exfiltration, and Impact"
     ],
-    "answer": "DHCP (Dynamic Host Configuration Protocol)",
-    "category": "Application Protocols"
+    "answer": "Passive, Active, Close-in, Insider, and Distribution",
+    "category": "Attack Classification"
   },
   {
     "id": 27,
-    "question": "Which standard transport-layer port is assigned by default to HTTPS (Hypertext Transfer Protocol Secure)?",
+    "question": "A cyber criminal connects a network tap to an external cable junction outside an office building to monitor network traffic flow and capture unencrypted credentials without tampering with the packets or interrupting service. Under IATF classification, which type of attack has taken place?",
     "options": [
-      "443",
-      "80",
-      "21",
-      "25"
+      "Passive Attack",
+      "Active Attack",
+      "Distribution Attack",
+      "Denial-of-Service Attack"
     ],
-    "answer": "443",
-    "category": "Application Protocols"
+    "answer": "Passive Attack",
+    "category": "Attack Classification"
   },
   {
     "id": 28,
-    "question": "Which standard port number does the Secure Shell (SSH) protocol use for secure remote management?",
+    "question": "A social engineer wearing delivery personnel attire slips into a corporate lobby, watches an employee type their password over their shoulder, and searches discarded paper recycling bins for confidential network diagrams. Under IATF attack classification, how is this attack categorized?",
     "options": [
-      "22",
-      "23",
-      "53",
-      "110"
+      "Close-in Attack",
+      "Distribution Attack",
+      "Passive Attack",
+      "Insider Attack"
     ],
-    "answer": "22",
-    "category": "Application Protocols"
+    "answer": "Close-in Attack",
+    "category": "Attack Classification"
   },
   {
     "id": 29,
-    "question": "In computer networking, which metric measures the actual amount of data successfully transferred across a network per unit of time?",
+    "question": "A military defense contractor orders several hundred edge routers. An intelligence agency intercepts the shipment in transit and implants a rogue hardware chip into the motherboards before resealing the boxes and sending them to the destination. Which IATF attack type has occurred?",
     "options": [
-      "Throughput",
-      "Theoretical Bandwidth",
-      "Latency",
-      "Jitter"
+      "Distribution Attack",
+      "Close-in Attack",
+      "Passive Attack",
+      "Insider Attack"
     ],
-    "answer": "Throughput",
-    "category": "Network Performance"
+    "answer": "Distribution Attack",
+    "category": "Attack Classification"
   },
   {
     "id": 30,
-    "question": "Which protocol does the diagnostic utility 'ping' utilize to verify network connectivity between two endpoints?",
+    "question": "In a military cyber conflict scenario, an adversary deploys radio-frequency jamming equipment to disable battlefield wireless transmissions while simultaneously employing cryptographic techniques to disrupt data stream integrity. According to Martin Libicki InfoWar categories, which form of warfare is being conducted?",
     "options": [
-      "ICMP (Internet Control Message Protocol)",
-      "IGMP (Internet Group Management Protocol)",
-      "BGP (Border Gateway Protocol)",
-      "SMTP (Simple Mail Transfer Protocol)"
+      "Electronic Warfare",
+      "Command and Control Warfare (C2)",
+      "Economic Warfare",
+      "Psychological Warfare"
     ],
-    "answer": "ICMP (Internet Control Message Protocol)",
-    "category": "Network Utilities"
+    "answer": "Electronic Warfare",
+    "category": "Information Warfare"
+  },
+  {
+    "id": 31,
+    "question": "A high school student downloads a pre-compiled LOIC denial-of-service tool and an automated defacement script from the Internet. Without understanding how the underlying TCP packets or code work, they launch an attack against a local online forum simply to impress their peers. Which hacker class does this individual belong to?",
+    "options": [
+      "Script Kiddies",
+      "Black Hat Hackers",
+      "State-Sponsored Hackers",
+      "White Hat Hackers"
+    ],
+    "answer": "Script Kiddies",
+    "category": "Hacker Classes"
+  },
+  {
+    "id": 32,
+    "question": "An independent computer researcher scans an e-commerce company web portal without obtaining prior permission or a testing contract. Upon uncovering a SQL injection flaw, the researcher emails the company security team requesting a bug bounty reward to reveal details. Which class of hacker does this researcher represent?",
+    "options": [
+      "Gray Hat Hacker",
+      "White Hat Hacker",
+      "Black Hat Hacker",
+      "Suicide Hacker"
+    ],
+    "answer": "Gray Hat Hacker",
+    "category": "Hacker Classes"
+  },
+  {
+    "id": 33,
+    "question": "A software development firm prepares to release its flagship enterprise CRM platform. Prior to public deployment, the firm temporarily contracts independent external security professionals to conduct penetration testing and vulnerability assessments to fix flaws before launch. Which hacker class does this group represent?",
+    "options": [
+      "Blue Hat Hackers",
+      "Red Hat Hackers",
+      "Green Hat Hackers",
+      "Black Hat Hackers"
+    ],
+    "answer": "Blue Hat Hackers",
+    "category": "Hacker Classes"
+  },
+  {
+    "id": 34,
+    "question": "A cyber vigilante discovers an active ransomware command-and-control server operated by a malicious criminal syndicate. Instead of simply reporting the IP address to law enforcement, the vigilante aggressively attacks and destroys the criminal server infrastructure to neutralize the threat. Which hacker classification describes this vigilante?",
+    "options": [
+      "Red Hat Hacker",
+      "Blue Hat Hacker",
+      "Green Hat Hacker",
+      "White Hat Hacker"
+    ],
+    "answer": "Red Hat Hacker",
+    "category": "Hacker Classes"
+  },
+  {
+    "id": 35,
+    "question": "An extremist launches a disruptive cyber attack against a regional power grid to promote an ideological cause. The attacker makes no effort to mask their IP address, proxy their connections, or evade forensic detection, completely unconcerned with facing mandatory life imprisonment. Which hacker class does this describe?",
+    "options": [
+      "Suicide Hacker",
+      "Corporate Spy",
+      "Script Kiddie",
+      "Gray Hat Hacker"
+    ],
+    "answer": "Suicide Hacker",
+    "category": "Hacker Classes"
+  },
+  {
+    "id": 36,
+    "question": "Two skilled computer specialists possess identical technical proficiencies in exploiting buffer overflows and bypassing web application firewalls. Specialist A is legally retained by an organization under a signed contract, whereas Specialist B probes systems without authorization for personal profit. What is the key factor distinguishing Specialist A as an ethical hacker?",
+    "options": [
+      "Explicit authorization and consent from the target organization",
+      "Using commercial automated vulnerability scanners instead of manual exploits",
+      "Limiting assessments strictly to public external IP addresses",
+      "Refraining from using Linux-based penetration testing distributions"
+    ],
+    "answer": "Explicit authorization and consent from the target organization",
+    "category": "Ethical Hacking Concepts"
+  },
+  {
+    "id": 37,
+    "question": "A commercial bank hires a certified group of elite penetration testers to perform an unannounced, full-scale security assessment testing physical door locks, social engineering receptionists, and attempting internal network intrusion. In ethical hacking methodology, what is this specialized team called?",
+    "options": [
+      "Tiger Team",
+      "Script Consortium",
+      "Incident Dispatch Unit",
+      "Black Hat Guild"
+    ],
+    "answer": "Tiger Team",
+    "category": "Ethical Hacking Concepts"
+  },
+  {
+    "id": 38,
+    "question": "A cybersecurity director considers replacing half of their human penetration testing staff with generative AI security models. The lead consultant cautions against this, explaining that while AI excels at automating repetitive vulnerability scans, it cannot substitute for human ethical hackers. What critical capability does AI lack in this context?",
+    "options": [
+      "Human creativity, critical thinking, contextual understanding, and ethical discretion",
+      "The capacity to execute multi-threaded network port scans",
+      "The ability to run within virtualized cloud computing environments",
+      "Compliance with standard TCP/IP network communication protocols"
+    ],
+    "answer": "Human creativity, critical thinking, contextual understanding, and ethical discretion",
+    "category": "AI in Ethical Hacking"
+  },
+  {
+    "id": 39,
+    "question": "During a terminal-based penetration testing exercise, a security professional interacts with an AI-driven command-line tool that auto-generates complex bash and PowerShell commands, writes custom exploit code snippets, and explains intricate shell scripts directly in the console. Which AI tool is being utilized?",
+    "options": [
+      "ShellGPT",
+      "FraudGPT",
+      "WormGPT",
+      "ChaosGPT"
+    ],
+    "answer": "ShellGPT",
+    "category": "AI in Ethical Hacking"
+  },
+  {
+    "id": 40,
+    "question": "A security research team conducts an experiment to demonstrate how an adversary can corrupt a trusted machine learning model by injecting tampered data to alter its output predictions. Which specialized AI tool was designed to introduce malicious models into trusted systems to study AI model poisoning?",
+    "options": [
+      "PoisonGPT",
+      "FreedomGPT",
+      "AutoGPT",
+      "PentestGPT"
+    ],
+    "answer": "PoisonGPT",
+    "category": "AI in Ethical Hacking"
+  },
+  {
+    "id": 41,
+    "question": "A newly certified ethical hacker outlines their formal testing methodology for a client engagement, beginning with passive OSINT profiling and concluding with log file sanitization. What is the correct sequential order of the 5 phases defined in the CEH framework?",
+    "options": [
+      "Reconnaissance, Vulnerability Scanning, Gaining Access, Maintaining Access, Clearing Tracks",
+      "Reconnaissance, Weaponization, Delivery, Exploitation, Installation",
+      "Footprinting, Enumeration, Exploitation, Privilege Escalation, Exfiltration",
+      "Planning, Scanning, Exploitation, Reporting, Remediation"
+    ],
+    "answer": "Reconnaissance, Vulnerability Scanning, Gaining Access, Maintaining Access, Clearing Tracks",
+    "category": "CEH Hacking Framework"
+  },
+  {
+    "id": 42,
+    "question": "During Phase 1 of a penetration test, the tester transitions from searching public DNS records and social media profiles to sending active queries directly to target servers to extract Windows user lists, SMB shares, and service banners. Which specific phase activity is the tester performing?",
+    "options": [
+      "Enumeration",
+      "Passive Footprinting",
+      "Maintaining Access",
+      "Clearing Tracks"
+    ],
+    "answer": "Enumeration",
+    "category": "CEH Hacking Framework"
+  },
+  {
+    "id": 43,
+    "question": "A Security Operations Center (SOC) investigates an Advanced Persistent Threat (APT) intrusion and reconstructs the incident using Lockheed Martin 7-phase Cyber Kill Chain. Which sequence correctly reflects the chronological progression of the attack?",
+    "options": [
+      "Reconnaissance, Weaponization, Delivery, Exploitation, Installation, Command and Control, Actions on Objectives",
+      "Reconnaissance, Scanning, Enumeration, Gaining Access, Maintaining Access, Clearing Tracks, Reporting",
+      "Identification, Assessment, Treatment, Tracking, Review, Containment, Eradication",
+      "Predict, Protect, Detect, Respond, Contain, Eradicate, Recover"
+    ],
+    "answer": "Reconnaissance, Weaponization, Delivery, Exploitation, Installation, Command and Control, Actions on Objectives",
+    "category": "Cyber Kill Chain"
+  },
+  {
+    "id": 44,
+    "question": "An APT threat actor identifies an unpatched CVE vulnerability in an organization spreadsheet application. The actor binds an exploit triggering this vulnerability together with a remote access Trojan into a weaponized Microsoft Excel attachment. In the Cyber Kill Chain, which phase does this action represent?",
+    "options": [
+      "Weaponization",
+      "Delivery",
+      "Exploitation",
+      "Installation"
+    ],
+    "answer": "Weaponization",
+    "category": "Cyber Kill Chain"
+  },
+  {
+    "id": 45,
+    "question": "A network security monitoring sensor detects outbound anomalies where internal endpoints are issuing thousands of high-frequency DNS queries containing base64-encoded subdomains, allowing malware to communicate with an external C2 server while bypassing web proxies. Which evasion technique is being observed?",
+    "options": [
+      "DNS Tunneling",
+      "ARP Poisoning",
+      "HTTP User Agent Modification",
+      "PowerShell Transcript Tampering"
+    ],
+    "answer": "DNS Tunneling",
+    "category": "Adversary Behaviors"
+  },
+  {
+    "id": 46,
+    "question": "A threat intelligence analyst extracts Indicators of Compromise (IoCs) from an incident report and segregates standalone IP addresses and attacker email addresses from calculated MD5 hashes. In IoC classification, what term refers to indicators that cannot be segmented into smaller constituent parts without losing their meaning?",
+    "options": [
+      "Atomic Indicators",
+      "Computed Indicators",
+      "Behavioral Indicators",
+      "Strategic Indicators"
+    ],
+    "answer": "Atomic Indicators",
+    "category": "Indicators of Compromise"
+  },
+  {
+    "id": 47,
+    "question": "A cyber defense team seeks a comprehensive, globally accessible repository that classifies real-world adversary behaviors into 14 distinct tactical categories (such as Initial Access, Persistence, and Defense Evasion) to evaluate defensive coverage. Which framework should the team utilize?",
+    "options": [
+      "MITRE ATT&CK Framework",
+      "Diamond Model of Intrusion",
+      "Lockheed Martin Kill Chain",
+      "IATF Defense-in-Depth Model"
+    ],
+    "answer": "MITRE ATT&CK Framework",
+    "category": "Security Frameworks"
+  },
+  {
+    "id": 48,
+    "question": "A digital forensics investigator visualizes a complex multi-stage attack by mapping the adversary who launched it, the infrastructure used to route communications, the technical capabilities/tools deployed, and the targeted victim organization into a four-node relationship. Which intrusion analysis model is being applied?",
+    "options": [
+      "Diamond Model of Intrusion Analysis",
+      "Cyber Kill Chain Methodology",
+      "MITRE ATT&CK Matrix",
+      "IATF Defense-in-Depth Matrix"
+    ],
+    "answer": "Diamond Model of Intrusion Analysis",
+    "category": "Security Frameworks"
+  },
+  {
+    "id": 49,
+    "question": "An IT risk manager evaluates potential exposure to an enterprise database server housing customer credit cards. The manager estimates the likelihood of active threat actors, the severity of system vulnerabilities, and the resulting financial and operational damage to calculate overall risk. Which CEH formula represents this calculation?",
+    "options": [
+      "Risk = Threats × Vulnerabilities × Impact (or Asset Value)",
+      "Risk = Motives + Methods + Exploits",
+      "Risk = Total Incidents ÷ Total Security Controls",
+      "Risk = Adversary Capability + Target Infrastructure"
+    ],
+    "answer": "Risk = Threats × Vulnerabilities × Impact (or Asset Value)",
+    "category": "Risk Management"
+  },
+  {
+    "id": 50,
+    "question": "A threat intelligence analyst prepares a quarterly executive summary for the Board of Directors and Chief Information Security Officer (CISO). The document provides high-level insights into geopolitical cyber risks, emerging cybercrime trends, and their projected financial impact on the business. Which type of Cyber Threat Intelligence is this?",
+    "options": [
+      "Strategic Threat Intelligence",
+      "Tactical Threat Intelligence",
+      "Technical Threat Intelligence",
+      "Operational Threat Intelligence"
+    ],
+    "answer": "Strategic Threat Intelligence",
+    "category": "Threat Intelligence"
   }
 ]
