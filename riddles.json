@@ -1,19 +1,31 @@
 [
   {
     "id": 1,
-    "question": "A network architect designs an infrastructure that enables multiple autonomous workstations, servers, and network printers to exchange data and share hardware resources over transmission media using standardized communication protocols. What fundamental concept does this interconnected system represent?",
+    "question": "A college IT administrator connects 30 lab workstations and two network laser printers to a central switch so students can exchange project files and share printing hardware using agreed communication protocols. What fundamental concept does this setup illustrate?",
     "options": [
       "A computer network",
-      "A standalone multiprocessor mainframe",
-      "A peripheral bus extension",
-      "A compiled software microcode engine"
+      "A standalone mainframe processor",
+      "A peripheral serial bus extension",
+      "An analog circuit switch"
     ],
     "answer": "A computer network",
-    "category": "Network Fundamentals"
+    "category": "Network Foundations"
   },
   {
     "id": 2,
-    "question": "An enterprise connects its corporate headquarters in New York with regional branch offices in London, Tokyo, and Sydney over leased telecommunications circuits. Which network classification best describes this geographically dispersed infrastructure?",
+    "question": "A student pairs their wireless Bluetooth earbuds with their smartphone to listen to an online lecture while walking across campus. Which network classification best describes this short-range personal device connection?",
+    "options": [
+      "PAN (Personal Area Network)",
+      "LAN (Local Area Network)",
+      "MAN (Metropolitan Area Network)",
+      "WAN (Wide Area Network)"
+    ],
+    "answer": "PAN (Personal Area Network)",
+    "category": "Network Types"
+  },
+  {
+    "id": 3,
+    "question": "A global university system connects its main campus network in Mumbai with satellite learning centers across London, Singapore, and New York over telecommunication provider circuits. Which network classification describes this global infrastructure?",
     "options": [
       "WAN (Wide Area Network)",
       "LAN (Local Area Network)",
@@ -24,20 +36,8 @@
     "category": "Network Types"
   },
   {
-    "id": 3,
-    "question": "A network engineer configures a full-duplex gigabit Ethernet connection between two core datacenter switches. What is the operational characteristic of this transmission mode?",
-    "options": [
-      "Data can be transmitted and received simultaneously in both directions without collisions",
-      "Data can travel in both directions, but only in one direction at a time",
-      "Data can only travel in a single fixed direction from sender to receiver",
-      "Data packets are broadcast to all connected devices simultaneously"
-    ],
-    "answer": "Data can be transmitted and received simultaneously in both directions without collisions",
-    "category": "Network Fundamentals"
-  },
-  {
     "id": 4,
-    "question": "In an office local area network, all desktop computers are connected via individual patch cables directly into a central rack-mounted switch. Which network topology is being utilized?",
+    "question": "In a Cisco Packet Tracer classroom lab, a student places eight desktop computers and connects each one with a dedicated straight-through cable to ports on a single central Cisco 2960 switch. Which physical topology has the student constructed?",
     "options": [
       "Star Topology",
       "Bus Topology",
@@ -49,115 +49,235 @@
   },
   {
     "id": 5,
-    "question": "A mission-critical financial exchange requires a network topology where every server is connected to every other server via dedicated links, ensuring zero single points of failure and maximum fault tolerance. Which topology must be deployed?",
+    "question": "A network engineer is inspecting legacy industrial automation equipment where multiple sensor nodes are linked to a single continuous coaxial backbone cable terminated with resistors at both ends. Which topology is this?",
     "options": [
-      "Full Mesh Topology",
-      "Linear Bus Topology",
-      "Single Ring Topology",
-      "Tree Topology"
+      "Bus Topology",
+      "Star Topology",
+      "Mesh Topology",
+      "Ring Topology"
     ],
-    "answer": "Full Mesh Topology",
+    "answer": "Bus Topology",
     "category": "Network Topologies"
   },
   {
     "id": 6,
-    "question": "Why does modern Internet communication rely predominantly on packet switching rather than traditional circuit switching?",
+    "question": "A critical financial data center requires high availability so that if any transmission line fails, data traffic can immediately follow alternative redundant physical paths directly between servers. Which topology satisfies this requirement?",
     "options": [
-      "Packet switching dynamically routes discrete data packets over shared paths, maximizing bandwidth efficiency",
-      "Packet switching reserves a dedicated physical wire exclusively for each ongoing communication session",
-      "Packet switching eliminates the need for routers, IP addresses, and transport protocols",
-      "Packet switching transmits analog audio frequencies rather than digitized binary bits"
+      "Mesh Topology",
+      "Bus Topology",
+      "Star Topology",
+      "Tree Topology"
     ],
-    "answer": "Packet switching dynamically routes discrete data packets over shared paths, maximizing bandwidth efficiency",
-    "category": "Network Fundamentals"
+    "answer": "Mesh Topology",
+    "category": "Network Topologies"
   },
   {
     "id": 7,
-    "question": "According to the ISO/IEC 7498-1 standard, into how many conceptual layers is the Open Systems Interconnection (OSI) reference model structured?",
+    "question": "During a networking seminar, an instructor emphasizes the foundational Golden Rule that differentiates Layer-2 and Layer-3 devices in a network design. Which statement correctly captures this rule?",
     "options": [
-      "7 layers",
-      "4 layers",
-      "5 layers",
-      "6 layers"
+      "A switch connects devices within a LAN; a router connects different networks",
+      "A router connects devices within a LAN; a switch connects different networks",
+      "A hub connects devices across WANs; a router connects devices inside a PAN",
+      "A bridge connects multiple WANs; a switch connects disparate IP subnets"
     ],
-    "answer": "7 layers",
-    "category": "OSI Model"
+    "answer": "A switch connects devices within a LAN; a router connects different networks",
+    "category": "Networking Devices"
   },
   {
     "id": 8,
-    "question": "At which layer of the OSI model do network engineers deal with physical transmission media, signal encoding, pinouts, voltage levels, and raw bit streams?",
+    "question": "A lab instructor replaces an old legacy network hub with a Cisco Catalyst Layer-2 switch. When PC1 sends a frame to PC2, how does the switch handle the transmission differently compared to the hub?",
     "options": [
-      "Physical Layer",
-      "Data Link Layer",
-      "Network Layer",
-      "Transport Layer"
+      "The switch forwards the frame only to the port where PC2 is connected using its MAC table",
+      "The switch broadcasts the incoming frame out of every active port on the device",
+      "The switch converts the Ethernet frame into a wireless radio broadcast",
+      "The switch increments the TTL and routes the frame based on destination IP address"
     ],
-    "answer": "Physical Layer",
-    "category": "OSI Model"
+    "answer": "The switch forwards the frame only to the port where PC2 is connected using its MAC table",
+    "category": "Networking Devices"
   },
   {
     "id": 9,
-    "question": "While analyzing an Ethernet capture in Wireshark, a technician inspects a Layer 2 unit containing source and destination MAC addresses, encapsulated payload, and a Cyclic Redundancy Check (CRC/FCS). What is this Layer 2 Protocol Data Unit (PDU) called?",
+    "question": "An enterprise network has two separate Ethernet LAN segments on the same floor. A network administrator installs a device that inspects incoming frames and filters traffic based on physical MAC addresses so local traffic does not cross unnecessarily. Which device is this?",
     "options": [
-      "Frame",
-      "Packet",
-      "Segment",
-      "Bit"
+      "Bridge",
+      "Repeater",
+      "Analog Modem",
+      "Passive Hub"
     ],
-    "answer": "Frame",
-    "category": "OSI Model"
+    "answer": "Bridge",
+    "category": "Networking Devices"
   },
   {
     "id": 10,
-    "question": "When a packet traverses intermediate networks across the Internet, at which layer of the OSI model does a router inspect logical destination IP addresses and consult routing tables to determine the best path?",
+    "question": "A technician runs a copper Ethernet cable to an outbuilding located 140 meters away, exceeding the standard 100-meter distance limit and causing signal degradation. Which hardware device should be installed mid-span to regenerate the electrical signals?",
     "options": [
-      "Network Layer",
-      "Transport Layer",
-      "Data Link Layer",
-      "Session Layer"
+      "Repeater",
+      "Router",
+      "Firewall",
+      "Bridge"
     ],
-    "answer": "Network Layer",
-    "category": "OSI Model"
+    "answer": "Repeater",
+    "category": "Networking Devices"
   },
   {
     "id": 11,
-    "question": "Which layer of the OSI model is responsible for end-to-end communication, segmentation, reassembly, flow control, and port-based multiplexing?",
+    "question": "A security engineer inspects an edge gateway device deployed between the corporate LAN and the public Internet. The device inspects incoming packets and blocks unauthorized connection requests based on defined access control lists. Which device is this?",
     "options": [
-      "Transport Layer",
-      "Network Layer",
-      "Session Layer",
-      "Presentation Layer"
+      "Firewall",
+      "Layer-2 Switch",
+      "Multiport Hub",
+      "Repeater"
     ],
-    "answer": "Transport Layer",
-    "category": "OSI Model"
+    "answer": "Firewall",
+    "category": "Networking Devices"
   },
   {
     "id": 12,
-    "question": "Which layer of the OSI reference model handles data formatting, character code conversion (such as ASCII or Unicode), data compression, and encryption/decryption?",
+    "question": "In Cisco Packet Tracer, a student needs to connect a desktop computer (FastEthernet0) to a port on a Cisco 2960 switch. According to traditional cabling rules for connecting different device types, which cable should be selected?",
     "options": [
-      "Presentation Layer",
-      "Application Layer",
-      "Session Layer",
-      "Transport Layer"
+      "Straight-through copper cable",
+      "Crossover copper cable",
+      "Console rollover cable",
+      "Fiber optic patch cable"
     ],
-    "answer": "Presentation Layer",
-    "category": "OSI Model"
+    "answer": "Straight-through copper cable",
+    "category": "Physical Layer & Cabling"
   },
   {
     "id": 13,
-    "question": "The standard TCP/IP architecture model used by the Internet consolidates networking functions into how many architectural layers?",
+    "question": "A lab assistant connects two legacy Cisco 2960 switches directly together trunk port to trunk port without Auto-MDI/MDIX enabled. Traditionally, which cable type is required when interconnecting similar device types?",
     "options": [
-      "4 layers: Network Access, Internet, Transport, Application",
-      "7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application",
-      "5 layers: Physical, Internet, Transport, Session, Application",
-      "3 layers: Hardware, Network, User"
+      "Crossover cable",
+      "Straight-through cable",
+      "Console cable",
+      "Coaxial cable"
     ],
-    "answer": "4 layers: Network Access, Internet, Transport, Application",
-    "category": "TCP/IP Model"
+    "answer": "Crossover cable",
+    "category": "Physical Layer & Cabling"
   },
   {
     "id": 14,
-    "question": "As application data moves down the TCP/IP protocol stack during encapsulation, what is the correct sequence of Protocol Data Units (PDUs) generated?",
+    "question": "A network administrator brings a new Cisco ISR router out of the box. Before assigning an IP address, the administrator connects an RJ-45 to USB rollover cable from their laptop to the management port on the router. What cable type is this?",
+    "options": [
+      "Console cable",
+      "Straight-through cable",
+      "Crossover cable",
+      "Fiber optic cable"
+    ],
+    "answer": "Console cable",
+    "category": "Physical Layer & Cabling"
+  },
+  {
+    "id": 15,
+    "question": "A campus backbone link connects two buildings 2 kilometers apart requiring 10 Gbps transmission speeds immune to electromagnetic interference. Why does the engineering team deploy fiber optic cabling instead of twisted-pair copper Ethernet?",
+    "options": [
+      "Fiber optic uses pulses of light, supporting significantly higher bandwidth over long distances",
+      "Fiber optic uses copper conductors that eliminate electrical grounding requirements",
+      "Fiber optic cabling can be crimped directly with standard RJ-45 modular plugs",
+      "Fiber optic cable operates at half-duplex to prevent collision domains"
+    ],
+    "answer": "Fiber optic uses pulses of light, supporting significantly higher bandwidth over long distances",
+    "category": "Physical Layer & Cabling"
+  },
+  {
+    "id": 16,
+    "question": "In a Packet Tracer lab, PC0 is configured with IP 192.168.1.1 (mask 255.255.255.0) and PC1 is configured with 192.168.2.2 (mask 255.255.255.0). Both are plugged into the same switch with no default gateway configured. Why does ping 192.168.2.2 from PC0 fail?",
+    "options": [
+      "The PCs are on different logical IP subnets and require a router to forward packets between them",
+      "Layer-2 switches only forward frames if both computers use dynamic DHCP addressing",
+      "The straight-through cables must be swapped for crossover cables to enable ICMP",
+      "Cisco 2960 switches automatically block all ping traffic by default"
+    ],
+    "answer": "The PCs are on different logical IP subnets and require a router to forward packets between them",
+    "category": "Packet Tracer & Labs"
+  },
+  {
+    "id": 17,
+    "question": "A student downloads and installs Wireshark on a Windows workstation to inspect live network packets. During installation, the setup wizard prompts the student to install Npcap. What essential capability does Npcap provide?",
+    "options": [
+      "It enables live packet capturing and network sniffing on Windows network interfaces",
+      "It automatically decrypts TLS encrypted HTTPS web browser traffic",
+      "It serves as a local DHCP server assigning IP configurations to Wireshark",
+      "It simulates virtual routers and switches inside the Wireshark application"
+    ],
+    "answer": "It enables live packet capturing and network sniffing on Windows network interfaces",
+    "category": "Wireshark & Packet Analysis"
+  },
+  {
+    "id": 18,
+    "question": "A student opens Command Prompt and executes ping 8.8.8.8 while running a live Wireshark packet capture. Which display filter should the student enter into Wireshark search bar to isolate only the ping Echo Request and Reply packets?",
+    "options": [
+      "icmp",
+      "ping",
+      "echo",
+      "arp"
+    ],
+    "answer": "icmp",
+    "category": "Wireshark & Packet Analysis"
+  },
+  {
+    "id": 19,
+    "question": "While testing DNS resolution in a lab, an engineer runs nslookup google.com in the terminal and captures the network exchange in Wireshark. Which display filter isolates the domain lookup queries and server responses?",
+    "options": [
+      "dns",
+      "nslookup",
+      "domain",
+      "udp.port == 80"
+    ],
+    "answer": "dns",
+    "category": "Wireshark & Packet Analysis"
+  },
+  {
+    "id": 20,
+    "question": "A student uses the classroom mnemonic 'All People Seem To Need Data Processing' to remember the 7 layers of the OSI model. Which layer sequence from top (Layer 7) to bottom (Layer 1) corresponds to this mnemonic?",
+    "options": [
+      "Application, Presentation, Session, Transport, Network, Data Link, Physical",
+      "Application, Session, Presentation, Transport, Network, Data Link, Physical",
+      "Physical, Data Link, Network, Transport, Session, Presentation, Application",
+      "Application, Transport, Internet, Network Access, Session, Presentation, Physical"
+    ],
+    "answer": "Application, Presentation, Session, Transport, Network, Data Link, Physical",
+    "category": "OSI Model"
+  },
+  {
+    "id": 21,
+    "question": "When comparing network architectures, an instructor asks which layers of the 7-layer OSI model are combined into the single Application layer of the 4-layer TCP/IP Internet model. What is the correct answer?",
+    "options": [
+      "Application, Presentation, and Session",
+      "Transport, Network, and Application",
+      "Data Link, Network, and Transport",
+      "Physical, Data Link, and Session"
+    ],
+    "answer": "Application, Presentation, and Session",
+    "category": "OSI vs TCP/IP"
+  },
+  {
+    "id": 22,
+    "question": "In the TCP/IP 4-layer model, which layer corresponds to the physical cabling, Wi-Fi radio transmissions, Ethernet framing, and MAC addressing (OSI Layers 1 and 2)?",
+    "options": [
+      "Network Access Layer",
+      "Internet Layer",
+      "Transport Layer",
+      "Application Layer"
+    ],
+    "answer": "Network Access Layer",
+    "category": "TCP/IP Model"
+  },
+  {
+    "id": 23,
+    "question": "In the TCP/IP model, which layer handles logical device addressing, packet routing across networks, and diagnostic messaging via protocols like IPv4, IPv6, and ICMP?",
+    "options": [
+      "Internet Layer",
+      "Network Access Layer",
+      "Transport Layer",
+      "Application Layer"
+    ],
+    "answer": "Internet Layer",
+    "category": "TCP/IP Model"
+  },
+  {
+    "id": 24,
+    "question": "A software developer observes how an HTTP GET message is prepared for transmission down the protocol stack. What is the correct chronological sequence of Protocol Data Units (PDUs) as data is encapsulated?",
     "options": [
       "Data -> Segment -> Packet -> Frame -> Bits",
       "Data -> Packet -> Segment -> Frame -> Bits",
@@ -165,198 +285,318 @@
       "Bits -> Frame -> Packet -> Segment -> Data"
     ],
     "answer": "Data -> Segment -> Packet -> Frame -> Bits",
-    "category": "TCP/IP Model"
-  },
-  {
-    "id": 15,
-    "question": "An application requires guaranteed, in-order packet delivery with error recovery, whereas a real-time multiplayer game requires low-overhead, fast packet transmission without delivery acknowledgments. Which transport protocols fulfill these respective needs?",
-    "options": [
-      "TCP for reliable delivery, and UDP for low-overhead speed",
-      "UDP for reliable delivery, and TCP for low-overhead speed",
-      "TCP for both services exclusively",
-      "UDP for both services exclusively"
-    ],
-    "answer": "TCP for reliable delivery, and UDP for low-overhead speed",
-    "category": "TCP/IP Model"
-  },
-  {
-    "id": 16,
-    "question": "Why does replacing an old Ethernet hub with a modern Layer-2 switch dramatically improve local network performance?",
-    "options": [
-      "A switch inspects MAC addresses to forward frames only to the designated recipient port, creating separate collision domains for each port",
-      "A switch broadcasts all incoming electrical signals to every connected port simultaneously",
-      "A switch eliminates the need for physical Ethernet cables by converting packets to radio waves",
-      "A switch operates exclusively at the Physical layer to boost analog voltage levels"
-    ],
-    "answer": "A switch inspects MAC addresses to forward frames only to the designated recipient port, creating separate collision domains for each port",
-    "category": "Network Devices"
-  },
-  {
-    "id": 17,
-    "question": "A network technician needs to connect two separate IP subnets (192.168.1.0/24 and 10.0.0.0/24) so that computers in both subnets can communicate. Which networking device must be deployed?",
-    "options": [
-      "Router",
-      "Repeater",
-      "Unmanaged Hub",
-      "Layer-1 Transceiver"
-    ],
-    "answer": "Router",
-    "category": "Network Devices"
-  },
-  {
-    "id": 18,
-    "question": "Which hardware device operates at the Physical layer (Layer 1) to amplify or regenerate electrical/optical signals, overcoming signal attenuation over long cable distances?",
-    "options": [
-      "Repeater",
-      "Bridge",
-      "Router",
-      "Gateway"
-    ],
-    "answer": "Repeater",
-    "category": "Network Devices"
-  },
-  {
-    "id": 19,
-    "question": "What is the primary role of a network firewall positioned at an enterprise boundary?",
-    "options": [
-      "To monitor, inspect, and filter incoming and outgoing network traffic based on predefined security rules",
-      "To convert digital computer signals into analog telephone frequencies",
-      "To assign physical MAC addresses to connected workstations",
-      "To distribute electrical alternating current power to connected network switches"
-    ],
-    "answer": "To monitor, inspect, and filter incoming and outgoing network traffic based on predefined security rules",
-    "category": "Network Devices"
-  },
-  {
-    "id": 20,
-    "question": "How many total bits compose a standard IPv4 address, and how is it conventionally represented for human readability?",
-    "options": [
-      "32 bits, expressed as four decimal octets separated by dots",
-      "64 bits, expressed as eight decimal octets separated by dashes",
-      "128 bits, expressed as eight hexadecimal groups separated by colons",
-      "48 bits, expressed as twelve hexadecimal digits separated by hyphens"
-    ],
-    "answer": "32 bits, expressed as four decimal octets separated by dots",
-    "category": "Network Addressing"
-  },
-  {
-    "id": 21,
-    "question": "To address IPv4 address exhaustion, IPv6 was introduced with vastly expanded address space. What is the total bit length of an IPv6 address?",
-    "options": [
-      "128 bits",
-      "64 bits",
-      "32 bits",
-      "256 bits"
-    ],
-    "answer": "128 bits",
-    "category": "Network Addressing"
-  },
-  {
-    "id": 22,
-    "question": "Every Network Interface Card (NIC) is manufactured with a globally unique physical hardware address. What is the standard length of this MAC address?",
-    "options": [
-      "48 bits (6 bytes)",
-      "32 bits (4 bytes)",
-      "64 bits (8 bytes)",
-      "128 bits (16 bytes)"
-    ],
-    "answer": "48 bits (6 bytes)",
-    "category": "Network Addressing"
-  },
-  {
-    "id": 23,
-    "question": "When calculating the number of usable host IP addresses in a subnet using the formula 2^h - 2 (where h is the number of host bits), why is 2 subtracted?",
-    "options": [
-      "The first address represents the Network ID and the last address represents the Directed Broadcast Address",
-      "One address is reserved for the default gateway and one for the primary DNS server",
-      "One address is reserved for the DHCP server and one for the hardware firewall",
-      "One address is reserved for the loopback interface and one for the switch management port"
-    ],
-    "answer": "The first address represents the Network ID and the last address represents the Directed Broadcast Address",
-    "category": "Subnetting"
-  },
-  {
-    "id": 24,
-    "question": "A network engineer allocates the CIDR block 192.168.10.0/26 to a department. What is the dotted-decimal subnet mask and the maximum number of usable host IP addresses on this subnet?",
-    "options": [
-      "Subnet mask 255.255.255.192 with 62 usable host addresses",
-      "Subnet mask 255.255.255.128 with 126 usable host addresses",
-      "Subnet mask 255.255.255.224 with 30 usable host addresses",
-      "Subnet mask 255.255.255.0 with 254 usable host addresses"
-    ],
-    "answer": "Subnet mask 255.255.255.192 with 62 usable host addresses",
-    "category": "Subnetting"
+    "category": "OSI vs TCP/IP"
   },
   {
     "id": 25,
-    "question": "Host A needs to send an IP packet to Host B on the same local subnet. Host A knows Host B IP address (192.168.1.50) but does not have Host B MAC address in its local cache. Which protocol broadcasts a request to resolve the IP address into a MAC address?",
+    "question": "An IPv4 address such as 192.168.1.10 is composed of 32 bits divided into two logical sections. What are these two fundamental sections called?",
     "options": [
-      "ARP (Address Resolution Protocol)",
-      "DNS (Domain Name System)",
-      "DHCP (Dynamic Host Configuration Protocol)",
-      "ICMP (Internet Control Message Protocol)"
+      "Network part and Host part",
+      "MAC part and IP part",
+      "Domain part and Port part",
+      "Segment part and Frame part"
     ],
-    "answer": "ARP (Address Resolution Protocol)",
-    "category": "Network Protocols"
+    "answer": "Network part and Host part",
+    "category": "Classful Addressing"
   },
   {
     "id": 26,
-    "question": "When a new client device connects to an enterprise Wi-Fi network, which protocol automatically assigns it an IP address, subnet mask, default gateway, and DNS servers using the 4-step DORA process?",
+    "question": "A network administrator inspects an IPv4 address 172.16.5.4 assigned to an internal server. Based on its first octet (172), which IPv4 address class does this address belong to?",
     "options": [
-      "DHCP (Dynamic Host Configuration Protocol)",
-      "DNS (Domain Name System)",
-      "ARP (Address Resolution Protocol)",
-      "SNMP (Simple Network Management Protocol)"
+      "Class B (128-191)",
+      "Class A (1-126)",
+      "Class C (192-223)",
+      "Class D (224-239)"
     ],
-    "answer": "DHCP (Dynamic Host Configuration Protocol)",
-    "category": "Network Protocols"
+    "answer": "Class B (128-191)",
+    "category": "Classful Addressing"
   },
   {
     "id": 27,
-    "question": "When a user types www.example.com into a web browser, which protocol resolves this human-friendly hostname into a numerical IP address, typically utilizing UDP or TCP port 53?",
+    "question": "A technician examines host address 192.168.10.25. Since 192 falls in Class C (192-223) with default mask 255.255.255.0, what are the network address and host ID?",
     "options": [
-      "DNS (Domain Name System)",
-      "DHCP (Dynamic Host Configuration Protocol)",
-      "FTP (File Transfer Protocol)",
-      "SMTP (Simple Mail Transfer Protocol)"
+      "Network is 192.168.10.0 and Host ID is 25",
+      "Network is 192.168.0.0 and Host ID is 10.25",
+      "Network is 192.0.0.0 and Host ID is 168.10.25",
+      "Network is 192.168.10.25 and Host ID is 0"
     ],
-    "answer": "DNS (Domain Name System)",
-    "category": "Network Protocols"
+    "answer": "Network is 192.168.10.0 and Host ID is 25",
+    "category": "Classful Addressing"
   },
   {
     "id": 28,
-    "question": "Why does modern web browsing strongly favor HTTPS over standard HTTP?",
+    "question": "A video streaming service uses an address in the range 224.0.0.0 to 239.255.255.255 (leading bits 1110) to deliver a live video stream to multiple subscribed hosts simultaneously. Which address class is designed for multicast?",
     "options": [
-      "HTTPS encrypts communications using TLS/SSL over port 443 to safeguard confidentiality and data integrity",
-      "HTTPS eliminates packet headers to double transmission speed",
-      "HTTPS allows web pages to be viewed without an active Internet connection",
-      "HTTPS disables cookies and cache storage entirely on web browsers"
+      "Class D",
+      "Class A",
+      "Class B",
+      "Class E"
     ],
-    "answer": "HTTPS encrypts communications using TLS/SSL over port 443 to safeguard confidentiality and data integrity",
-    "category": "Network Protocols"
+    "answer": "Class D",
+    "category": "Classful Addressing"
   },
   {
     "id": 29,
-    "question": "A systems administrator needs to remotely manage a Linux server securely from across the Internet. Which protocol provides encrypted command-line terminal communication over TCP port 22, replacing unencrypted Telnet?",
+    "question": "A developer suspects their computer network interface card driver is corrupted. They open a command prompt and run ping 127.0.0.1. What special IPv4 function does this address serve?",
     "options": [
-      "SSH (Secure Shell)",
-      "RDP (Remote Desktop Protocol)",
-      "TFTP (Trivial File Transfer Protocol)",
-      "SNMP (Simple Network Management Protocol)"
+      "Loopback address for local TCP/IP protocol stack testing",
+      "Default gateway broadcast address for LAN routers",
+      "Automatic Private IP Addressing (APIPA) failover",
+      "Public DNS root server query address"
     ],
-    "answer": "SSH (Secure Shell)",
-    "category": "Network Protocols"
+    "answer": "Loopback address for local TCP/IP protocol stack testing",
+    "category": "Classful Addressing"
   },
   {
     "id": 30,
-    "question": "A network engineer runs the command ping 8.8.8.8 from a terminal to test network connectivity and measure round-trip latency. Which underlying protocol sends the Echo Request and listens for the Echo Reply?",
+    "question": "A home Wi-Fi router assigns connected laptops addresses in the 192.168.1.0/24 range. Why are addresses in 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16 not routable directly over the public Internet?",
     "options": [
-      "ICMP (Internet Control Message Protocol)",
-      "IGMP (Internet Group Management Protocol)",
-      "BGP (Border Gateway Protocol)",
-      "OSPF (Open Shortest Path First)"
+      "They are designated private IPv4 address ranges reserved for internal networks under RFC 1918",
+      "They are reserved exclusively for government military installations",
+      "They lack the 32-bit formatting required by public Internet routers",
+      "They can only be used with fiber optic media rather than copper Wi-Fi"
     ],
-    "answer": "ICMP (Internet Control Message Protocol)",
-    "category": "Network Protocols"
+    "answer": "They are designated private IPv4 address ranges reserved for internal networks under RFC 1918",
+    "category": "Classful Addressing"
+  },
+  {
+    "id": 31,
+    "question": "A network engineer starts with a Class C network 192.168.1.0/24 (default mask 255.255.255.0) and borrows 2 host bits to create subnets. What is the new prefix length and how many subnets are created?",
+    "options": [
+      "New mask /26 (255.255.255.192) creating 2^2 = 4 subnets",
+      "New mask /25 (255.255.255.128) creating 2^1 = 2 subnets",
+      "New mask /27 (255.255.255.224) creating 2^3 = 8 subnets",
+      "New mask /28 (255.255.255.240) creating 2^4 = 16 subnets"
+    ],
+    "answer": "New mask /26 (255.255.255.192) creating 2^2 = 4 subnets",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 32,
+    "question": "In the subnetted network 192.168.1.0/26, 6 host bits remain in each subnet. Using the formula 2^h - 2, how many assignable host IP addresses are available in each /26 subnet?",
+    "options": [
+      "62 usable hosts (2^6 - 2 = 64 - 2)",
+      "64 usable hosts (2^6)",
+      "30 usable hosts (2^5 - 2)",
+      "126 usable hosts (2^7 - 2)"
+    ],
+    "answer": "62 usable hosts (2^6 - 2 = 64 - 2)",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 33,
+    "question": "When 192.168.1.0/24 is split into /26 subnets, the second subnet has network ID 192.168.1.64/26. What is the valid usable host range and broadcast address for this second subnet?",
+    "options": [
+      "Usable hosts .65 to .126 and Broadcast .127",
+      "Usable hosts .64 to .127 and Broadcast .128",
+      "Usable hosts .1 to .62 and Broadcast .63",
+      "Usable hosts .65 to .128 and Broadcast .129"
+    ],
+    "answer": "Usable hosts .65 to .126 and Broadcast .127",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 34,
+    "question": "Why did modern network engineering transition from rigid classful addressing (Class A /8, Class B /16, Class C /24) to Classless Inter-Domain Routing (CIDR)?",
+    "options": [
+      "CIDR uses arbitrary variable-length prefixes (/20, /25, /27) to eliminate IP waste and support route aggregation",
+      "CIDR increases the size of IPv4 addresses from 32 bits to 64 bits",
+      "CIDR eliminates the need for default gateway routers on enterprise LANs",
+      "CIDR enforces static manual addressing across all endpoint workstations"
+    ],
+    "answer": "CIDR uses arbitrary variable-length prefixes (/20, /25, /27) to eliminate IP waste and support route aggregation",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 35,
+    "question": "An ISP assigns an organization the block 192.168.10.0/24. The engineer divides this block using a new prefix of /27. How many borrowed bits are there, and how many /27 subnets are produced?",
+    "options": [
+      "3 borrowed bits (27 - 24), producing 2^3 = 8 subnets",
+      "2 borrowed bits (26 - 24), producing 2^2 = 4 subnets",
+      "4 borrowed bits (28 - 24), producing 2^4 = 16 subnets",
+      "5 borrowed bits (29 - 24), producing 2^5 = 32 subnets"
+    ],
+    "answer": "3 borrowed bits (27 - 24), producing 2^3 = 8 subnets",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 36,
+    "question": "For the /27 subnets created from 192.168.10.0/24, the subnet mask is 255.255.255.224. Using block size = 256 - 224 = 32, how many total addresses and usable hosts exist in each subnet?",
+    "options": [
+      "32 total addresses and 30 usable hosts (32 - 2)",
+      "64 total addresses and 62 usable hosts (64 - 2)",
+      "16 total addresses and 14 usable hosts (16 - 2)",
+      "32 total addresses and 32 usable hosts"
+    ],
+    "answer": "32 total addresses and 30 usable hosts (32 - 2)",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 37,
+    "question": "A network administrator needs to divide 192.168.20.0/24 into /28 subnets. How many subnets are generated, and how many usable host IP addresses are available per subnet?",
+    "options": [
+      "16 subnets (2^4) and 14 usable hosts per subnet (2^4 - 2)",
+      "8 subnets (2^3) and 30 usable hosts per subnet (2^5 - 2)",
+      "4 subnets (2^2) and 62 usable hosts per subnet (2^6 - 2)",
+      "32 subnets (2^5) and 6 usable hosts per subnet (2^3 - 2)"
+    ],
+    "answer": "16 subnets (2^4) and 14 usable hosts per subnet (2^4 - 2)",
+    "category": "Subnetting & CIDR"
+  },
+  {
+    "id": 38,
+    "question": "A network student compares IP addresses with MAC addresses. What is the fundamental difference in addressing scope and format between an IP address and a MAC address?",
+    "options": [
+      "An IP address is a 32-bit logical address for end-to-end routing; a MAC address is a 48-bit physical hex address for local delivery",
+      "An IP address is a 48-bit physical address burned into ROM; a MAC address is a 32-bit logical address assigned by DHCP",
+      "An IP address operates only within a local collision domain; a MAC address routes across global wide area networks",
+      "An IP address is permanent and immutable; a MAC address changes dynamically at every intermediate router"
+    ],
+    "answer": "An IP address is a 32-bit logical address for end-to-end routing; a MAC address is a 48-bit physical hex address for local delivery",
+    "category": "Addressing & ARP"
+  },
+  {
+    "id": 39,
+    "question": "PC1 (192.168.1.10) wants to send data to PC2 (192.168.1.20) on the same switch. PC1 checks its local cache and finds no entry for PC2. What ARP message does PC1 transmit first?",
+    "options": [
+      "A broadcast ARP Request to all devices asking: Who has 192.168.1.20? Tell 192.168.1.10",
+      "A unicast ARP Reply directly to PC2 containing its MAC address",
+      "An ICMP Echo Request packet addressed to the default gateway router",
+      "A DHCP Discover message requesting PC2 MAC address from the server"
+    ],
+    "answer": "A broadcast ARP Request to all devices asking: Who has 192.168.1.20? Tell 192.168.1.10",
+    "category": "Addressing & ARP"
+  },
+  {
+    "id": 40,
+    "question": "Before demonstrating an ARP broadcast in a classroom lab, an instructor wants students to empty their operating system ARP table so that fresh resolution occurs. Which command in Windows Command Prompt clears the ARP cache?",
+    "options": [
+      "arp -d *",
+      "arp -a",
+      "ipconfig /flushdns",
+      "netstat -r"
+    ],
+    "answer": "arp -d *",
+    "category": "Addressing & ARP"
+  },
+  {
+    "id": 41,
+    "question": "A computer on subnet 192.168.1.0/24 needs to send an IP packet to a remote web server on the Internet (142.250.190.46). When the computer sends an ARP request, whose MAC address is it attempting to resolve?",
+    "options": [
+      "The MAC address of the local default gateway router",
+      "The MAC address of the destination Google web server",
+      "The MAC address of the root DNS nameserver",
+      "The broadcast MAC address FF:FF:FF:FF:FF:FF"
+    ],
+    "answer": "The MAC address of the local default gateway router",
+    "category": "Addressing & ARP"
+  },
+  {
+    "id": 42,
+    "question": "When a smartphone connects to a home Wi-Fi network, it automatically obtains IP parameters through DHCP. What is the correct chronological 4-step sequence (DORA) of this exchange?",
+    "options": [
+      "Discover (broadcast) -> Offer (unicast/broadcast) -> Request (broadcast) -> Acknowledge (unicast)",
+      "Detect -> Obtain -> Renew -> Authorize",
+      "Demand -> Offer -> Receive -> Allocate",
+      "Discover -> Request -> Offer -> Acknowledge"
+    ],
+    "answer": "Discover (broadcast) -> Offer (unicast/broadcast) -> Request (broadcast) -> Acknowledge (unicast)",
+    "category": "DHCP & IP Management"
+  },
+  {
+    "id": 43,
+    "question": "A technician is troubleshooting a PC that received an incorrect IP address lease. The technician executes ipconfig /release followed by ipconfig /renew. Which transport protocol and port numbers do DHCP client and server use?",
+    "options": [
+      "UDP port 67 for the Server and UDP port 68 for the Client",
+      "TCP port 80 for the Server and TCP port 8080 for the Client",
+      "UDP port 53 for both Server and Client",
+      "TCP port 67 for the Server and TCP port 68 for the Client"
+    ],
+    "answer": "UDP port 67 for the Server and UDP port 68 for the Client",
+    "category": "DHCP & IP Management"
+  },
+  {
+    "id": 44,
+    "question": "A workstation boots up on a corporate network where the DHCP server is offline. After broadcasting DHCP Discover messages without receiving any Offer, Windows assigns the PC the address 169.254.12.34. What feature assigned this address?",
+    "options": [
+      "APIPA (Automatic Private IP Addressing)",
+      "Static DNS fallback resolution",
+      "Loopback diagnostic interface",
+      "Default gateway proxy allocation"
+    ],
+    "answer": "APIPA (Automatic Private IP Addressing)",
+    "category": "DHCP & IP Management"
+  },
+  {
+    "id": 45,
+    "question": "When resolving www.google.com, a client first checks its local OS cache. If the entry is missing, the request is sent to a recursive resolver, which queries Root servers, TLD servers, and Authoritative servers over which port?",
+    "options": [
+      "UDP and TCP port 53",
+      "TCP port 80",
+      "TCP port 443",
+      "UDP port 67"
+    ],
+    "answer": "UDP and TCP port 53",
+    "category": "DNS & Name Resolution"
+  },
+  {
+    "id": 46,
+    "question": "A web administrator registers a new domain name and needs to configure DNS records so that mail is routed to their email server and the domain name points to an IPv6 server address. Which record types should be configured?",
+    "options": [
+      "MX for mail routing and AAAA for IPv6 address mapping",
+      "A for mail routing and CNAME for IPv6 address mapping",
+      "TXT for mail routing and NS for IPv6 address mapping",
+      "PTR for mail routing and A for IPv6 address mapping"
+    ],
+    "answer": "MX for mail routing and AAAA for IPv6 address mapping",
+    "category": "DNS & Name Resolution"
+  },
+  {
+    "id": 47,
+    "question": "A network support technician wants to verify which DNS mappings are currently cached in the local Windows operating system memory. Which terminal command displays these cached records?",
+    "options": [
+      "ipconfig /displaydns",
+      "ipconfig /flushdns",
+      "nslookup -all",
+      "netstat -dns"
+    ],
+    "answer": "ipconfig /displaydns",
+    "category": "DNS & Name Resolution"
+  },
+  {
+    "id": 48,
+    "question": "An online gaming company evaluates transport protocols: player positional updates require fast real-time delivery where fresh data beats retransmitting late packets, while in-game store purchases require 100% reliable ordered delivery. Which protocols fit these needs?",
+    "options": [
+      "UDP for fast real-time game updates, and TCP for reliable transactional purchases",
+      "TCP for fast real-time game updates, and UDP for reliable transactional purchases",
+      "TCP exclusively for both requirements",
+      "UDP exclusively for both requirements"
+    ],
+    "answer": "UDP for fast real-time game updates, and TCP for reliable transactional purchases",
+    "category": "Transport Protocols"
+  },
+  {
+    "id": 49,
+    "question": "A user logs into their online bank account over HTTPS (port 443). In Wireshark, the packet payload appears scrambled under TLS encryption. What three core security pillars does TLS provide over standard cleartext HTTP (port 80)?",
+    "options": [
+      "Confidentiality via encryption, Authentication via digital certificates, and Integrity against tampering",
+      "Compression, Bandwidth expansion, and Unlimited packet forwarding",
+      "Static IP assignment, Automatic DNS resolution, and Hardware routing",
+      "Subnetting, NAT translation, and MAC address spoofing prevention"
+    ],
+    "answer": "Confidentiality via encryption, Authentication via digital certificates, and Integrity against tampering",
+    "category": "Web & Security Protocols"
+  },
+  {
+    "id": 50,
+    "question": "A user opens a web browser and navigates to https://www.google.com on a freshly connected laptop. What is the correct chronological sequence of network protocol interactions that occur to display the webpage?",
+    "options": [
+      "DHCP acquires IP -> DNS resolves domain -> ARP finds gateway MAC -> TCP handshake & TLS session setup -> HTTPS GET fetches page",
+      "HTTPS GET fetches page -> TCP handshake -> DNS resolves domain -> ARP finds gateway MAC -> DHCP acquires IP",
+      "DNS resolves domain -> DHCP acquires IP -> HTTPS GET fetches page -> TCP handshake -> ARP finds gateway MAC",
+      "ARP finds gateway MAC -> TCP handshake -> HTTPS GET fetches page -> DHCP acquires IP -> DNS resolves domain"
+    ],
+    "answer": "DHCP acquires IP -> DNS resolves domain -> ARP finds gateway MAC -> TCP handshake & TLS session setup -> HTTPS GET fetches page",
+    "category": "Integrated Capstone Flow"
   }
 ]
